@@ -1,44 +1,46 @@
-.side-box {
+$colorBlue: rgba(10, 102, 194, 255);
+$amount: 45;
+
+.side-box
+{
   width: 25%;
   height: 100%;
   background-color: black;
 }
-.box {
+
+.box
+{
   width: 75%;
 }
-.profileImg {
+
+.profile-img
+ {
   position: absolute;
   width: 21%;
   border: 3px solid white;
   top: 35px;
   left: 24px;
 }
-.divImgProfile {
+
+.div-img-profile
+{
   max-width: 800px !important;
 }
-$colorBlue: rgba(10, 102, 194, 255);
-$colorgrey: grey;
-$amount: 45;
 
-.brBlue {
+.btn-blue
+{
   border: 1px solid $colorBlue;
   color: $colorBlue;
-  &:hover {
+  &:hover
+  {
     background-color: lighten($colorBlue, $amount);
   }
 }
-.brGrey {
-  border: 1px solid $colorgrey;
-  color: $colorgrey;
-  &:hover {
-    background-color: lighten($colorgrey, $amount);
-  }
-}
-.btBlue {
-  background-color: $colorBlue;
-  color: white;
-
-  &:hover {
-    background-color: darken($colorBlue, 10);
+.btn-grey {
+  border: 1px solid grey;
+  color: grey;
+  &:hover
+  {
+    background-color: lighten(grey, $amount);
   }
 }
