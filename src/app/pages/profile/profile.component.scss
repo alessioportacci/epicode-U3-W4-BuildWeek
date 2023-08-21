@@ -1,5 +1,13 @@
-$colorBlue: rgba(10, 102, 194, 255);
+$colorBlue: #1666C5;
 $amount: 45;
+
+.propic
+{
+  object-fit: contain;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+
+}
 
 .side-box
 {
@@ -11,6 +19,13 @@ $amount: 45;
 .box
 {
   width: 75%;
+}
+
+.linkedin-box
+{
+  background-color: #ffffff;
+  border-radius: 14px;
+  border: 1px solid lightgray
 }
 
 .profile-img
@@ -29,8 +44,10 @@ $amount: 45;
 
 .btn-blue
 {
-  border: 1px solid $colorBlue;
+  border: 1.5px solid $colorBlue;
+  border-radius: 20px;
   color: $colorBlue;
+  font-weight:700;
   &:hover
   {
     background-color: lighten($colorBlue, $amount);
