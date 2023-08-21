@@ -1,4 +1,5 @@
 //Interfaccia
+import { StriveApiService } from 'src/app/services/strive-api.service';
 import { IProfile } from './../../interfaces/iprofile';
 
 
@@ -13,7 +14,7 @@ import { Component, OnInit } from '@angular/core';
 export class ProfileComponent implements OnInit
 {
   profileData? : IProfile
-  constructor()
+  constructor(striveSrv : StriveApiService)
   {
 
   }

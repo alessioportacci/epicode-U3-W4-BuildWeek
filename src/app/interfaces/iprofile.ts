@@ -13,3 +13,13 @@ export interface IProfile
   updatedAt : string, 	// server generated
   __v       : number    // server generated
 }
+
+export interface IUpdateProfile
+{
+  name      : string,
+  surname   : string,
+  email     : string,
+  bio       : string,
+  title     : string,
+  area      : string,
+}
