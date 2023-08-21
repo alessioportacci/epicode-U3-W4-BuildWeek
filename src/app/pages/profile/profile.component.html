@@ -25,17 +25,26 @@
               class="rounded-circle profile-img"
             />
           </div>
-          <h1 class="mt-5">
-            {{ profileData?.name }} {{ profileData?.surname }}
-          </h1>
-          <h3>{{ profileData?.bio }}</h3>
-          <h3>{{ profileData?.title }}</h3>
-          <h3 class="mb-0">{{ profileData?.area }}</h3>
-          <a href="modulobostrapp"> informazioni contatto</a>
-          <a href="link conoscenti"> n collegament*</a>
-          <button class="btn btn-blue me-2">Disponibile per</button>
-          <button class="btn btn-blue">Aggiungi sezione profilo</button>
-          <button class="btn btn-blue">...</button>
+
+          <div class="m-4">
+            <h1 class="mt-5">
+              {{ profileData?.name }} {{ profileData?.surname }}
+            </h1>
+            <p>{{ profileData?.bio }}</p>
+            <p>{{ profileData?.title }}</p>
+            <p class="mb-0">{{ profileData?.area }}</p>
+            <a href="link conoscenti" class="text-decoration-none text-dark"
+              >Più di x collegamenti</a
+            ><br />
+            <a href="modulobostrapp"> Informazioni contatto</a>
+            <div class="d-flex justfy-content-start">
+              <button class="btn btn-blue me-2">Disponibile per</button>
+              <button class="btn btn-blue me-2">
+                Aggiungi sezione profilo
+              </button>
+              <button class="btn btn-blue me-2">...</button>
+            </div>
+          </div>
         </div>
         <div class="col g-4 bg-light">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam esse
