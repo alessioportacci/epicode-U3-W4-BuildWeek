@@ -1,44 +1,46 @@
-.side-box {
+$colorBlue: #1666C5;
+$amount: 45;
+
+.cover-img
+{
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+.profile-img
+ {
+  position: absolute;
+  width: 21%;
+  border: 3px solid white;
+  top: 65px;
+  left: 24px;
+}
+
+.side-box
+{
   width: 25%;
   height: 100%;
   background-color: black;
 }
-.box {
-  width: 75%;
-}
-.profileImg {
-  position: absolute;
-  width: 21%;
-  border: 3px solid white;
-  top: 35px;
-  left: 24px;
-}
-.divImgProfile {
-  max-width: 800px !important;
-}
-$colorBlue: rgba(10, 102, 194, 255);
-$colorgrey: grey;
-$amount: 45;
 
-.brBlue {
-  border: 1px solid $colorBlue;
-  color: $colorBlue;
-  &:hover {
-    background-color: lighten($colorBlue, $amount);
+.linkedin-box-content-mini
+{
+  font-size: 14px;
+  padding: 3px;
+  p
+  {
+    margin: 0px;
   }
-}
-.brGrey {
-  border: 1px solid $colorgrey;
-  color: $colorgrey;
-  &:hover {
-    background-color: lighten($colorgrey, $amount);
-  }
-}
-.btBlue {
-  background-color: $colorBlue;
-  color: white;
 
-  &:hover {
-    background-color: darken($colorBlue, 10);
+  p:first-of-type
+  {
+    font-weight: bold;
   }
 }
+
+.linkedin-box-content-mini-blue
+{
+  background-color: #dde7f1;
+}
+
+
