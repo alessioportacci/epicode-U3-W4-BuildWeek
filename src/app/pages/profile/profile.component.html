@@ -1,10 +1,10 @@
-{{ profileData?.name }}
+<!-- {{ profileData?.name }}
 {{ profileData?.surname }}
 {{ profileData?.email }}
 {{ profileData?.bio }}
 {{ profileData?.title }}
 {{ profileData?.area }}
-{{ profileData?.username }}
+{{ profileData?.username }} -->
 
 <div class="container">
   <div class="row justify-content-around">
@@ -17,19 +17,23 @@
             <!-- Propic -->
             <img
               [src]="profileData?.image"
-              alt=""
+              alt="profile-image"
               class="rounded-circle profileImg"
             />
           </div>
-          <h1 class="mt-5">io</h1>
-          <h3>descrizione</h3>
-          <h3>FORMAZIONE</h3>
-          <h3 class="mb-0">residenza</h3>
-          <a href="modulobostrapp"> informazioni contatto</a>
-          <a href="link conoscenti"> n collegament*</a>
-          <button class="btn btBlue me-2">disponibile</button>
-          <button class="btn brBlue">aggiungi sezione profilo</button>
-          <button class="btn brBlue">aggiungi sezione profilo</button>
+          <h1 class="mt-5">
+            {{ profileData?.name }} {{ profileData?.surname }}
+          </h1>
+          <div class="d-flex">
+            <h3>{{ profileData?.area }}</h3>
+            <a href="link conoscenti">Informazioni di contatto</a>
+          </div>
+
+          <h3>{{ profileData?.title }}</h3>
+
+          <button class="btn brBlue">Disponibile per</button>
+          <button class="btn brBlue">Aggiungi sezione profilo</button>
+          <button class="btn btBlue me-2">...</button>
         </div>
         <div class="col g-4 bg-light">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam esse
