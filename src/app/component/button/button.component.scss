@@ -1,0 +1,26 @@
+$colorBlue: rgba(10, 102, 194, 255);
+$colorgrey: grey;
+$amount: 45;
+
+.brBlue {
+  border: 1px solid $colorBlue;
+  color: $colorBlue;
+  &:hover {
+    background-color: lighten($colorBlue, $amount);
+  }
+}
+.brGrey {
+  border: 1px solid $colorgrey;
+  color: $colorgrey;
+  &:hover {
+    background-color: lighten($colorgrey, $amount);
+  }
+}
+.btBlue {
+  background-color: $colorBlue;
+  color: white;
+
+  &:hover {
+    background-color: darken($colorBlue, 10);
+  }
+}
