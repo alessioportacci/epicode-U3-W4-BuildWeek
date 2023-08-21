@@ -1,7 +1,7 @@
 $colorBlue: #1666C5;
 $amount: 45;
 
-.propic
+.cover-img
 {
   border-top-left-radius: 14px;
   border-top-right-radius: 14px;
@@ -23,16 +23,4 @@ $amount: 45;
   background-color: black;
 }
 
-.box
-{
-  width: 75%;
-}
 
-.btn-grey {
-  border: 1px solid grey;
-  color: grey;
-  &:hover
-  {
-    background-color: lighten(grey, $amount);
-  }
-}

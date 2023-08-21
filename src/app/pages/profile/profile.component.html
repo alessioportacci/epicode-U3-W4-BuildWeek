@@ -19,7 +19,7 @@
             <img
               src="./../assets/imgs/profile-top-image.png"
               alt=""
-              class="img-fluid w-100 propic"
+              class="img-fluid w-100 cover-image"
             />
             <!-- Propic -->
             <img
@@ -39,9 +39,19 @@
             <p>{{ profileData?.title }}</p>
             <p>{{ profileData?.bio }}</p>
             <p class="mb-0">{{ profileData?.area }}</p>
-            <button class="btn btn-blue-2 me-2">disponibile per</button>
-            <button class="btn btn-blue">aggiungi sezione profilo</button>
-            <button class="btn btn-blue">aggiungi sezione profilo</button>
+          </div>
+
+          <!-- Bottoni -->
+          <div class="row row-cols-3 linkedin-box-content">
+            <div class="text-center">
+              <button class="btn btn-blue-2 me-2">disponibile per</button>
+            </div>
+            <div>
+              <button class="btn btn-blue">aggiungi sezione profilo</button>
+            </div>
+            <div>
+              <button class="btn btn-gray">aggiungi sezione profilo</button>
+            </div>
           </div>
         </div>
 

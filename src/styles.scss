@@ -4,6 +4,7 @@
 
 $linkedinBlue: #1666C5;
 $linkedinBlue2: #0a66c2;
+$linkedinGray: #858585;
 $lighten: 45;
 $darken: 15;
 
@@ -36,6 +37,7 @@ body
   &:hover
   {
     background-color: lighten($linkedinBlue, $lighten) !important;
+    border: 2px solid !important
   }
 }
 
@@ -51,5 +53,23 @@ body
   &:hover
   {
     background-color: darken($linkedinBlue2, $darken) !important;
+    border: 2px solid !important
+
+  }
+}
+
+.btn-gray
+{
+  border: 1.5px solid  !important;
+  border-radius: 20px !important;
+  color: $linkedinGray !important;
+  font-weight:700 !important;
+  padding: 6px 15px !important;
+
+  &:hover
+  {
+    background-color: darken(#ffffff, $darken) !important;
+    border: 2px solid !important
+
   }
 }
