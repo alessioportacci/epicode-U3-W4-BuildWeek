@@ -6,7 +6,7 @@ import { Token } from 'src/app/environment/token';
 //Http
 import { HttpClient} from '@angular/common/http';
 //Tap
-import { retry, tap } from 'rxjs';
+import { Observable, retry, tap } from 'rxjs';
 
 
 
@@ -38,35 +38,37 @@ export class StriveApiService {
     */
   }
 
-  getUser(userId:string)
+  getUser(userId:string): Observable<IProfile>
   {
     return this.http.get<IProfile>(`${this.url}/${userId}`,
-      {
-        headers: {Authorization: `Bearer ${this.token}`},
-      })
-        .pipe(tap(res => {console.log(res)})).subscribe()
+      { headers: {Authorization: `Bearer ${this.token}`} })
   }
 
-  getUsers()
+  getUsers(): Observable<IProfile[]>
   {
-    console.log("users")
-    this.http.get<IProfile[]>(this.url,
-      { headers: {Authorization:  `Bearer ${this.token}`}} )
-        .pipe(tap(res => {console.log(res)})).subscribe()
+    return this.http.get<IProfile[]>
+    (
+      this.url,
+      { headers: {Authorization:  `Bearer ${this.token}`}}
+    )
   }
 
-  getProfile()
+  getProfile(): Observable<IProfile>
   {
-    return this.http.get<IProfile[]>(`${this.url}/me`,
-      { headers: {Authorization:  `Bearer ${this.token}`}})
-        .pipe(tap(res => {console.log(res)})).subscribe()
+    return this.http.get<IProfile>
+    (
+      `${this.url}/me`,
+      { headers: {Authorization:  `Bearer ${this.token}`}}
+    )
   }
 
-  setUser(userUpdate: IUpdateProfile)
+  setUser(userUpdate: IUpdateProfile): Observable<IProfile>
   {
-    return this.http.put<IProfile[]>(`${this.url}`,
+    return this.http.put<IProfile>
+    (
+      `${this.url}`,
       userUpdate,
-      { headers: {Authorization:  `Bearer ${this.token}`}})
-        .pipe(tap(res => {console.log(res)})).subscribe()
+      { headers: {Authorization:  `Bearer ${this.token}`}}
+    )
   }
 }
