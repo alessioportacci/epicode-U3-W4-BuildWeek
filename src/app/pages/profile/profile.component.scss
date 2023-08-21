@@ -3,10 +3,17 @@ $amount: 45;
 
 .propic
 {
-  object-fit: contain;
   border-top-left-radius: 14px;
   border-top-right-radius: 14px;
+}
 
+.profile-img
+ {
+  position: absolute;
+  width: 21%;
+  border: 3px solid white;
+  top: 65px;
+  left: 24px;
 }
 
 .side-box
@@ -21,38 +28,6 @@ $amount: 45;
   width: 75%;
 }
 
-.linkedin-box
-{
-  background-color: #ffffff;
-  border-radius: 14px;
-  border: 1px solid lightgray
-}
-
-.profile-img
- {
-  position: absolute;
-  width: 21%;
-  border: 3px solid white;
-  top: 35px;
-  left: 24px;
-}
-
-.div-img-profile
-{
-  max-width: 800px !important;
-}
-
-.btn-blue
-{
-  border: 1.5px solid $colorBlue;
-  border-radius: 20px;
-  color: $colorBlue;
-  font-weight:700;
-  &:hover
-  {
-    background-color: lighten($colorBlue, $amount);
-  }
-}
 .btn-grey {
   border: 1px solid grey;
   color: grey;
