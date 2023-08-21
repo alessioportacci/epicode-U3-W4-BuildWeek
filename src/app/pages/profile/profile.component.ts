@@ -14,14 +14,19 @@ import { Component, OnInit } from '@angular/core';
 export class ProfileComponent implements OnInit
 {
   profileData? : IProfile
-  constructor(striveSrv : StriveApiService)
+  constructor(public striveSrv : StriveApiService)
   {
-
+    console.log("ciao")
   }
 
-
   ngOnInit(): void
-  {}
+  {
+    this.striveSrv.getProfile().subscribe
+    (
+      data => this.profileData = data
+    )
+    console.log(this.profileData)
+  }
 
   getProfileData()
   {}
