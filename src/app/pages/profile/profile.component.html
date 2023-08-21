@@ -1,10 +1,10 @@
-{{ profileData?.name }}
+<!-- {{ profileData?.name }}
 {{ profileData?.surname }}
 {{ profileData?.email }}
 {{ profileData?.bio }}
 {{ profileData?.title }}
 {{ profileData?.area }}
-{{ profileData?.username }}
+{{ profileData?.username }} -->
 
 <div class="container">
   <div class="row justify-content-around">
@@ -37,59 +37,78 @@
             <button class="btn btn-blue-2 me-2">disponibile per</button>
             <button class="btn btn-blue">aggiungi sezione profilo</button>
             <button class="btn btn-blue">aggiungi sezione profilo</button>
+            <div class="m-4">
+              <h1 class="mt-5">
+                {{ profileData?.name }} {{ profileData?.surname }}
+              </h1>
+              <p>{{ profileData?.bio }}</p>
+              <p>{{ profileData?.title }}</p>
+              <p class="mb-0">{{ profileData?.area }}</p>
+              <a href="link conoscenti" class="text-decoration-none text-dark"
+                >Più di x collegamenti</a
+              ><br />
+              <a href="modulobostrapp"> Informazioni contatto</a>
+              <div class="d-flex justfy-content-start">
+                <button class="btn btn-blue me-2">Disponibile per</button>
+                <button class="btn btn-blue me-2">
+                  Aggiungi sezione profilo
+                </button>
+                <button class="btn btn-blue me-2">...</button>
+              </div>
+            </div>
+          </div>
+          <div class="col g-4 bg-light">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam
+            esse ducimus qui harum maiores ratione accusamus cum totam, quasi
+            fugit maxime corporis, voluptatibus commodi id eos, sint aperiam
+            molestiae voluptas! Lorem ipsum dolor sit, amet consectetur
+            adipisicing elit. Magnam esse ducimus qui harum maiores ratione
+            accusamus cum totam, quasi fugit maxime corporis, voluptatibus
+            commodi id eos, sint aperiam molestiae voluptas!
+          </div>
+          <div class="col g-4 bg-light">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam
+            esse ducimus qui harum maiores ratione accusamus cum totam, quasi
+            fugit maxime corporis, voluptatibus commodi id eos, sint aperiam
+            molestiae voluptas! Lorem ipsum dolor sit, amet consectetur
+            adipisicing elit. Magnam esse ducimus
+          </div>
+          <div class="col g-4 bg-light">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam
+            esse ducimus qui harum maiores ratione accusamus cum totam, quasi
+            fugit maxime corporis, voluptatibus commodi id eos, sint aperiam
+            molestiae voluptas!
           </div>
         </div>
-        <div class="col g-4 bg-light">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam esse
-          ducimus qui harum maiores ratione accusamus cum totam, quasi fugit
-          maxime corporis, voluptatibus commodi id eos, sint aperiam molestiae
-          voluptas! Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Magnam esse ducimus qui harum maiores ratione accusamus cum totam,
-          quasi fugit maxime corporis, voluptatibus commodi id eos, sint aperiam
-          molestiae voluptas!
-        </div>
-        <div class="col g-4 bg-light">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam esse
-          ducimus qui harum maiores ratione accusamus cum totam, quasi fugit
-          maxime corporis, voluptatibus commodi id eos, sint aperiam molestiae
-          voluptas! Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-          Magnam esse ducimus
-        </div>
-        <div class="col g-4 bg-light">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam esse
-          ducimus qui harum maiores ratione accusamus cum totam, quasi fugit
-          maxime corporis, voluptatibus commodi id eos, sint aperiam molestiae
-          voluptas!
-        </div>
       </div>
-    </div>
 
-    <!-- colonna laterale -->
-    <div class="col col-12 col-md-3 m-2">
-      <div class="row flex-column">
-        <div class="col g-4 bg-light">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam
-          recusandae quia esse impedit ratione ad. Eligendi, quod modi suscipit
-          quaerat architecto amet praesentium cum voluptate nulla deleniti
-          tempora est voluptates!
-        </div>
-        <div class="col g-4 bg-light">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam
-          recusandae quia esse impedit ratione ad. Eligendi, quod modi suscipit
-          quaerat architecto amet praesentium cum voluptate nulla deleniti
-          tempora est voluptates!
-        </div>
-        <div class="col g-4 bg-light">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam
-          recusandae quia esse impedit ratione ad. Eligendi, quod modi suscipit
-          quaerat architecto amet praesentium cum voluptate nulla deleniti
-          tempora est voluptates!
-        </div>
-        <div class="col g-4 bg-light">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam
-          recusandae quia esse impedit ratione ad. Eligendi, quod modi suscipit
-          quaerat architecto amet praesentium cum voluptate nulla deleniti
-          tempora est voluptates!
+      <!-- colonna laterale -->
+      <div class="col col-12 col-md-3 m-2">
+        <div class="row flex-column">
+          <div class="col g-4 bg-light">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam
+            recusandae quia esse impedit ratione ad. Eligendi, quod modi
+            suscipit quaerat architecto amet praesentium cum voluptate nulla
+            deleniti tempora est voluptates!
+          </div>
+          <div class="col g-4 bg-light">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam
+            recusandae quia esse impedit ratione ad. Eligendi, quod modi
+            suscipit quaerat architecto amet praesentium cum voluptate nulla
+            deleniti tempora est voluptates!
+          </div>
+          <div class="col g-4 bg-light">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam
+            recusandae quia esse impedit ratione ad. Eligendi, quod modi
+            suscipit quaerat architecto amet praesentium cum voluptate nulla
+            deleniti tempora est voluptates!
+          </div>
+          <div class="col g-4 bg-light">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam
+            recusandae quia esse impedit ratione ad. Eligendi, quod modi
+            suscipit quaerat architecto amet praesentium cum voluptate nulla
+            deleniti tempora est voluptates!
+          </div>
         </div>
       </div>
     </div>
