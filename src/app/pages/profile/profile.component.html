@@ -1,4 +1,11 @@
-<p>profile works!</p>
+{{ profileData?.name }}
+{{ profileData?.surname }}
+{{ profileData?.email }}
+{{ profileData?.bio }}
+{{ profileData?.title }}
+{{ profileData?.area }}
+{{ profileData?.username }}
+
 <div class="container">
   <div class="row justify-content-around">
     <!-- colonna centrale -->
@@ -7,9 +14,9 @@
         <div class="col g-4 bg-light">
           <div class="w-100 position-relative divImgProfile">
             <img src="https://placekitten.com/500/100" alt="" class="w-100" />
-
+            <!-- Propic -->
             <img
-              src="https://placekitten.com/100/100"
+              [src]="profileData?.image"
               alt=""
               class="rounded-circle profileImg"
             />
