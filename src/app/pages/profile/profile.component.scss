@@ -1,12 +1,19 @@
 $colorBlue: #1666C5;
 $amount: 45;
 
-.propic
+.cover-img
 {
-  object-fit: contain;
   border-top-left-radius: 14px;
   border-top-right-radius: 14px;
+}
 
+.profile-img
+ {
+  position: absolute;
+  width: 21%;
+  border: 3px solid white;
+  top: 65px;
+  left: 24px;
 }
 
 .side-box
@@ -16,48 +23,24 @@ $amount: 45;
   background-color: black;
 }
 
-.box
+.linkedin-box-content-mini
 {
-  width: 75%;
-}
-
-.linkedin-box
-{
-  background-color: #ffffff;
-  border-radius: 14px;
-  border: 1px solid lightgray
-}
-
-.profile-img
- {
-  position: absolute;
-  width: 21%;
-  border: 3px solid white;
-  top: 35px;
-  left: 24px;
-}
-
-.div-img-profile
-{
-  max-width: 800px !important;
-}
-
-.btn-blue
-{
-  border: 1.5px solid $colorBlue;
-  border-radius: 20px;
-  color: $colorBlue;
-  font-weight:700;
-  &:hover
+  font-size: 14px;
+  padding: 3px;
+  p
   {
-    background-color: lighten($colorBlue, $amount);
+    margin: 0px;
+  }
+
+  p:first-of-type
+  {
+    font-weight: bold;
   }
 }
-.btn-grey {
-  border: 1px solid grey;
-  color: grey;
-  &:hover
-  {
-    background-color: lighten(grey, $amount);
-  }
+
+.linkedin-box-content-mini-blue
+{
+  background-color: #dde7f1;
 }
+
+
