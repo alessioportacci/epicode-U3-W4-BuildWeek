@@ -9,8 +9,9 @@
 <div class="container">
   <div class="row justify-content-around">
     <!-- colonna centrale -->
-    <div class="col col-12 col-md-8 m-2">
+    <div class="col col-12 col-md-8">
       <div class="row flex-column">
+        <!-- Box Profilo -->
         <div class="col g-4 linkedin-box p-0">
           <!-- Immagini -->
           <div class="position-relative div-img-profile w-100 m-0 p-0">
@@ -30,34 +31,23 @@
 
           <!-- Contenuto -->
           <div class="linkedin-box-content">
-            <h1 class="mt-5">io</h1>
-            <h3>descrizione</h3>
-            <h3>FORMAZIONE</h3>
-            <h3 class="mb-0">residenza</h3>
+            <!-- Nome -->
+            <h1 class="mt-5">
+              {{ profileData?.name }} {{ profileData?.surname }}
+            </h1>
+            <!-- Altro  -->
+            <p>{{ profileData?.title }}</p>
+            <p>{{ profileData?.bio }}</p>
+            <p class="mb-0">{{ profileData?.area }}</p>
             <button class="btn btn-blue-2 me-2">disponibile per</button>
             <button class="btn btn-blue">aggiungi sezione profilo</button>
             <button class="btn btn-blue">aggiungi sezione profilo</button>
-            <div class="m-4">
-              <h1 class="mt-5">
-                {{ profileData?.name }} {{ profileData?.surname }}
-              </h1>
-              <p>{{ profileData?.bio }}</p>
-              <p>{{ profileData?.title }}</p>
-              <p class="mb-0">{{ profileData?.area }}</p>
-              <a href="link conoscenti" class="text-decoration-none text-dark"
-                >Più di x collegamenti</a
-              ><br />
-              <a href="modulobostrapp"> Informazioni contatto</a>
-              <div class="d-flex justfy-content-start">
-                <button class="btn btn-blue me-2">Disponibile per</button>
-                <button class="btn btn-blue me-2">
-                  Aggiungi sezione profilo
-                </button>
-                <button class="btn btn-blue me-2">...</button>
-              </div>
-            </div>
           </div>
-          <div class="col g-4 bg-light">
+        </div>
+
+        <!-- Box di test -->
+        <div class="col g-4 linkedin-box p-0">
+          <div class="col g-4 linkedin-box-content">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam
             esse ducimus qui harum maiores ratione accusamus cum totam, quasi
             fugit maxime corporis, voluptatibus commodi id eos, sint aperiam
@@ -66,44 +56,31 @@
             accusamus cum totam, quasi fugit maxime corporis, voluptatibus
             commodi id eos, sint aperiam molestiae voluptas!
           </div>
-          <div class="col g-4 bg-light">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam
-            esse ducimus qui harum maiores ratione accusamus cum totam, quasi
-            fugit maxime corporis, voluptatibus commodi id eos, sint aperiam
-            molestiae voluptas! Lorem ipsum dolor sit, amet consectetur
-            adipisicing elit. Magnam esse ducimus
-          </div>
-          <div class="col g-4 bg-light">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam
-            esse ducimus qui harum maiores ratione accusamus cum totam, quasi
-            fugit maxime corporis, voluptatibus commodi id eos, sint aperiam
-            molestiae voluptas!
-          </div>
         </div>
       </div>
+    </div>
 
-      <!-- colonna laterale -->
-      <div class="col col-12 col-md-3 m-2">
-        <div class="row flex-column">
-          <div class="col g-4 bg-light">
+    <!-- colonna laterale -->
+    <div class="col col-12 col-md-3 mx-2">
+      <div class="row flex-column">
+        <div class="col g-4 linkedin-box">
+          <div class="linkedin-box-content">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam
             recusandae quia esse impedit ratione ad. Eligendi, quod modi
             suscipit quaerat architecto amet praesentium cum voluptate nulla
             deleniti tempora est voluptates!
           </div>
-          <div class="col g-4 bg-light">
+        </div>
+        <div class="col g-4 linkedin-box">
+          <div class="linkedin-box-content">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam
             recusandae quia esse impedit ratione ad. Eligendi, quod modi
             suscipit quaerat architecto amet praesentium cum voluptate nulla
             deleniti tempora est voluptates!
           </div>
-          <div class="col g-4 bg-light">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam
-            recusandae quia esse impedit ratione ad. Eligendi, quod modi
-            suscipit quaerat architecto amet praesentium cum voluptate nulla
-            deleniti tempora est voluptates!
-          </div>
-          <div class="col g-4 bg-light">
+        </div>
+        <div class="col g-4 linkedin-box">
+          <div class="linkedin-box-content">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam
             recusandae quia esse impedit ratione ad. Eligendi, quod modi
             suscipit quaerat architecto amet praesentium cum voluptate nulla
