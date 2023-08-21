@@ -16,15 +16,11 @@ export class ProfileComponent implements OnInit
   profileData? : IProfile
   constructor(public striveSrv : StriveApiService)
   {
-    console.log("ciao")
   }
 
   ngOnInit(): void
   {
-    this.striveSrv.getProfile().subscribe
-    (
-      data => this.profileData = data
-    )
+    this.striveSrv.getProfile().subscribe ( data => this.profileData = data )
     console.log(this.profileData)
   }
 
