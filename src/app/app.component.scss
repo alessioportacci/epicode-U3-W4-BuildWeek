@@ -1,1 +1,45 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+.side-box {
+  width: 25%;
+  height: 100%;
+  background-color: black;
+}
+.box {
+  width: 75%;
+}
+.profileImg {
+  position: absolute;
+  width: 21%;
+  border: 3px solid white;
+  top: 35px;
+  left: 24px;
+}
+.divImgProfile {
+  max-width: 800px !important;
+}
+$colorBlue: rgba(10, 102, 194, 255);
+$colorgrey: grey;
+$amount: 45;
+
+.brBlue {
+  border: 1px solid $colorBlue;
+  color: $colorBlue;
+  &:hover {
+    background-color: lighten($colorBlue, $amount);
+  }
+}
+.brGrey {
+  border: 1px solid $colorgrey;
+  color: $colorgrey;
+  &:hover {
+    background-color: lighten($colorgrey, $amount);
+  }
+}
+.btBlue {
+  background-color: $colorBlue;
+  color: white;
+
+  &:hover {
+    background-color: darken($colorBlue, 10);
+  }
+}
