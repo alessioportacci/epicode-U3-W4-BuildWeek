@@ -1,11 +1,15 @@
-.side-box {
+.side-box
+{
   width: 25%;
   height: 100%;
   background-color: black;
 }
-.box {
+
+.box
+{
   width: 75%;
 }
+
 .profileImg {
   position: absolute;
   width: 21%;
@@ -13,32 +17,43 @@
   top: 35px;
   left: 24px;
 }
-.divImgProfile {
+
+.divImgProfile
+{
   max-width: 800px !important;
 }
+
 $colorBlue: rgba(10, 102, 194, 255);
 $colorgrey: grey;
 $amount: 45;
 
-.brBlue {
+.brBlue
+{
   border: 1px solid $colorBlue;
   color: $colorBlue;
-  &:hover {
+  &:hover
+  {
     background-color: lighten($colorBlue, $amount);
   }
 }
-.brGrey {
+
+.brGrey
+{
   border: 1px solid $colorgrey;
   color: $colorgrey;
-  &:hover {
+  &:hover
+  {
     background-color: lighten($colorgrey, $amount);
   }
 }
-.btBlue {
+
+.btBlue
+{
   background-color: $colorBlue;
   color: white;
 
-  &:hover {
+  &:hover
+  {
     background-color: darken($colorBlue, 10);
   }
 }
