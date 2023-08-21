@@ -1,14 +1,12 @@
-$colorBlue: #1666C5;
+$colorBlue: #1666c5;
 $amount: 45;
 
-.cover-img
-{
+.cover-img {
   border-top-left-radius: 14px;
   border-top-right-radius: 14px;
 }
 
-.profile-img
- {
+.profile-img {
   position: absolute;
   width: 21%;
   border: 3px solid white;
@@ -16,31 +14,34 @@ $amount: 45;
   left: 24px;
 }
 
-.side-box
-{
+.side-box {
   width: 25%;
   height: 100%;
   background-color: black;
 }
 
-.linkedin-box-content-mini
-{
+.linkedin-box-content-mini {
   font-size: 14px;
   padding: 3px;
-  p
-  {
+  p {
     margin: 0px;
   }
 
-  p:first-of-type
-  {
+  p:first-of-type {
     font-weight: bold;
   }
 }
 
-.linkedin-box-content-mini-blue
-{
+.linkedin-box-content-mini-blue {
   background-color: #dde7f1;
 }
-
-
+.text {
+  color: gray;
+}
+.profileName {
+  font-weight: bold;
+}
+.unstyle {
+  list-style: none;
+  color: grey;
+}
