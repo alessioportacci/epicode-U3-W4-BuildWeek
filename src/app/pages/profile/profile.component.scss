@@ -23,4 +23,24 @@ $amount: 45;
   background-color: black;
 }
 
+.linkedin-box-content-mini
+{
+  font-size: 14px;
+  padding: 3px;
+  p
+  {
+    margin: 0px;
+  }
+
+  p:first-of-type
+  {
+    font-weight: bold;
+  }
+}
+
+.linkedin-box-content-mini-blue
+{
+  background-color: #dde7f1;
+}
+
 
