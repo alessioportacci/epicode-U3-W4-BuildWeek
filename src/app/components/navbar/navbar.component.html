@@ -107,8 +107,11 @@
             <i class="bi bi-grid-3x3-gap-fill"></i>
 
             <button
-              class="dropdown-button bg-light nowrap"
-              (click)="toggleCompanyDropdown()"
+              class="btn"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasRight"
+              aria-controls="offcanvasRight"
             >
               per le aziende <i class="bi bi-caret-down-fill fs-6"></i>
             </button>
@@ -120,7 +123,125 @@
             </ul>
           </div>
         </li>
+        <li class="nav-item"></li>
       </ul>
     </div>
   </div>
 </nav>
+
+<!-- Offcanvas Element -->
+<div
+  class="offcanvas offcanvas-end"
+  tabindex="-1"
+  id="offcanvasRight"
+  aria-labelledby="offcanvasRightLabel"
+>
+  <div class="offcanvas-header">
+    <h4 id="offcanvasRightLabel">Per le aziende</h4>
+    <button
+      type="button"
+      class="btn-close text-reset"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="card">
+      <div class="card-header">Scopri altri prodotti Linkedin</div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card-body">
+              <div><i class="bi bi-play-btn-fill"></i> Learning</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-body">
+              <i class="bi bi-file-earmark-bar-graph-fill"> Talent Insights</i>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-body">
+              <i class="bi bi-clipboard-fill"> Pubblica un'offerta di lavoro</i>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-body">
+              <i class="bi bi-pin-map-fill"> Publicizza</i>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-body">
+              <i class="bi bi-compass-fill"> trova lead</i>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-body">
+              <i class="bi bi-people"> Gruppi</i>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-body">
+              <i class="bi bi-info"> Marketplace dei servizi</i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card mt-5">
+      <div class="card-header fs-5 fw-bold">
+        Assistenza alle aziende di Linkedin
+      </div>
+      <div class="card-body">
+        <div>
+          <p class="d-flex flex-column fw-bold">
+            Talent Solutions
+            <span class="fw-light">Trova, attrai e assumi</span>
+          </p>
+        </div>
+        <div>
+          <p class="d-flex flex-column fw-bold">
+            Sales Solutions
+            <span class="fw-light">Sblocca nuove opportuinità di vendita</span>
+          </p>
+        </div>
+        <div>
+          <p class="d-flex flex-column fw-bold">
+            Pubblica offerta di lavoro gratuita
+            <span class="fw-light"
+              >Raggiungi i migliori candidati con la tua offerta di lavoro</span
+            >
+          </p>
+        </div>
+        <div>
+          <p class="d-flex flex-column fw-bold">
+            Marketing Solutions
+            <span class="fw-light"
+              >Aquisisci clienti e fai crescere la tua azienda</span
+            >
+          </p>
+        </div>
+        <div>
+          <p class="d-flex flex-column fw-bold">
+            Learning Solutions
+            <span class="fw-light"
+              >Promouvi l'aquisizione di competenze nella tua
+              organizzazione</span
+            >
+          </p>
+        </div>
+        <div>
+          <p class="d-flex flex-column fw-bold">
+            Centro amministrazione
+            <span class="fw-light"
+              >Gestisci i dettagli di fatturazione e account</span
+            >
+          </p>
+        </div>
+      </div>
+      <div class="card-footer fs-5 fw-bold align-items-center">
+        Crea una pagina aziendale <i class="bi bi-plus fw-bolder"></i>
+      </div>
+    </div>
+  </div>
+</div>

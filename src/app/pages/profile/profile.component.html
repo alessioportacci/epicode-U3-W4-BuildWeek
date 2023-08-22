@@ -32,13 +32,13 @@
           <!-- Contenuto -->
           <div class="linkedin-box-content">
             <!-- Nome -->
-            <h1 class="mt-5">
+            <h1 class="mt-5 profileName">
               {{ profileData?.name }} {{ profileData?.surname }}
             </h1>
             <!-- Altro  -->
-            <p>{{ profileData?.title }}</p>
-            <p>{{ profileData?.bio }}</p>
-            <p class="mb-0">{{ profileData?.area }}</p>
+            <p class="text">{{ profileData?.title }}</p>
+            <p class="text">{{ profileData?.bio }}</p>
+            <p class="mb-0 text">{{ profileData?.area }}</p>
           </div>
 
           <!-- Bottoni -->
@@ -89,28 +89,21 @@
 
         <!-- Box di test -->
         <div class="col g-4 linkedin-box p-0">
-          <div class="col g-4 linkedin-box-content">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magnam
-            esse ducimus qui harum maiores ratione accusamus cum totam, quasi
-            fugit maxime corporis, voluptatibus commodi id eos, sint aperiam
-            molestiae voluptas! Lorem ipsum dolor sit, amet consectetur
-            adipisicing elit. Magnam esse ducimus qui harum maiores ratione
-            accusamus cum totam, quasi fugit maxime corporis, voluptatibus
-            commodi id eos, sint aperiam molestiae voluptas!
-          </div>
+          <div class="col g-4 linkedin-box-content"></div>
         </div>
       </div>
     </div>
 
     <!-- colonna laterale -->
-    <div class="col col-12 col-md-3 mx-2">
+    <div class="col col-12 col-md-3 mx-2 d-none d-md-flex">
       <div class="row flex-column">
         <div class="col g-4 linkedin-box">
           <div class="linkedin-box-content">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Totam
-            recusandae quia esse impedit ratione ad. Eligendi, quod modi
-            suscipit quaerat architecto amet praesentium cum voluptate nulla
-            deleniti tempora est voluptates!
+            <div class="d-flex justify-content-between">
+              <p>lingua del profilo</p>
+              <a href="" class="unstyle"> <i class="bi bi-pencil ms-3"></i></a>
+            </div>
+            <p class="text">italiano</p>
           </div>
         </div>
         <div class="col g-4 linkedin-box">
