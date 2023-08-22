@@ -1,11 +1,6 @@
 $colorBlue: #1666c5;
 $amount: 45;
 
-.fs-profile
-{
-  font-size: 14px;
-}
-
 .cover-img {
   border-top-left-radius: 14px;
   border-top-right-radius: 14px;
@@ -52,4 +47,33 @@ $amount: 45;
 }
 .profilelanguage {
   border-bottom: 1px solid lightgray;
+}
+
+#exampleModal i {
+  font-size: 2.5em;
+}
+#exampleModal .i {
+  font-size: 1em;
+  margin-right: 10px;
+}
+.bold {
+  font-weight: bold;
+}
+.iconProfile {
+  height: 60px;
+}
+.marginButtuonIcon {
+  margin-left: 63px;
+}
+.annucioPopUP {
+  cursor: pointer;
+}
+.addPann {
+  font-size: 0.7em;
+}
+.profileAddsImg {
+  width: 50px;
+}
+.spanEpicodeAdd {
+  color: black;
 }
