@@ -1,6 +1,6 @@
+import { Token } from 'src/app/environment/token';
 import { Injectable, ɵɵsetComponentScope } from '@angular/core';
 import { Observable, Subject, tap } from 'rxjs';
-import { Token } from '../environment/token';
 import { HttpClient } from '@angular/common/http';
 import { IUpdateExperience, Iexperiences } from '../interfaces/iexperiences';
 
