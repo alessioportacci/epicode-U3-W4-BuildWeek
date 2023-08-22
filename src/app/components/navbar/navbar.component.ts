@@ -1,5 +1,6 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-
+import { Component, ElementRef, ViewChild, HostListener } from '@angular/core';
+import { IProfile } from './../../interfaces/iprofile';
+import { StriveApiService } from 'src/app/services/strive-api.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -11,27 +12,39 @@ export class NavbarComponent {
 
   isMeDropdownOpen: boolean = false;
   isCompanyDropdownOpen: boolean = false;
+  scrolled: boolean = false;
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll(event: Event) {
+    const scrollY = window.scrollY || window.pageYOffset;
+
+    if (scrollY > 200) {
+      this.scrolled = true;
+
+    } else {
+      this.scrolled = false;
+    }
+  }
+
 
   toggleMeDropdown() {
     this.isMeDropdownOpen = !this.isMeDropdownOpen;
-    if (!this.isCompanyDropdownOpen) {
-      this.closeOtherDropdown(this.meDropdown.nativeElement);
-    }
+
   }
 
   toggleCompanyDropdown() {
     this.isCompanyDropdownOpen = !this.isCompanyDropdownOpen;
-    if (!this.isMeDropdownOpen) {
-      this.closeOtherDropdown(this.companyDropdown.nativeElement);
-    }
+
   }
 
-  closeOtherDropdown(currentDropdown: HTMLElement) {
-    if (currentDropdown !== this.meDropdown.nativeElement) {
-      this.isMeDropdownOpen = false;
-    }
-    if (currentDropdown !== this.companyDropdown.nativeElement) {
-      this.isCompanyDropdownOpen = false;
-    }
+  profileData?: IProfile;
+  constructor(public striveSrv: StriveApiService) {}
+
+  ngOnInit(): void {
+    this.striveSrv.getProfile().subscribe((data) => (this.profileData = data));
+    console.log(this.profileData);
   }
+
+  getProfileData() {}
+
 }

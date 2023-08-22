@@ -1,7 +1,18 @@
+
+// nabvar component
 nav{
   height: 65px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 
+  background-color: #ffffff;
+  z-index: 1000;
+  border-bottom: solid 1px gainsboro;
 }
+
+// linkedin logo icon
 .logo{
   i{
     color:#0a66c2;
@@ -12,6 +23,8 @@ nav{
     background-color: #edf3f8;
   }
 }
+
+// navbar icons div
 .icons{
 
   i{
@@ -24,7 +37,7 @@ nav{
   }
 }
 
-
+// dropdown
 .dropdown{
   button{
     display: flex;
@@ -41,6 +54,7 @@ nav{
   }
 }
 
+// search bar
 .search-container {
   position: relative;
   display: flex;
@@ -49,6 +63,7 @@ nav{
   justify-content: center;
 }
 
+// icon of  the lens inside the search bar
 .search-icon {
   position: absolute;
   top: 50%;
@@ -59,20 +74,25 @@ nav{
   }
 }
 
+// search bar input
 .search-input {
   padding-left: 40px;
 }
+
+// dropdown component of the user
 #me{
   border-right: solid 1px gainsboro;
   margin-right: 10px;
  padding-right: 10px;
 }
 
+
 .custom-dropdown {
   position: relative;
   display: inline-block;
 }
 
+// arrow button for the dropdown
 .dropdown-button {
   background-color: #f0f0f0;
   border: none;
@@ -93,15 +113,62 @@ nav{
   z-index: 1;
 }
 
+// each item of the dropdown list
 .dropdown-item {
   padding: 8px 12px;
   cursor: pointer;
   transition: background-color 0.2s;
 }
 
+
 .dropdown-item:hover {
   background-color: #f0f0f0;
 }
-.nowrap {
-  white-space: nowrap;
+
+// tu button of the dropdown
+#tu{
+  background-color: white;
+}
+
+// offcanvas
+.offcanvas-body{
+  i{
+    font-size: 1.3em;
+  }
+}
+
+// div that shows with scroll
+#scroll{
+  margin-top: 65px;
+  height: 55px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  button{
+    height: 35px;
+
+  }
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+// scrolled div visible
+.visible-div {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+
+}
+
+// when not scrolled not visible
+.hidden-div {
+  opacity: 0;
+
 }
