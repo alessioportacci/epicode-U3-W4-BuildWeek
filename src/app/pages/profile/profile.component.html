@@ -6,6 +6,7 @@
 {{ profileData?.area }}
 {{ profileData?.username }} -->
 
+{{ profileData?._id }}
 <div class="container">
   <div class="row justify-content-around">
     <!-- colonna centrale -->
@@ -116,7 +117,7 @@
               </div>
             </div>
             <!-- Inizio esperienze -->
-            <div>
+            <div *ngFor="let experience of experienceData">
               <div class="row">
                 <!-- Immagine azienda -->
                 <div class="col-2 text-center">
@@ -128,12 +129,13 @@
                 </div>
                 <!-- Descrizione -->
                 <div class="col-10">
-                  <p class="fw-bold m-0">Ruolo nell'azienda</p>
-                  <p class="fs-profile m-0">Nome dell'azienda - durata</p>
+                  <p class="fw-bold m-0">{{ experience.role }}</p>
+                  <p class="fs-profile m-0">{{ experience.company }}</p>
                   <p class="fs-profile m-0">
-                    mese anno - mese anno - durata complessiva
+                    {{ experience.startDate }} - {{ experience.endDate }} -
+                    durata complessiva
                   </p>
-                  <p class="fs-profile m-0">luogo</p>
+                  <p class="fs-profile m-0">{{ experience.area }}</p>
                   <p class="fs-profile">
                     <span class="fw-bold">Competenze:</span>CSS HTML Jquery
                     Javascript SQL

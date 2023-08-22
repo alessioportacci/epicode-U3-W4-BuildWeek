@@ -8,13 +8,13 @@ export interface Iexperiences
   description : string,
   area        : string,
   username    : string,  // server generated
-  createdAt   :string,   // server generated
+  createdAt   : string,   // server generated
   updatedAt   : string,  // server generated
   __v         : number	 // server generated
   image       : string	 // server generated on upload
 }
 
-export interface IUpddateExperience
+export interface IUpdateExperience
 {
   role        : string,
   company     : string,
