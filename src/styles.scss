@@ -49,7 +49,8 @@ body {
   }
 }
 
-.btn-gray {
+.btn-gray
+{
   border: 1.5px solid !important;
   border-radius: 20px !important;
   color: $linkedinGray !important;
@@ -59,5 +60,20 @@ body {
   &:hover {
     background-color: darken(#ffffff, $darken) !important;
     border: 2px solid !important;
+  }
+}
+
+.btn-icon
+{
+  border-radius: 100% !important;
+  text-align: center;
+  border: 0px;
+  background-color: #ffffff !important;
+  width: 35px;
+  height: 35px;
+
+  &:hover {
+    background-color: darken(#ffffff, 10) !important;
+    cursor:pointer
   }
 }

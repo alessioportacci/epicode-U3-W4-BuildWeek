@@ -22,6 +22,11 @@ export class ExperienceService
 
   }
 
+  setUserId(id: string)
+  {
+    this.userId = id
+  }
+
   getExperience(): Observable<Iexperiences>
   {
     return this.http.get<Iexperiences> ( this.url,
