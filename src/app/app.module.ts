@@ -9,6 +9,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProfiliComponent } from './components/profili/profili.component';
+import { EsperienzeComponent } from './pages/esperienze/esperienze.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ProfiliComponent } from './components/profili/profili.component';
     NavbarComponent,
     FooterComponent,
     ProfiliComponent,
+    EsperienzeComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
