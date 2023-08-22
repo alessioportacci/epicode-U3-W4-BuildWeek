@@ -8,6 +8,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './components/footer/footer.component';
+import { ProfiliComponent } from './components/profili/profili.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { FooterComponent } from './components/footer/footer.component';
     ProfileComponent,
     NavbarComponent,
     FooterComponent,
+    ProfiliComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

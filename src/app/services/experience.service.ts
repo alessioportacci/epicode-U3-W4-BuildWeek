@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Injectable, ɵɵsetComponentScope } from '@angular/core';
+import { Observable, tap } from 'rxjs';
 import { Token } from '../environment/token';
 import { HttpClient } from '@angular/common/http';
-import { IUpddateExperience, Iexperiences } from '../interfaces/iexperiences';
+import { IUpdateExperience, Iexperiences } from '../interfaces/iexperiences';
 
 @Injectable({
   providedIn: 'root'
@@ -10,16 +10,21 @@ import { IUpddateExperience, Iexperiences } from '../interfaces/iexperiences';
 export class ExperienceService
 {
 
-  userId :string = ""
+  userId :string = "64e314361f175c0014c558c2"
   readonly url:string = `https://striveschool-api.herokuapp.com/api/profile/${this.userId}/experiences`
-  token:string = ""
+  token:string = new Token().token
 
   constructor
   (
     private http: HttpClient,
   )
   {
-    this.token = new Token().token
+
+  }
+
+  setUserId(id: string)
+  {
+    this.userId = id
   }
 
   getExperience(): Observable<Iexperiences>
@@ -31,11 +36,12 @@ export class ExperienceService
 
   getExperiences(): Observable<Iexperiences[]>
   {
-    return this.http.post<Iexperiences[]>(`${this.url}/`,
-      { headers: {Authorization: `Bearer ${this.token}`} })
+    console.log('userid ',this.userId)
+    return this.http.get<Iexperiences[]>(`${this.url}`,
+            { headers: {Authorization: `Bearer ${this.token}`} })
   }
 
-  updateExperience(experienceId: string, experience: IUpddateExperience): Observable<IUpddateExperience>
+  updateExperience(experienceId: string, experience: IUpdateExperience): Observable<IUpdateExperience>
   {
     return this.http.put<Iexperiences>
     (
@@ -45,19 +51,21 @@ export class ExperienceService
     )
   }
 
-  setExperience(experience: IUpddateExperience): Observable<IUpddateExperience>
+  setExperience(experience: IUpdateExperience): Observable<IUpdateExperience>
   {
+    console.log(experience)
     return this.http.post<Iexperiences>
     (
       `${this.url}`,
       experience,
       { headers: {Authorization:  `Bearer ${this.token}`}}
-    )
+
+    ).pipe(tap(res => console.log(res)))
   }
 
-  removeExperience(experienceId: string): Observable<IUpddateExperience>
+  removeExperience(experienceId: string): Observable<IUpdateExperience>
   {
-    return this.http.put<Iexperiences>
+    return this.http.delete<Iexperiences>
     (
       `${this.url}/${experienceId}`,
       { headers: {Authorization:  `Bearer ${this.token}`}}

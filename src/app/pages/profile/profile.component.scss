@@ -1,50 +1,5 @@
-$colorBlue: #1666c5;
-$amount: 45;
-
-.cover-img {
-  border-top-left-radius: 14px;
-  border-top-right-radius: 14px;
-}
-
-.profile-img {
-  position: absolute;
-  width: 21%;
-  border: 3px solid white;
-  top: 65px;
-  left: 24px;
-}
-
-.side-box {
-  width: 25%;
-  height: 100%;
-  background-color: black;
-}
-
-.linkedin-box-content-mini {
-  font-size: 14px;
-  padding: 3px;
-  p {
-    margin: 0px;
-  }
-
-  p:first-of-type {
-    font-weight: bold;
-  }
-}
-
-.linkedin-box-content-mini-blue {
-  background-color: #dde7f1;
-}
-.text {
-  color: gray;
-}
-.profileName {
-  font-weight: bold;
-}
-.unstyle {
-  list-style: none;
-  color: grey;
-}
-.profilelanguage {
-  border-bottom: 1px solid lightgray;
+.aPencil {
+  display: block;
+  color: inherit;
+  text-decoration: inherit;
 }

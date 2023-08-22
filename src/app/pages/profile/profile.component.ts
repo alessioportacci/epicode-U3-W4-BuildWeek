@@ -1,8 +1,10 @@
+import { ExperienceService } from './../../services/experience.service';
 //Interfaccia
 import { StriveApiService } from 'src/app/services/strive-api.service';
 import { IProfile } from './../../interfaces/iprofile';
 
 import { Component, OnInit } from '@angular/core';
+import { Iexperiences } from 'src/app/interfaces/iexperiences';
 
 @Component({
   selector: 'app-profile',
@@ -11,11 +13,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
   profileData?: IProfile;
-  constructor(public striveSrv: StriveApiService) {}
+  experienceData?: Iexperiences[]
 
-  ngOnInit(): void {
-    this.striveSrv.getProfile().subscribe((data) => (this.profileData = data));
-    console.log(this.profileData);
+  constructor
+  (
+    public striveSrv: StriveApiService,
+    public experienceSrv: ExperienceService
+  ) {}
+
+  ngOnInit(): void
+  {
+    this.striveSrv.getProfile().subscribe((data) =>
+    {
+      console.log("Primo subscribe")
+      this.profileData = data
+      this.experienceSrv.setUserId(data._id)
+
+      this.experienceSrv.getExperiences().subscribe(((data) =>
+      {
+        console.log("ciao")
+        this.experienceData = data
+        console.log(data)
+      }))
+
+    });
+
+
+
+
+
   }
 
   getProfileData() {}
