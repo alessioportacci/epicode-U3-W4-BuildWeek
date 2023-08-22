@@ -18,18 +18,18 @@ import { EsperienzeComponent } from './pages/esperienze/esperienze.component';
     HomeComponent,
     ProfileComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
     FooterComponent,
     ProfiliComponent,
     EsperienzeComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+
   providers: [],
   bootstrap: [AppComponent],
 })
