@@ -1,4 +1,4 @@
-<nav class="navbar justify-content-around navbar-expand-md bg-body-tertiary">
+<nav class="navbar justify-content-around navbar-expand-md">
   <div class="container justify-content-between">
     <!-- Logo linkedin -->
     <div class="logo">
@@ -76,7 +76,8 @@
             <i class="bi bi-person-circle"></i>
             <div class="d-flex align-items-center">
               <button
-                class="dropdown-button bg-light"
+                class="dropdown-button"
+                id="tu"
                 (click)="toggleMeDropdown()"
               >
                 Tu <i class="bi bi-caret-down-fill fs-6"></i>
@@ -84,6 +85,21 @@
             </div>
             <!-- user dropdown -->
             <ul class="dropdown-list" *ngIf="isMeDropdownOpen">
+              <li class="dropdown-item">
+                <div class="d-flex">
+                  <i class="bi bi-person-circle text-primary fs-2"></i>
+                  <p class="ms-3 fw-bold">
+                    {{ profileData?.name }} {{ profileData?.surname }} <br />
+                    <span class="fw-light">{{ profileData?.title }}</span>
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-outline-primary align-items-center w-75 mx-auto"
+                >
+                  Visualizza profilo
+                </button>
+              </li>
               <li class="dropdown-item" routerLink="profile">Account</li>
               <li class="dropdown-item">Prova Premium gratis</li>
               <li class="dropdown-item">Impostazioni e privacy</li>
@@ -129,6 +145,35 @@
   </div>
 </nav>
 
+<div [ngClass]="scrolled ? 'visible-div' : 'hidden-div'" class="container">
+  <div class="d-flex justify-content-around w-100 pt-2" id="scroll">
+    <div class="d-flex">
+      <i class="bi bi-person-circle text-primary fs-2"></i>
+      <p class="ms-3 fw-bold">
+        {{ profileData?.name }} {{ profileData?.surname }} <br />
+        <span class="fw-light">{{ profileData?.title }}</span>
+      </p>
+    </div>
+    <div>
+      <button
+        type="button"
+        class="btn btn-outline-secondary align-items-center mx-2"
+      >
+        altro
+      </button>
+      <button
+        type="button"
+        class="btn btn-outline-primary align-items-center mx-2"
+      >
+        Aggiungi sezione di profilo
+      </button>
+      <button type="button" class="btn btn-primary align-items-center mx-2">
+        Disponibile per
+      </button>
+    </div>
+  </div>
+</div>
+
 <!-- Offcanvas Element -->
 <div
   class="offcanvas offcanvas-end"
@@ -136,6 +181,7 @@
   id="offcanvasRight"
   aria-labelledby="offcanvasRightLabel"
 >
+  <!-- Offcanvas title and close button -->
   <div class="offcanvas-header">
     <h4 id="offcanvasRightLabel">Per le aziende</h4>
     <button
@@ -145,49 +191,61 @@
       aria-label="Close"
     ></button>
   </div>
+
+  <!-- offcanvas first card  -->
   <div class="offcanvas-body">
     <div class="card">
       <div class="card-header">Scopri altri prodotti Linkedin</div>
       <div class="container">
         <div class="row">
-          <div class="col-md-4">
-            <div class="card-body">
-              <div><i class="bi bi-play-btn-fill"></i> Learning</div>
+          <div class="col-3">
+            <div class="card-body d-flex flex-column align-items-center">
+              <i class="bi bi-play-btn-fill"></i>
+              <span class="fs-6 text-center">Learning</span>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card-body">
-              <i class="bi bi-file-earmark-bar-graph-fill"> Talent Insights</i>
+          <div class="col-3">
+            <div class="card-body d-flex flex-column align-items-center">
+              <i class="bi bi-file-earmark-bar-graph-fill"></i>
+              <span class="fs-6 text-center">Talent Insights</span>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card-body">
-              <i class="bi bi-clipboard-fill"> Pubblica un'offerta di lavoro</i>
+          <div class="col-3">
+            <div class="card-body d-flex flex-column align-items-center">
+              <i class="bi bi-clipboard-fill"></i>
+              <span class="fs-6 text-center"
+                >Pubblica un'offerta di lavoro</span
+              >
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card-body">
-              <i class="bi bi-pin-map-fill"> Publicizza</i>
+          <div class="col-3">
+            <div class="card-body d-flex flex-column align-items-center">
+              <i class="bi bi-pin-map-fill"></i>
+              <span class="fs-6 text-center">Publicizza</span>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card-body">
-              <i class="bi bi-compass-fill"> trova lead</i>
+          <div class="col-3">
+            <div class="card-body d-flex flex-column align-items-center">
+              <i class="bi bi-compass-fill"></i>
+              <span class="fs-6 text-center">Trova lead</span>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card-body">
-              <i class="bi bi-people"> Gruppi</i>
+          <div class="col-3">
+            <div class="card-body d-flex flex-column align-items-center">
+              <i class="bi bi-people"></i>
+              <span class="fs-6 text-center">Gruppi</span>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card-body">
-              <i class="bi bi-info"> Marketplace dei servizi</i>
+          <div class="col-3">
+            <div class="card-body d-flex flex-column align-items-center">
+              <i class="bi bi-info"></i>
+              <span class="fs-6 text-center">Marketplace dei servizi</span>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <!-- offcanvas second card -->
     <div class="card mt-5">
       <div class="card-header fs-5 fw-bold">
         Assistenza alle aziende di Linkedin
