@@ -23,20 +23,19 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void
   {
-    this.striveSrv.getProfile().subscribe((data) =>
-    {
-      console.log("Primo subscribe")
-      this.profileData = data
-      this.experienceSrv.setUserId(data._id)
+     this.striveSrv.getProfile().subscribe((data) =>
+     {
+       console.log(data)
+       this.profileData = data
+       this.experienceSrv.userId = data._id
 
-      this.experienceSrv.getExperiences().subscribe(((data) =>
-      {
-        console.log("ciao")
-        this.experienceData = data
-        console.log(data)
-      }))
+       this.experienceSrv.getExperiences().subscribe(((data) =>
+       {
+         this.experienceData = data
+         console.log('esperienza', data)
+       }))
 
-    });
+     })
 
 
 
