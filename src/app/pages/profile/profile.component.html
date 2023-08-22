@@ -98,12 +98,80 @@
     <div class="col col-12 col-md-3 mx-2 d-none d-md-flex">
       <div class="row flex-column">
         <div class="col g-4 linkedin-box">
-          <div class="linkedin-box-content">
+          <div class="linkedin-box-content profilelanguage">
             <div class="d-flex justify-content-between">
               <p>lingua del profilo</p>
-              <a href="" class="unstyle"> <i class="bi bi-pencil ms-3"></i></a>
+              <button
+                type="button"
+                class="btn"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                <i class="bi bi-pencil ms-3"></i>
+              </button>
+
+              <!-- Modal -->
+              <div
+                class="modal fade"
+                id="exampleModal"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">
+                        Impostazioni lingua del profilo
+                      </h1>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body d-flex">
+                      <div>
+                        <i class="bi bi-globe2"></i>
+                        <p>
+                          Aggiungi più di una lingua al tuo profilo, così sarà
+                          più facile trovarti.
+                        </p>
+                      </div>
+                      <div>
+                        <i class="bi bi-eyeglasses"></i>
+                        <p>
+                          Se disponibile, mostreremo il tuo profilo nella lingua
+                          di chi lo visita. Se non c’è corrispondenza, verrà
+                          mostrato il tuo profilo predefinito.
+                        </p>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                      <button type="button" class="btn btn-primary">
+                        Save changes
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <p class="text">italiano</p>
+          </div>
+          <div class="linkedin-box-content">
+            <div class="d-flex justify-content-between">
+              <p>Public profile & URl</p>
+              <a href="" class="unstyle"> <i class="bi bi-pencil ms-3"></i></a>
+            </div>
+            <p class="text">link non apribile</p>
           </div>
         </div>
         <div class="col g-4 linkedin-box">
