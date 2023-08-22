@@ -12,4 +12,10 @@ export class FooterComponent {
     'Español (Spagnolo)',
     'Français (Francese)',
   ];
+
+  linguaSelezionata: string = 'Italiano (Italiano)';
+
+  onClick(lingua: string) {
+    this.linguaSelezionata = lingua;
+  }
 }

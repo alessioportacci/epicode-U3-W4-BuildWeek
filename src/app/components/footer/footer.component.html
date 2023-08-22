@@ -60,18 +60,19 @@
       <!-- Dropdown button -->
       <div class="dropdown">
         <button
-          class="btn btn-light border border-primary border-3 dropdown-toggle"
+          class="btn btn-light border border-primary border-3 dropdown-toggle text-secondary"
           type="button"
           data-bs-toggle="dropdown"
           aria-expanded="false"
         >
-          Italiano (Italiano)
+          {{ linguaSelezionata }}
         </button>
         <ul class="dropdown-menu">
-          <li *ngFor="let lingua of lingue; index as i">
+          <li *ngFor="let lingua of lingue">
             <a
               href="#"
               [ngClass]="'bg bg-secondary bg-opacity-75 text-light'"
+              (click)="onClick(lingua)"
               >{{ lingua }}</a
             >
           </li>
