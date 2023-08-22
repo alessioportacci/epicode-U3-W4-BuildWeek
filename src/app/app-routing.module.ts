@@ -13,7 +13,10 @@ const routes: Routes = [
     path: 'profile',
     component: ProfileComponent,
   },
-  { path: 'profile/esperienze', component: EsperienzeComponent },
+  {
+    path: 'profile/esperienze',
+    component: EsperienzeComponent
+  },
 ];
 
 @NgModule({
