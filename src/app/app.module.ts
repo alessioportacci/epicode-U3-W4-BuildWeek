@@ -8,6 +8,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './components/footer/footer.component';
+import { FormsModule } from '@angular/forms';
 import { ProfiliComponent } from './components/profili/profili.component';
 import { EsperienzeComponent } from './pages/esperienze/esperienze.component';
 
@@ -20,8 +21,20 @@ import { EsperienzeComponent } from './pages/esperienze/esperienze.component';
     FooterComponent,
     ProfiliComponent,
     EsperienzeComponent,
+    FooterComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+
+    FormsModule,
+    FooterComponent,
+    ProfiliComponent,
+    EsperienzeComponent,
+  ],
+
   providers: [],
   bootstrap: [AppComponent],
 })

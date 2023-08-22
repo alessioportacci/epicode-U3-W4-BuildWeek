@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 //Interfaccia
 import { IProfile, IUpdateProfile } from 'src/app/interfaces/iprofile';
 //Token
-import { Token } from 'src/app/environment/token';
+import { Token } from '../environment/token';
 //Http
 import { HttpClient } from '@angular/common/http';
 //Tap
