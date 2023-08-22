@@ -23,16 +23,61 @@
       <a href="">Piccole imprese</a>
     </div>
     <div class="col col-md-2">
-      <h5>Domande?</h5>
-      <a href="">Visita il nostro Centro assistenza.</a>
-      <h5>Gestisci il tuo account e la tua privacy</h5>
-      <a href="">Vai alle impostazioni</a>
-      <h5>Trasparenza sui contenuti consigliati</h5>
-      <a href="">Scopri di più sui contenuti consigliati.</a>
+      <!-- Question icon and text -->
+      <div class="d-flex">
+        <div>
+          <i class="bi bi-question-circle-fill"></i>
+        </div>
+        <div>
+          <h6 class="fw-bold">Domande?</h6>
+          <a class="fw-lighter" href="">Visita il nostro Centro assistenza.</a>
+        </div>
+      </div>
+      <!-- Gear icon and text -->
+      <div class="d-flex">
+        <div>
+          <i class="bi bi-gear-fill"></i>
+        </div>
+        <div>
+          <h6 class="fw-bolder">Gestisci il tuo account e la tua privacy</h6>
+          <a class="fw-lighter" href="">Vai alle impostazioni</a>
+        </div>
+      </div>
+      <!-- Shield icon and text -->
+      <div class="d-flex">
+        <div><i class="bi bi-shield-shaded"></i></div>
+        <div>
+          <h6 class="fw-semibold">Trasparenza sui contenuti consigliati</h6>
+          <a class="fw-lighter" href=""
+            >Scopri di più sui contenuti consigliati.</a
+          >
+        </div>
+      </div>
     </div>
+
     <div class="col col-md-2">
-      <a href="">Seleziona lingua</a>
+      <a class="fw-lighter" href="">Seleziona lingua</a>
+      <!-- Dropdown button -->
+      <div class="dropdown">
+        <button
+          class="btn btn-light border border-primary border-3 dropdown-toggle"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Italiano (Italiano)
+        </button>
+        <ul class="dropdown-menu">
+          <li *ngFor="let lingua of lingue; index as i">
+            <a
+              href="#"
+              [ngClass]="'bg bg-secondary bg-opacity-75 text-light'"
+              >{{ lingua }}</a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
-<a href="">LinkedIn Corporation &copy; 2023</a>
+<a class="fw-lighter" href="">LinkedIn Corporation &copy; 2023</a>

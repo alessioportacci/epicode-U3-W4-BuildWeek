@@ -8,6 +8,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './components/footer/footer.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,14 +16,10 @@ import { FooterComponent } from './components/footer/footer.component';
     HomeComponent,
     ProfileComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
