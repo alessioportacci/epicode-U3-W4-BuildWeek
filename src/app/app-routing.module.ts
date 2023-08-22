@@ -2,22 +2,22 @@ import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { EsperienzeComponent } from './pages/esperienze/esperienze.component';
 
-const routes: Routes =
-[
+const routes: Routes = [
   {
-    path:'',
-    component: HomeComponent
+    path: '',
+    component: HomeComponent,
   },
   {
-    path:'profile',
-    component: ProfileComponent
-  }
-
+    path: 'profile',
+    component: ProfileComponent,
+  },
+  { path: 'profile/esperienze', component: EsperienzeComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
