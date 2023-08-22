@@ -4,7 +4,7 @@ import { StriveApiService } from 'src/app/services/strive-api.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
   @ViewChild('Me') meDropdown!: ElementRef;
