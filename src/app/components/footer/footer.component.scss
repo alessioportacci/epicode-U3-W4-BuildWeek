@@ -1,0 +1,9 @@
+a {
+  display: block;
+  color: inherit;
+  text-decoration: inherit;
+  &:hover {
+    color: #0000ff;
+    text-decoration: underline;
+  }
+}
