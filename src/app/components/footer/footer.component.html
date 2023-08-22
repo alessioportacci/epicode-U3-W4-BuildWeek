@@ -1,13 +1,41 @@
-<div class="container">
+<div class="container mt-5">
   <div class="row justify-content-around">
-    <div class="col col-md-2">
+    <div class="col col-4 col-md-2 my-3">
       <a href="">Informazioni</a>
       <a href="">Linee guida della community</a>
-      <a href="">Privacy e condizioni</a>
+      <!-- Dropdown link -->
+      <div class="dropdown">
+        <a
+          class="dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Privacy e condizioni
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" href="#">Informativa sulla privacy</a>
+          </li>
+          <li><a class="dropdown-item" href="#">Contratto di licenza</a></li>
+          <li>
+            <a class="dropdown-item" href="#"
+              >Termini e condizioni della pagine</a
+            >
+          </li>
+          <li><a class="dropdown-item" href="#">Informativa sui cookie</a></li>
+          <li>
+            <a class="dropdown-item" href="#">Informativa sul copyright</a>
+          </li>
+        </ul>
+      </div>
+
       <a href="">Sales Solutions</a>
       <a href="">Centro sicurezza</a>
     </div>
-    <div class="col col-md-2">
+
+    <div class="col col-4 col-md-2 my-3">
       <a href="">Accessibilità</a>
       <a href="">Carriera</a>
       <a href="">
@@ -16,38 +44,40 @@
       </a>
       <a href="">Mobile</a>
     </div>
-    <div class="col col-md-2">
+    <div class="col col-4 col-md-2 my-3">
       <a href="">Talent Solutions</a>
       <a href="">Soluzioni di marketing</a>
       <a href="">Pubblicità</a>
       <a href="">Piccole imprese</a>
     </div>
-    <div class="col col-md-2">
+    <div class="col col-4 col-md-2 my-3">
       <!-- Question icon and text -->
-      <div class="d-flex">
+      <div class="d-flex mb-2">
         <div>
           <i class="bi bi-question-circle-fill"></i>
         </div>
         <div>
-          <h6 class="fw-bold">Domande?</h6>
+          <h6 class="fw-bold m-0">Domande?</h6>
           <a class="fw-lighter" href="">Visita il nostro Centro assistenza.</a>
         </div>
       </div>
       <!-- Gear icon and text -->
-      <div class="d-flex">
+      <div class="d-flex mb-2">
         <div>
           <i class="bi bi-gear-fill"></i>
         </div>
         <div>
-          <h6 class="fw-bolder">Gestisci il tuo account e la tua privacy</h6>
+          <h6 class="fw-bolder m-0">
+            Gestisci il tuo account e la tua privacy
+          </h6>
           <a class="fw-lighter" href="">Vai alle impostazioni</a>
         </div>
       </div>
       <!-- Shield icon and text -->
-      <div class="d-flex">
+      <div class="d-flex mb-2">
         <div><i class="bi bi-shield-shaded"></i></div>
         <div>
-          <h6 class="fw-semibold">Trasparenza sui contenuti consigliati</h6>
+          <h6 class="fw-semibold m-0">Trasparenza sui contenuti consigliati</h6>
           <a class="fw-lighter" href=""
             >Scopri di più sui contenuti consigliati.</a
           >
@@ -55,8 +85,8 @@
       </div>
     </div>
 
-    <div class="col col-md-2">
-      <a class="fw-lighter" href="">Seleziona lingua</a>
+    <div class="col col-4 col-md-2 my-3">
+      <p class="fw-lighter">Seleziona lingua</p>
       <!-- Dropdown button -->
       <div class="dropdown">
         <button
@@ -81,4 +111,10 @@
     </div>
   </div>
 </div>
-<a class="fw-lighter" href="">LinkedIn Corporation &copy; 2023</a>
+<div class="container">
+  <div class="row">
+    <div class="col col-12">
+      <p class="fw-lighter fs-6">LinkedIn Corporation &copy; 2023</p>
+    </div>
+  </div>
+</div>
