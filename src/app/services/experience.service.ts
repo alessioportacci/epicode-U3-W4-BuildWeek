@@ -1,6 +1,6 @@
+import { Token } from 'src/app/environment/token';
 import { Injectable, ɵɵsetComponentScope } from '@angular/core';
-import { Observable, tap } from 'rxjs';
-import { Token } from '../environment/token';
+import { Observable, Subject, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { IUpdateExperience, Iexperiences } from '../interfaces/iexperiences';
 
@@ -10,7 +10,8 @@ import { IUpdateExperience, Iexperiences } from '../interfaces/iexperiences';
 export class ExperienceService
 {
 
-  userId :string = "64e314361f175c0014c558c2"
+  userId :string= ""
+
   readonly url:string = `https://striveschool-api.herokuapp.com/api/profile/${this.userId}/experiences`
   token:string = new Token().token
 
@@ -29,7 +30,7 @@ export class ExperienceService
 
   getExperience(): Observable<Iexperiences>
   {
-    return this.http.get<Iexperiences> ( this.url,
+    return this.http.get<Iexperiences> ( `https://striveschool-api.herokuapp.com/api/profile/${this.userId}/experiences`,
       { headers: {Authorization:  `Bearer ${this.token}`}}
     )
   }
@@ -37,7 +38,7 @@ export class ExperienceService
   getExperiences(): Observable<Iexperiences[]>
   {
     console.log('userid ',this.userId)
-    return this.http.get<Iexperiences[]>(`${this.url}`,
+    return this.http.get<Iexperiences[]>(`https://striveschool-api.herokuapp.com/api/profile/${this.userId}/experiences`,
             { headers: {Authorization: `Bearer ${this.token}`} })
   }
 
@@ -56,7 +57,7 @@ export class ExperienceService
     console.log(experience)
     return this.http.post<Iexperiences>
     (
-      `${this.url}`,
+      `https://striveschool-api.herokuapp.com/api/profile/${this.userId}/experiences`,
       experience,
       { headers: {Authorization:  `Bearer ${this.token}`}}
 
@@ -67,7 +68,7 @@ export class ExperienceService
   {
     return this.http.delete<Iexperiences>
     (
-      `${this.url}/${experienceId}`,
+      `https://striveschool-api.herokuapp.com/api/profile/${this.userId}/experiences/${experienceId}`,
       { headers: {Authorization:  `Bearer ${this.token}`}}
     )
   }
