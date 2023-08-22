@@ -143,10 +143,19 @@
         id="offcanvasBottom"
         aria-labelledby="offcanvasBottomLabel"
       >
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title" id="offcanvasBottomLabel">
-            Messaggistica
-          </h5>
+        <div class="offcanvas-header justify-content-end">
+          <div class="d-flex align-items-center flex-grow-1">
+            <i class="bi bi-person-circle fs-3 p-2"></i>
+            <p class="offcanvas-title" id="offcanvasBottomLabel">
+              Messaggistica
+            </p>
+          </div>
+          <div>
+            <i class="bi bi-three-dots"></i>
+            <i class="bi bi-pencil-square"></i>
+            <i class="bi bi-caret-up"></i>
+          </div>
+
           <button
             type="button"
             class="btn-close"
@@ -154,7 +163,9 @@
             aria-label="Close"
           ></button>
         </div>
-        <div class="offcanvas-body small">...</div>
+        <div class="offcanvas-body small">
+          <input placeholder="Cerca messaggi" />
+        </div>
       </div>
     </div>
   </div>
