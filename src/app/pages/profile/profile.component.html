@@ -9,7 +9,7 @@
 <div class="container mt-5">
   <div class="row justify-content-around">
     <!-- colonna centrale -->
-    <div class="col col-12 col-md-8">
+    <div class="col col-12 col-md-7">
       <div class="row flex-column">
         <!-- Box Profilo -->
         <div class="col g-4 linkedin-box p-0">
@@ -105,14 +105,12 @@
                 </button>
 
                 <!-- Icona matita -->
-                <button
-                  type="button "
-                  class="btn-icon"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
+                <a
+                  routerLink="ocalhost:4200/profile/esperienze"
+                  class="btn-icon aPencil"
                 >
-                  <i class="bi bi-pencil"></i>
-                </button>
+                  <i class="bi bi-pencil"></i
+                ></a>
               </div>
             </div>
             <!-- Inizio esperienze -->
@@ -153,7 +151,7 @@
     </div>
 
     <!-- colonna laterale -->
-    <div class="col col-12 col-md-3 mx-2">
+    <div class="col col-12 col-md-4 mx-2">
       <div class="row flex-column">
         <div class="col g-4 linkedin-box">
           <div class="linkedin-box-content profilelanguage">
@@ -314,41 +312,7 @@
             >
           </div>
         </div>
-        <div class="col g-4 linkedin-box">
-          <div class="linkedin-box-content">
-            <p class="bold">Altri profili cosultati</p>
-            <div class="d-flex mt-2">
-              <img
-                src="http://placekitten.com/100/100"
-                class="rounded-circle iconProfile"
-              />
-              <div class="ms-2">
-                <p class="bold mb-0">nome e cognome</p>
-                <p class="mb-3">specilizazione</p>
-              </div>
-            </div>
-            <div class="profilelanguage d-flex">
-              <button class="mb-2 marginButtuonIcon d-block btn btn-gray">
-                <i class="bi bi-person-fill-add"></i> colegati
-              </button>
-            </div>
-            <div class="d-flex mt-2">
-              <img
-                src="http://placekitten.com/100/100"
-                class="rounded-circle iconProfile"
-              />
-              <div class="ms-2">
-                <p class="bold mb-0">nome e cognome</p>
-                <p class="mb-3">specilizazione</p>
-              </div>
-            </div>
-            <div class="profilelanguage d-flex">
-              <button class="mb-2 marginButtuonIcon d-block btn btn-gray">
-                <i class="bi bi-person-fill-add"></i> colegati
-              </button>
-            </div>
-          </div>
-        </div>
+        <app-profili class="col g-4 linkedin-box"> </app-profili>
       </div>
     </div>
   </div>
