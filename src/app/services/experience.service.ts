@@ -1,4 +1,4 @@
-import { Token } from 'src/app/environment/token';
+import { Token } from '../environment/token';
 import { Injectable, ɵɵsetComponentScope } from '@angular/core';
 import { Observable, Subject, tap } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
