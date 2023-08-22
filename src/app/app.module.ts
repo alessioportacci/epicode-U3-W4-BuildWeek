@@ -9,6 +9,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
+import { ProfiliComponent } from './components/profili/profili.component';
+import { EsperienzeComponent } from './pages/esperienze/esperienze.component';
 
 @NgModule({
   declarations: [
@@ -23,8 +25,12 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     FormsModule
+    FooterComponent,
+    ProfiliComponent,
+    EsperienzeComponent,
   ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

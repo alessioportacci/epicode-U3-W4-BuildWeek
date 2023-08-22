@@ -9,7 +9,7 @@
 <div class="container mt-5">
   <div class="row justify-content-around">
     <!-- colonna centrale -->
-    <div class="col col-12 col-md-8">
+    <div class="col col-12 col-md-7">
       <div class="row flex-column">
         <!-- Box Profilo -->
         <div class="col g-4 linkedin-box p-0">
@@ -105,14 +105,9 @@
                 </button>
 
                 <!-- Icona matita -->
-                <button
-                  type="button "
-                  class="btn-icon"
-                  data-bs-toggle="modal"
-                  data-bs-target="#exampleModal"
-                >
-                  <i class="bi bi-pencil"></i>
-                </button>
+                <a routerLink="esperienze" class="btn-icon aPencil">
+                  <i class="bi bi-pencil"></i
+                ></a>
               </div>
             </div>
             <!-- Inizio esperienze -->
@@ -424,5 +419,6 @@
         </div>
       </div>
     </div>
+    <app-profili></app-profili>
   </div>
 </div>

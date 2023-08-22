@@ -1,0 +1,32 @@
+<div class="container mt-5">
+  <div class="row justify-content-around">
+    <div *ngFor="let experience of experienceData" class="col-8">
+      <div class="row">
+        <!-- Immagine azienda -->
+        <div class="col-2 text-center">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Valve-logo.jpg/1024px-Valve-logo.jpg"
+            height="60px"
+            width="60px"
+          />
+        </div>
+        <!-- Descrizione -->
+        <div class="col-10">
+          <p class="fw-bold m-0">{{ experience.role }}</p>
+          <p class="fs-profile m-0">{{ experience.company }}</p>
+          <p class="fs-profile m-0">
+            {{ experience.startDate }} - {{ experience.endDate }} - durata
+            complessiva
+          </p>
+          <p class="fs-profile m-0">{{ experience.area }}</p>
+          <p class="fs-profile">
+            <span class="fw-bold">Competenze:</span>CSS HTML Jquery Javascript
+            SQL
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <app-profili class="col-3"></app-profili>
+  </div>
+</div>

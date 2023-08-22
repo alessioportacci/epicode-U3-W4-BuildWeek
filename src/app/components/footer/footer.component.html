@@ -1,13 +1,41 @@
-<div class="container">
+<div class="container mt-5">
   <div class="row justify-content-around">
-    <div class="col col-md-2">
+    <div class="col col-4 col-md-2 my-3">
       <a href="">Informazioni</a>
       <a href="">Linee guida della community</a>
-      <a href="">Privacy e condizioni</a>
+      <!-- Dropdown link -->
+      <div class="dropdown">
+        <a
+          class="dropdown-toggle"
+          href="#"
+          role="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Privacy e condizioni
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item" href="#">Informativa sulla privacy</a>
+          </li>
+          <li><a class="dropdown-item" href="#">Contratto di licenza</a></li>
+          <li>
+            <a class="dropdown-item" href="#"
+              >Termini e condizioni della pagine</a
+            >
+          </li>
+          <li><a class="dropdown-item" href="#">Informativa sui cookie</a></li>
+          <li>
+            <a class="dropdown-item" href="#">Informativa sul copyright</a>
+          </li>
+        </ul>
+      </div>
+
       <a href="">Sales Solutions</a>
       <a href="">Centro sicurezza</a>
     </div>
-    <div class="col col-md-2">
+
+    <div class="col col-4 col-md-2 my-3">
       <a href="">Accessibilità</a>
       <a href="">Carriera</a>
       <a href="">
@@ -16,23 +44,110 @@
       </a>
       <a href="">Mobile</a>
     </div>
-    <div class="col col-md-2">
+    <div class="col col-4 col-md-2 my-3">
       <a href="">Talent Solutions</a>
       <a href="">Soluzioni di marketing</a>
       <a href="">Pubblicità</a>
       <a href="">Piccole imprese</a>
     </div>
-    <div class="col col-md-2">
-      <h5>Domande?</h5>
-      <a href="">Visita il nostro Centro assistenza.</a>
-      <h5>Gestisci il tuo account e la tua privacy</h5>
-      <a href="">Vai alle impostazioni</a>
-      <h5>Trasparenza sui contenuti consigliati</h5>
-      <a href="">Scopri di più sui contenuti consigliati.</a>
+    <div class="col col-4 col-md-2 my-3">
+      <!-- Question icon and text -->
+      <div class="d-flex mb-2">
+        <div>
+          <i class="bi bi-question-circle-fill"></i>
+        </div>
+        <div>
+          <h6 class="fw-bold m-0">Domande?</h6>
+          <a class="fw-lighter" href="">Visita il nostro Centro assistenza.</a>
+        </div>
+      </div>
+      <!-- Gear icon and text -->
+      <div class="d-flex mb-2">
+        <div>
+          <i class="bi bi-gear-fill"></i>
+        </div>
+        <div>
+          <h6 class="fw-bolder m-0">
+            Gestisci il tuo account e la tua privacy
+          </h6>
+          <a class="fw-lighter" href="">Vai alle impostazioni</a>
+        </div>
+      </div>
+      <!-- Shield icon and text -->
+      <div class="d-flex mb-2">
+        <div><i class="bi bi-shield-shaded"></i></div>
+        <div>
+          <h6 class="fw-semibold m-0">Trasparenza sui contenuti consigliati</h6>
+          <a class="fw-lighter" href=""
+            >Scopri di più sui contenuti consigliati.</a
+          >
+        </div>
+      </div>
     </div>
-    <div class="col col-md-2">
-      <a href="">Seleziona lingua</a>
+
+    <div class="col col-4 col-md-2 my-3">
+      <p class="fw-lighter">Seleziona lingua</p>
+      <!-- Dropdown button -->
+      <div class="dropdown">
+        <button
+          class="btn btn-light border border-primary border-3 dropdown-toggle text-secondary"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          {{ linguaSelezionata }}
+        </button>
+        <ul class="dropdown-menu">
+          <li *ngFor="let lingua of lingue">
+            <a
+              href="#"
+              [ngClass]="'bg bg-secondary bg-opacity-75 text-light'"
+              (click)="onClick(lingua)"
+              >{{ lingua }}</a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
-<a href="">LinkedIn Corporation &copy; 2023</a>
+<div class="container-fluid">
+  <div class="row justify-content-between">
+    <div class="col col-4">
+      <p class="fw-lighter fs-6">LinkedIn Corporation &copy; 2023</p>
+    </div>
+
+    <!-- Messaggistica -->
+    <div class="col col-4">
+      <button
+        class="btn btn-light"
+        type="button"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasBottom"
+        aria-controls="offcanvasBottom"
+      >
+        Messaggistica
+      </button>
+
+      <div
+        class="offcanvas offcanvas-bottom"
+        tabindex="-1"
+        id="offcanvasBottom"
+        aria-labelledby="offcanvasBottomLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasBottomLabel">
+            Messaggistica
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="offcanvas-body small">...</div>
+      </div>
+    </div>
+  </div>
+</div>
