@@ -21,7 +21,6 @@ import { EsperienzeComponent } from './pages/esperienze/esperienze.component';
     FooterComponent,
     ProfiliComponent,
     EsperienzeComponent,
-    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,9 +29,7 @@ import { EsperienzeComponent } from './pages/esperienze/esperienze.component';
     FormsModule,
 
     FormsModule,
-    FooterComponent,
-    ProfiliComponent,
-    EsperienzeComponent,
+
   ],
 
   providers: [],
