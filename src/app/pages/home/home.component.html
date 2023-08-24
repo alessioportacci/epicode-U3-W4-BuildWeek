@@ -1,48 +1,67 @@
 <div id="empty"></div>
-<div
-  class="container d-flex flex-column justify-content-center align-items-center"
-  id="new-post"
->
-  <div class="d-flex mb-3">
-    <img [src]="profileData?.image" />
-    <input type="text" placeholder="Avvia un post" />
-  </div>
-  <div>
-    <a href="" class="mx-3 text-decoration-none">
-      <i class="bi bi-card-image mx-1 text-primary"></i> Contenuti
-      Multimediali</a
-    >
-    <a href="" class="mx-3 text-decoration-none">
-      <i class="bi bi-calendar3 mx-1 text-warning"></i>Evento</a
-    >
-    <a href="" class="mx-3 text-decoration-none">
-      <i class="bi bi-newspaper mx-1 text-danger-emphasis"></i>Scrivi un
-      articolo</a
-    >
-  </div>
-</div>
-<div id="myGroup">
-  <div
-    class="container-fluid w-100 mt-5 d-flex justify-content-center panel"
-    *ngFor="let post of posts"
-  >
-    <div class="card">
-      <div class="card-body">
-        <div class="d-flex">
-          <img [src]="post.user.image" class="card-img-top" alt="..." />
-          <h3 class="card-title fw-bold">
-            {{ post.user.name }} {{ post.user.surname }}
-          </h3>
+<div class="row">
+  <div class="col d-none d-lg-block" id="first-col">
+    <div class="card" style="width: 18rem">
+      <div class="position-relative div-img-profile w-100 m-0 p-0">
+        <!-- Copertina -->
+        <img
+          src="./../assets/imgs/profile-top-image.png"
+          alt=""
+          class="img-fluid w-100 cover-image"
+        />
+        <!-- Propic -->
+        <div class="profile-img-container">
+          <img
+            [src]="profileData?.image"
+            alt=""
+            class="rounded-circle profile-img"
+          />
         </div>
-        <p class="card-text fs-6 text-secondary">
-          {{ post.user.title }}
-          <br />
-
-          {{ post.createdAt | dateDay }}
-          <br />
-        </p>
-        <p class="fs-5">{{ post.text }}</p>
       </div>
+
+      <div class="card-body">
+        <h5 class="card-title text-center w-100">
+          {{ profileData?.name }} {{ profileData?.surname }}
+          <br />
+          <span class="fs-6 text-secondary">{{ profileData?.title }}</span>
+        </h5>
+        <hr />
+        <p class="fw-bold">
+          <span class="text-secondary fw-light">Collegamenti</span>
+          <br />
+          Espandi la rete
+        </p>
+        <hr />
+        <p>
+          <span class="text-secondary">
+            Accedi a strumenti e informazioni in esclusiva
+          </span>
+        </p>
+        <hr />
+        <p><i class="bi bi-bookmark-fill"></i> i miei elementi</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div
+      class="container d-flex flex-column justify-content-center align-items-center"
+      id="new-post"
+    >
+      <div class="d-flex mb-3">
+        <img [src]="profileData?.image" />
+        <input type="text" placeholder="Avvia un post" />
+      </div>
+      <div>
+        <a href="" class="mx-3 text-decoration-none">
+          <i class="bi bi-card-image mx-1 text-primary"></i> Contenuti
+          Multimediali</a
+        >
+        <a href="" class="mx-3 text-decoration-none">
+          <i class="bi bi-calendar3 mx-1 text-warning"></i>Evento</a
+        >
+        <a href="" class="mx-3 text-decoration-none">
+          <i class="bi bi-newspaper mx-1 text-danger-emphasis"></i>Scrivi un
+          articolo</a
 
       <div class="my-3">
         <a
@@ -69,46 +88,95 @@
           ><i class="bi bi-share"></i> &nbsp; Invia</a
         >
       </div>
-      <!-- Collapse dei commenti -->
+    </div>
+    <div id="myGroup">
       <div
-        class="collapse"
-        id="collapse-{{ post._id }}"
-        data-bs-parent="#myGroup"
+        class="container-fluid w-100 mt-5 d-flex justify-content-center panel"
+        *ngFor="let post of posts"
       >
-        <div class="card card-body">
-          <!-- Inserisci commento -->
-          <input
-            type="text"
-            id="commento"
-            placeholder="Aggiungi un commento"
-            [(ngModel)]="currentComment"
-            name="title"
-            class="d-block w-100 rounded-2 my-2"
-            [value]="currentComment"
-          />
-          <button
-            class="btn-send mb-2"
-            data-bs-toggle="collapse"
-            attr.data-bs-target="#collapse-{{ post._id }}"
-            aria-expanded="false"
-            *ngIf="currentComment.length > 3"
-            (click)="addComment(post._id)"
-          >
-            Pubblica
-          </button>
+        <div class="card">
+          <div class="card-body">
+            <div class="d-flex">
+              <img [src]="post.user.image" class="card-img-top" alt="..." />
+              <h3 class="card-title fw-bold">
+                {{ post.user.name }} {{ post.user.surname }}
+              </h3>
+            </div>
+            <p class="card-text fs-6 text-secondary">
+              {{ post.user.title }}
+              <br />
 
-          <!-- Commenti -->
-          <div class="comments mx-3 my-2" *ngFor="let comment of comments">
-            <i class="bi bi-person-circle fs-2 text-info-emphasis"></i>
-            <div class="comment-bubble mx-4">
-              {{ comment.comment }}
+              {{ post.createdAt | dateDay }}
+              <br />
+            </p>
+            <p class="fs-5">{{ post.text }}</p>
+          </div>
+
+          <div class="mt-3 mb-3">
+            <a
+              href="#"
+              class="mx-4 text-decoration-none fs-6 text-black fw-bold"
+              ><i class="bi bi-hand-thumbs-up"></i> &nbsp; Consiglia</a
+            >
+            <a
+              class="mx-3 text-decoration-none fs-6 text-black fw-bold"
+              data-bs-toggle="collapse"
+              href="#collapse-{{ post._id }}"
+              aria-expanded="false"
+              (click)="loadComments(post._id)"
+              ><i class="bi bi-chat-text"></i> &nbsp; Commenta</a
+            >
+            <a
+              href="#"
+              class="mx-3 text-decoration-none fs-6 text-black fw-bold"
+              ><i class="bi bi-upload"></i> &nbsp; Diffondi il post</a
+            >
+            <a
+              href="#"
+              class="mx-3 text-decoration-none fs-6 text-black fw-bold"
+              ><i class="bi bi-share"></i> &nbsp; Invia</a
+            >
+          </div>
+          <!-- Collapse dei commenti -->
+          <div
+            class="collapse"
+            id="collapse-{{ post._id }}"
+            data-bs-parent="#myGroup"
+          >
+            <div class="card card-body">
+              <div class="comments mx-3 my-2" *ngFor="let comment of comments">
+                <i class="bi bi-person-circle fs-2 text-info-emphasis"></i>
+                <div class="comment-bubble mx-4">
+                  {{ comment.comment }}
+                </div>
+              </div>
+              <!-- Inserisci commento -->
+              <input
+                type="text"
+                id="commento"
+                placeholder="Aggiungi un commento"
+                [(ngModel)]="currentComment"
+                name="title"
+                class="d-block w-100 rounded-2 my-2"
+                [value]="currentComment"
+              />
+              <button
+                class="btn-send mb-2"
+                data-bs-toggle="collapse"
+                attr.data-bs-target="#collapse-{{ post._id }}"
+                aria-expanded="false"
+                *ngIf="currentComment.length > 3"
+                (click)="addComment(post._id)"
+              >
+                Pubblica
+              </button>
+
+              <!-- Commenti -->
             </div>
           </div>
-          <p *ngIf="comments == null || comments.length === 0">
-            Nessun commento su questo post
-          </p>
         </div>
       </div>
     </div>
   </div>
+  <div class="col"></div>
 </div>
