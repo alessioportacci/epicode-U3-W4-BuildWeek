@@ -23,7 +23,12 @@ export class ProfileComponent implements OnInit {
     title: '',
     area: '',
   };
-
+  role: string = '';
+  company: string = '';
+  startDate: string = '';
+  endDate: string = '';
+  description: string = '';
+  area: string = '';
   constructor(
     public striveSrv: StriveApiService,
     public experienceSrv: ExperienceService
