@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit
 {
   posts: Inews[] = []
 
+
   constructor
   (
     private postSrv: NewsService,
@@ -30,6 +31,7 @@ export class HomeComponent implements OnInit
       {
         this.posts = res
         console.log(res)
+
       })
 
     this.commentsSrv.getAllComments().subscribe(res => console.log('commenti', res))
@@ -38,5 +40,7 @@ export class HomeComponent implements OnInit
 
     this.postSrv.getPost("64e7111fad24970014693641").subscribe(res => console.log(res))
   }
+
+
 
 }
