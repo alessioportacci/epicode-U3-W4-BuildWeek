@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit
   posts: Inews[] = []
   comments: Icomments [] = []
 
+
   constructor
   (
     private postSrv: NewsService,
