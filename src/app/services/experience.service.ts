@@ -65,14 +65,14 @@ export class ExperienceService {
       .pipe(tap((res) => console.log(res)));
   }
 
-  removeExperience(experienceId: string): Observable<IUpdateExperience> {
-    return this.http.delete<Iexperiences>(
+  removeExperience(experienceId: string): Observable<unknown> {
+    return this.http.delete(
       `https://striveschool-api.herokuapp.com/api/profile/${this.userId}/experiences/${experienceId}`,
       {
         headers: {
           Authorization: `Bearer ${this.token}`,
-          responseType: 'text',
         },
+        responseType: 'text',
       }
     );
   }
