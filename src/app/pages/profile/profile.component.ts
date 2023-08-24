@@ -9,6 +9,8 @@ import {
   Iexperiences,
 } from 'src/app/interfaces/iexperiences';
 import { NgForm } from '@angular/forms';
+import { NewsService } from 'src/app/services/news.service';
+import { Inews } from 'src/app/interfaces/inews';
 
 @Component({
   selector: 'app-profile',
@@ -29,15 +31,17 @@ export class ProfileComponent implements OnInit {
   endDate: string = '';
   description: string = '';
   area: string = '';
+  utente?: Inews[];
   constructor(
     public striveSrv: StriveApiService,
-    public experienceSrv: ExperienceService
+    public experienceSrv: ExperienceService,
+    public postSrv: NewsService
   ) {}
 
   ngOnInit(): void {
     this.striveSrv.getProfile().subscribe((data) => {
-      console.log(data);
       this.profileData = data;
+      console.log(data);
       this.experienceSrv.userId = data._id;
 
       this.experienceSrv.getExperiences().subscribe((data) => {
@@ -45,6 +49,7 @@ export class ProfileComponent implements OnInit {
         console.log('esperienza', data);
       });
     });
+    this.getUser();
   }
 
   onSubmit(form: NgForm): void {
@@ -80,6 +85,12 @@ export class ProfileComponent implements OnInit {
     this.striveSrv.setUser(this.userUpate).subscribe((data) => {
       this.userUpate;
       console.log(data);
+    });
+  }
+  getUser() {
+    this.postSrv.getPosts().subscribe((data) => {
+      this.utente = data.slice(0, 10);
+      console.log(data.slice(0, 10));
     });
   }
 }
