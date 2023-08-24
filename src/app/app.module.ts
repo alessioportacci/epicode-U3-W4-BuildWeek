@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { ProfiliComponent } from './components/profili/profili.component';
 import { EsperienzeComponent } from './pages/esperienze/esperienze.component';
 import { DateFormatterPipe } from './pipes/date-formatter.pipe';
+import { ModificaEsperienzeComponent } from './pages/modifica-esperienze/modifica-esperienze.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { DateFormatterPipe } from './pipes/date-formatter.pipe';
     ProfiliComponent,
     EsperienzeComponent,
     DateFormatterPipe,
+    ModificaEsperienzeComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { EsperienzeComponent } from './pages/esperienze/esperienze.component';
+import { ModificaEsperienzeComponent } from './pages/modifica-esperienze/modifica-esperienze.component';
 
 const routes: Routes = [
   {
@@ -15,7 +16,11 @@ const routes: Routes = [
   },
   {
     path: 'profile/esperienze',
-    component: EsperienzeComponent
+    component: EsperienzeComponent,
+  },
+  {
+    path: 'modifica/:id',
+    component: ModificaEsperienzeComponent,
   },
 ];
 
