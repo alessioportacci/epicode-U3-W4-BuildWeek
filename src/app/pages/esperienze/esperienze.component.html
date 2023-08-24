@@ -1,17 +1,16 @@
 <div class="m">
   <div class="row ms-2 b">
     <div *ngFor="let experience of experienceData" class="col-8">
-      <div class="row">
+      <div class="d-flex">
         <!-- Immagine azienda -->
-        <div class="col-2 text-center">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Valve-logo.jpg/1024px-Valve-logo.jpg"
-            height="60px"
-            width="60px"
-          />
-        </div>
-        <!-- Descrizione -->
-        <div class="col-10">
+
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Valve-logo.jpg/1024px-Valve-logo.jpg"
+          height="60px"
+          width="60px"
+        />
+        <div class="ms-2">
+          <!-- Descrizione -->
           <p class="fw-bold m-0">{{ experience.role }}</p>
           <p class="fs-profile m-0">{{ experience.company }}</p>
           <p class="fs-profile m-0">
@@ -23,6 +22,7 @@
             <span class="fw-bold">Competenze:</span>CSS HTML Jquery Javascript
             SQL
           </p>
+          <button (click)="deleteExperience(experience._id)">ciao</button>
         </div>
       </div>
     </div>
