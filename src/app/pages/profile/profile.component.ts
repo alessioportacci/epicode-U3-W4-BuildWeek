@@ -24,7 +24,7 @@ export class ProfileComponent implements OnInit {
   description:string='';
   area:string='';
 
-  formattedEndDate: string = '';
+
 
   constructor
   (
