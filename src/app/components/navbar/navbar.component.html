@@ -72,14 +72,14 @@
 
         <!-- Tu Dropdown -->
         <li class="nav-item dropdown" #Me id="me">
-          <div class="custom-dropdown d-flex flex-column align-items-center">
+          <div
+            class="custom-dropdown d-flex flex-column align-items-center"
+            (click)="toggleMeDropdown()"
+            style="cursor: pointer"
+          >
             <i class="bi bi-person-circle"></i>
             <div class="d-flex align-items-center">
-              <button
-                class="dropdown-button"
-                id="tu"
-                (click)="toggleMeDropdown()"
-              >
+              <button class="dropdown-button" id="tu">
                 Tu <i class="bi bi-caret-down-fill fs-6"></i>
               </button>
             </div>
