@@ -13,7 +13,8 @@
 
 .card{
   width: 600px;
-
+  border-radius: 20px;
+  border: none;
 
 }
 
@@ -23,4 +24,54 @@ img{
   height: 30px;
   margin-right: 20px;
 
+}
+.comment-bubble {
+  position: relative;
+  display: inline-block;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.comment-bubble i {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.comment-bubble::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -15px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 15px 8px 0;
+  border-color: transparent #f1f1f1 transparent transparent;
+}
+
+#new-post{
+  background-color: white;
+  height: 150px;
+  width: 600px;
+  border-radius: 20px;
+  input{
+    width: 300px;
+    margin-right:20px;
+    border-radius: 20px;
+    border: solid 1px gainsboro;
+    height: 30px;
+    padding-left: 20px;
+  }
+  a{
+
+    font-size: 0.9em;
+    color: black;
+    i{
+      font-size: 1.5em;
+
+    }
+  }
 }
