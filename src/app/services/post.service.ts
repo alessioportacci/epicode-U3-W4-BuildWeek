@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class PostService {
-  token = new Token().token2;
+  token = new Token().token;
   constructor(private http: HttpClient) {}
   getPOst() {
     return this.http.get('https://striveschool-api.herokuapp.com/api/posts/', {
@@ -14,8 +14,12 @@ export class PostService {
     });
   }
   addPost() {
-    return this.http.post('https://striveschool-api.herokuapp.com/api/posts/', {
-      headers: { Authorization: `Bearer ${this.token}` },
-    });
+    return this.http.post(
+      'https://striveschool-api.herokuapp.com/api/posts/',
+      null,
+      {
+        headers: { Authorization: `Bearer ${this.token}` },
+      }
+    );
   }
 }
