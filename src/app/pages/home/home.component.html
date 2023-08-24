@@ -62,6 +62,30 @@
         <a href="" class="mx-3 text-decoration-none">
           <i class="bi bi-newspaper mx-1 text-danger-emphasis"></i>Scrivi un
           articolo</a
+
+      <div class="my-3">
+        <a
+          href="#"
+          class="mx-4 text-decoration-none fs-6 text-black fw-bold btn-gray-2 py-2 px-1"
+          ><i class="bi bi-hand-thumbs-up"></i> &nbsp; Consiglia</a
+        >
+        <a
+          class="mx-3 text-decoration-none fs-6 text-black fw-bold btn-gray-2 py-2 px-1"
+          data-bs-toggle="collapse"
+          href="#collapse-{{ post._id }}"
+          aria-expanded="false"
+          (click)="loadComments(post._id)"
+          ><i class="bi bi-chat-text"></i> &nbsp; Commenta</a
+        >
+        <a
+          href="#"
+          class="mx-3 text-decoration-none fs-6 text-black fw-bold btn-gray-2 py-2 px-1"
+          ><i class="bi bi-upload"></i> &nbsp; Diffondi il post</a
+        >
+        <a
+          href="#"
+          class="mx-3 text-decoration-none fs-6 text-black fw-bold btn-gray-2 py-2 px-1"
+          ><i class="bi bi-share"></i> &nbsp; Invia</a
         >
       </div>
     </div>
