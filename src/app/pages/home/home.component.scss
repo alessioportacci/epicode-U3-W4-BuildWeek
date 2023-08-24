@@ -13,7 +13,8 @@
 
 .card{
   width: 600px;
-
+  border-radius: 20px;
+  border: none;
 
 }
 
@@ -22,5 +23,105 @@ img{
   border-radius: 40px;
   height: 30px;
   margin-right: 20px;
+}
 
+.btn-send
+{
+  color: white;
+  background-color: #0a66c2;
+  border-radius: 25px;
+  width: 80px;
+  font-size: 15px;
+
+}
+.comment-bubble {
+  position: relative;
+  display: inline-block;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.comment-bubble i {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.comment-bubble::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -15px;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 15px 8px 0;
+  border-color: transparent #f1f1f1 transparent transparent;
+}
+
+#new-post{
+  background-color: white;
+  height: 150px;
+  width: 600px;
+  border-radius: 20px;
+  input{
+    width: 300px;
+    margin-right:20px;
+    border-radius: 20px;
+    border: solid 1px gainsboro;
+    height: 30px;
+    padding-left: 20px;
+  }
+  a{
+
+    font-size: 0.9em;
+    color: black;
+    i{
+      font-size: 1.5em;
+
+    }
+  }
+}
+
+#first-col{
+  padding-left: 60px;
+}
+
+
+
+.div-img-profile {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.cover-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.profile-img-container {
+  position: absolute;
+  top: -55%;
+  left: 30%;
+
+
+
+
+}
+
+.profile-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.card-body{
+  p{
+    font-size: 0.8em;
+  }
 }

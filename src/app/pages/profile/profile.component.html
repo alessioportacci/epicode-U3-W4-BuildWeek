@@ -199,14 +199,16 @@
                 </div>
                 <!-- Descrizione -->
                 <div class="col-10">
-                  <p class="fw-bold m-0">{{ experience.role }}</p>
-                  <p class="fs-profile m-0">{{ experience.company }}</p>
-                  <p class="fs-profile m-0">
+                  <p class="fw-bold fs-4 m-0">{{ experience.role }}</p>
+                  <p class="fs-profile fs-5 m-0">{{ experience.company }}</p>
+                  <p class="fs-profile text-secondary m-0">
                     {{ experience.startDate | dateFormatter }} -
                     {{ experience.endDate | dateFormatter }} - durata
                     complessiva
                   </p>
-                  <p class="fs-profile m-0">{{ experience.area }}</p>
+                  <p class="fs-profile text-secondary m-0">
+                    {{ experience.area }}
+                  </p>
                   <p class="fs-profile">
                     <span class="fw-bold">Competenze:</span>CSS HTML Jquery
                     Javascript SQL
@@ -300,7 +302,7 @@
           </div>
           <div class="linkedin-box-content">
             <div class="d-flex justify-content-between">
-              <p>Public profile & URl</p>
+              <p class="bold">Public profile & URl</p>
 
               <button type="button " class="btn-icon">
                 <a> <i class="bi bi-pencil text-secondary"></i></a>
@@ -480,31 +482,15 @@
           </div>
         </div>
         <div class="col g-4 linkedin-box">
-          <div class="linkedin-box-content">
+          <div class="p-box-contentent">
             <p class="bold">Altri profili cosultati</p>
+          </div>
+          <div *ngFor="let item of utente" class="linkedin-box-content pt-0">
             <div class="d-flex mt-2">
-              <img
-                src="http://placekitten.com/100/100"
-                class="rounded-circle iconProfile"
-              />
+              <img [src]="item.image" class="rounded-circle iconProfile" />
               <div class="ms-2">
-                <p class="bold mb-0">nome e cognome</p>
-                <p class="mb-3">specilizazione</p>
-              </div>
-            </div>
-            <div class="profilelanguage d-flex">
-              <button class="mb-2 marginButtuonIcon d-block btn btn-gray">
-                <i class="bi bi-person-fill-add"></i> colegati
-              </button>
-            </div>
-            <div class="d-flex mt-2">
-              <img
-                src="http://placekitten.com/100/100"
-                class="rounded-circle iconProfile"
-              />
-              <div class="ms-2">
-                <p class="bold mb-0">nome e cognome</p>
-                <p class="mb-3">specilizazione</p>
+                <p class="bold mb-0">{{ item.name }} {{ item.surname }}</p>
+                <p class="mb-3">{{ item.title }}</p>
               </div>
             </div>
             <div class="profilelanguage d-flex">

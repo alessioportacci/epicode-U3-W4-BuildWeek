@@ -14,6 +14,8 @@ export interface IProfile {
 }
 
 export interface IUpdateProfile {
+  nome: string;
+  cognome: string;
   email: string;
   bio: string;
   title: string;
