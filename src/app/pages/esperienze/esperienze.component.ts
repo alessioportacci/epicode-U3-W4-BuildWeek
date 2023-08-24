@@ -22,16 +22,19 @@ export class EsperienzeComponent implements OnInit {
 
   ngOnInit(): void {
     this.striveSrv.getProfile().subscribe((data) => {
-      console.log('Primo subscribe');
       this.profileData = data;
       this.experienceSrv.setUserId(data._id);
 
       this.experienceSrv.getExperiences().subscribe((data) => {
-        console.log('ciao');
         this.experienceData = data;
-        console.log(data);
       });
     });
+  }
+
+  deleteExperience(id: string) {
+    this.experienceSrv
+      .removeExperience(id)
+      .subscribe((res) => console.log('cancellato'));
   }
 
   getProfileData() {}
