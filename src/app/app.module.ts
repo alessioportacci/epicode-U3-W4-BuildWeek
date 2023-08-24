@@ -29,7 +29,6 @@ import { EsperienzeComponent } from './pages/esperienze/esperienze.component';
     FormsModule,
 
     FormsModule,
-
   ],
 
   providers: [],
