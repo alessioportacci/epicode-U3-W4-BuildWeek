@@ -1,5 +1,26 @@
 <div id="empty"></div>
-
+<div
+  class="container d-flex flex-column justify-content-center align-items-center"
+  id="new-post"
+>
+  <div class="d-flex mb-3">
+    <img [src]="profileData?.image" />
+    <input type="text" placeholder="Avvia un post" />
+  </div>
+  <div>
+    <a href="" class="mx-3 text-decoration-none">
+      <i class="bi bi-card-image mx-1 text-primary"></i> Contenuti
+      Multimediali</a
+    >
+    <a href="" class="mx-3 text-decoration-none">
+      <i class="bi bi-calendar3 mx-1 text-warning"></i>Evento</a
+    >
+    <a href="" class="mx-3 text-decoration-none">
+      <i class="bi bi-newspaper mx-1 text-danger-emphasis"></i>Scrivi un
+      articolo</a
+    >
+  </div>
+</div>
 <div id="myGroup">
   <div
     class="container-fluid w-100 mt-5 d-flex justify-content-center panel"
@@ -55,6 +76,12 @@
         data-bs-parent="#myGroup"
       >
         <div class="card card-body">
+          <div class="comments mx-3 my-2" *ngFor="let comment of comments">
+            <i class="bi bi-person-circle fs-2 text-info-emphasis"></i>
+            <div class="comment-bubble mx-4">
+              {{ comment.comment }}
+            </div>
+          </div>
           <!-- Inserisci commento -->
           <input
             type="text"
