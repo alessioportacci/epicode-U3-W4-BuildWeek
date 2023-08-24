@@ -5,6 +5,7 @@ import { StriveApiService } from 'src/app/services/strive-api.service';
 import { IProfile } from './../../interfaces/iprofile';
 
 import { Iexperiences } from 'src/app/interfaces/iexperiences';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-esperienze',
@@ -17,7 +18,8 @@ export class EsperienzeComponent implements OnInit {
 
   constructor(
     public striveSrv: StriveApiService,
-    public experienceSrv: ExperienceService
+    public experienceSrv: ExperienceService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -32,10 +34,14 @@ export class EsperienzeComponent implements OnInit {
   }
 
   deleteExperience(id: string) {
-    this.experienceSrv
-      .removeExperience(id)
-      .subscribe((res) => console.log('cancellato'));
+    this.experienceSrv.removeExperience(id).subscribe((res) => {
+      console.log('cancellato');
+      this.experienceSrv.getExperiences().subscribe((data) => {
+        this.experienceData = data;
+      });
+    });
   }
-
-  getProfileData() {}
+  modifica(id: string) {
+    this.router.navigate([`modifica/${id}`]);
+  }
 }

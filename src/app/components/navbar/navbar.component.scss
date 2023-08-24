@@ -82,8 +82,7 @@ nav{
 // dropdown component of the user
 #me{
   border-right: solid 1px gainsboro;
-  margin-right: 10px;
- padding-right: 10px;
+
 }
 
 
@@ -149,6 +148,7 @@ nav{
     height: 35px;
 
   }
+  z-index: 999;
 }
 
 @keyframes slide-in-top {
@@ -171,4 +171,18 @@ nav{
 .hidden-div {
   opacity: 0;
 
+}
+
+#navbarNav{
+ background-color: white;
+ height: 65px;
+ border-bottom: solid 1px gainsboro;
+}
+
+@media screen and (max-width: 750px) {
+
+  #navbarNav{
+    background-color: white;
+    height: 500px;
+  }
 }
