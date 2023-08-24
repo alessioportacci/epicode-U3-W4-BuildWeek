@@ -1,0 +1,9 @@
+<div *ngFor="let post of posts">
+  <img [src]="post.user.image" />
+  {{ post.user.name }} {{ [post.user.surname] }} <br />
+  {{ post.user.title }}
+  {{ post.createdAt }}
+  <br />
+  <br />
+  {{ post.text }}
+</div>
