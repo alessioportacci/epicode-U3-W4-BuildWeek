@@ -31,8 +31,6 @@ import { DateDayPipe } from './pipes/date-day.pipe';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-
-    FormsModule,
   ],
 
   providers: [],
