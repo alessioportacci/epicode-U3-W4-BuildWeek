@@ -128,8 +128,9 @@
                   <p class="fw-bold m-0">{{ experience.role }}</p>
                   <p class="fs-profile m-0">{{ experience.company }}</p>
                   <p class="fs-profile m-0">
-                    {{ experience.startDate }} - {{ experience.endDate }} -
-                    durata complessiva
+                    {{ experience.startDate | dateFormatter }} -
+                    {{ experience.endDate | dateFormatter }} - durata
+                    complessiva
                   </p>
                   <p class="fs-profile m-0">{{ experience.area }}</p>
                   <p class="fs-profile">
@@ -310,48 +311,66 @@
                 </div>
                 <div class="modal-body annucioPopUP">
                   <!-- form del modale -->
-                  <form>
+                  <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
                     <div class="mb-3">
                       <label class="form-label">Qualifica</label>
-                      <input type="text" class="form-control" />
-                    </div>
-                    <div class="mb-3">
-                      <label class="form-label">Tipo di impiego</label>
-                      <input type="text" class="form-control" />
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="role"
+                        name="role"
+                        [(ngModel)]="role"
+                      />
                     </div>
                     <div class="mb-3">
                       <label class="form-label">Nome azienda</label>
-                      <input type="text" class="form-control" />
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="company"
+                        name="company"
+                        [(ngModel)]="company"
+                      />
                     </div>
                     <div class="mb-3">
-                      <label class="form-label">Località</label>
-                      <input type="text" class="form-control" />
+                      <label class="form-label">Data di inizio</label>
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="startDate"
+                        name="startDate"
+                        [(ngModel)]="startDate"
+                      />
                     </div>
                     <div class="mb-3">
-                      <label class="form-label">Tipo di località</label>
-                      <input type="text" class="form-control" />
+                      <label class="form-label">Data di fine</label>
+                      <input
+                        type="date"
+                        class="form-control"
+                        id="endDate"
+                        name="endDate"
+                        [(ngModel)]="endDate"
+                      />
                     </div>
                     <div class="mb-3">
-                      <label class="form-label">data di inizio</label>
-                      <input type="date" class="form-control" />
+                      <label class="form-label">Descrizione</label>
+                      <textarea
+                        class="form-control"
+                        id="description"
+                        name="description"
+                        [(ngModel)]="description"
+                      ></textarea>
                     </div>
                     <div class="mb-3">
-                      <label class="form-label">data di fine</label>
-                      <input type="date" class="form-control" />
+                      <label class="form-label">Luogo</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="area"
+                        name="area"
+                        [(ngModel)]="area"
+                      />
                     </div>
-                    <div class="mb-3">
-                      <label class="form-label">settore</label>
-                      <input type="Text" class="form-control" />
-                    </div>
-                    <div class="mb-3">
-                      <label class="form-label">descrizione</label>
-                      <input type="text-area" class="form-control" />
-                    </div>
-                    <div class="mb-3">
-                      <label class="form-label">Sommario del profilo</label>
-                      <input type="textarea" class="form-control" />
-                    </div>
-
                     <button type="submit" class="btn btn-primary">Salva</button>
                   </form>
                 </div>
