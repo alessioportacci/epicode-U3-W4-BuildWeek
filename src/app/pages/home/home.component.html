@@ -49,6 +49,28 @@
         data-bs-parent="#myGroup"
       >
         <div class="card card-body">
+          <!-- Inserisci commento -->
+          <input
+            type="text"
+            id="commento"
+            placeholder="Aggiungi un commento"
+            [(ngModel)]="currentComment"
+            name="title"
+            class="d-block w-100 rounded-2 my-2"
+            [value]="currentComment"
+          />
+          <button
+            class="btn-send mb-2"
+            data-bs-toggle="collapse"
+            attr.data-bs-target="#collapse-{{ post._id }}"
+            aria-expanded="false"
+            *ngIf="currentComment.length > 3"
+            (click)="addComment(post._id)"
+          >
+            Pubblica
+          </button>
+
+          <!-- Commenti -->
           <div *ngFor="let comment of comments">{{ comment.comment }}</div>
           <p *ngIf="comments == null || comments.length === 0">
             Nessun commento su questo post
