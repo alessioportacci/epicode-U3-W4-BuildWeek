@@ -28,9 +28,9 @@ export class CommentsService
     { headers: {Authorization:  `Bearer ${this.token}`}})
   }
 
-  setComment(postId: string, comment: IupdateComment): Observable<Icomments>
+  setComment(comment: Icomments): Observable<Icomments>
   {
-    return this.http.post<Icomments> (`${this.url}${postId}`, comment,
+    return this.http.post<Icomments> (`${this.url}`, comment,
     { headers: {Authorization:  `Bearer ${this.token}`}})
   }
 

@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit
         console.log(res.slice(0,35))
       })
 
-      this.commentsSrv.getAllComments().subscribe(res => this.comments = res)
+    //this.commentsSrv.setComment({comment: "Attaccapanni was here", rate:"3", elementId:"5fc6ba2a0626b5001729ee1d"}).subscribe()
     this.postSrv.getPost("64e7111fad24970014693641").subscribe(res => console.log(res))
   }
 
