@@ -32,9 +32,83 @@
           <!-- Contenuto -->
           <div class="linkedin-box-content">
             <!-- Nome -->
-            <h1 class="mt-5 profileName">
-              {{ profileData?.name }} {{ profileData?.surname }}
-            </h1>
+            <div class="d-flex align-items-center">
+              <h1 class="mt-5 profileName">
+                {{ profileData?.name }} {{ profileData?.surname }}
+              </h1>
+              <!-- Button trigger modal -->
+              <button
+                type="button"
+                class="btn mt-5 mb-3 ms-4"
+                data-bs-toggle="modal"
+                data-bs-target="#formModal"
+              >
+                <i class="bi bi-pencil text-secondary"></i>
+              </button>
+
+              <!-- Modal -->
+              <div
+                class="modal fade"
+                id="formModal"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="exampleModalLabel">
+                        Modifica presentazione
+                      </h1>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <label for="title"> modifica titolo:</label>
+                        <input
+                          type="text"
+                          id="title"
+                          [(ngModel)]="userUpate.title"
+                          name="title"
+                          class="d-block w-100 rounded-2 my-2"
+                          [value]="profileData?.title"
+                        />
+                        <label for="bio"> modifica bio:</label>
+                        <input
+                          type="text"
+                          id="bio"
+                          [(ngModel)]="userUpate.bio"
+                          name="bio"
+                          class="d-block w-100 rounded-2 my-2"
+                          [value]="profileData?.bio"
+                        />
+                        <label for="area"> modifica area:</label>
+                        <input
+                          type="text"
+                          id="area"
+                          [(ngModel)]="userUpate.area"
+                          name="area"
+                          class="d-block w-100 rounded-2 my-2"
+                          [value]="profileData?.area"
+                        />
+                        <button
+                          (click)="setUser()"
+                          class="btn-blue-2 d-block"
+                          data-bs-dismiss="modal"
+                        >
+                          aggiorna profilo
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <!-- Altro  -->
             <p class="text">{{ profileData?.title }}</p>
             <p class="text">{{ profileData?.bio }}</p>

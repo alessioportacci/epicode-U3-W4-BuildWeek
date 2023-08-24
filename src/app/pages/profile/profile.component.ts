@@ -13,31 +13,36 @@ import { Iexperiences } from 'src/app/interfaces/iexperiences';
 })
 export class ProfileComponent implements OnInit {
   profileData?: IProfile;
-  experienceData?: Iexperiences[]
+  experienceData?: Iexperiences[];
+  userUpate?: any = {
+    bio: '',
+    title: '',
+    area: '',
+  };
 
-  constructor
-  (
+  constructor(
     public striveSrv: StriveApiService,
     public experienceSrv: ExperienceService
   ) {}
 
-  ngOnInit(): void
-  {
-     this.striveSrv.getProfile().subscribe((data) =>
-     {
-       console.log(data)
-       this.profileData = data
-       this.experienceSrv.userId = data._id
+  ngOnInit(): void {
+    this.striveSrv.getProfile().subscribe((data) => {
+      console.log(data);
+      this.profileData = data;
+      this.experienceSrv.userId = data._id;
 
-       this.experienceSrv.getExperiences().subscribe(((data) =>
-       {
-         this.experienceData = data
-         console.log('esperienza', data)
-       }))
-
-     })
-
+      this.experienceSrv.getExperiences().subscribe((data) => {
+        this.experienceData = data;
+        console.log('esperienza', data);
+      });
+    });
   }
 
   getProfileData() {}
+  setUser() {
+    this.striveSrv.setUser(this.userUpate).subscribe((data) => {
+      this.userUpate;
+      console.log(data);
+    });
+  }
 }
