@@ -199,14 +199,16 @@
                 </div>
                 <!-- Descrizione -->
                 <div class="col-10">
-                  <p class="fw-bold m-0">{{ experience.role }}</p>
-                  <p class="fs-profile m-0">{{ experience.company }}</p>
-                  <p class="fs-profile m-0">
+                  <p class="fw-bold fs-4 m-0">{{ experience.role }}</p>
+                  <p class="fs-profile fs-5 m-0">{{ experience.company }}</p>
+                  <p class="fs-profile text-secondary m-0">
                     {{ experience.startDate | dateFormatter }} -
                     {{ experience.endDate | dateFormatter }} - durata
                     complessiva
                   </p>
-                  <p class="fs-profile m-0">{{ experience.area }}</p>
+                  <p class="fs-profile text-secondary m-0">
+                    {{ experience.area }}
+                  </p>
                   <p class="fs-profile">
                     <span class="fw-bold">Competenze:</span>CSS HTML Jquery
                     Javascript SQL
