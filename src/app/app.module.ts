@@ -11,6 +11,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { ProfiliComponent } from './components/profili/profili.component';
 import { EsperienzeComponent } from './pages/esperienze/esperienze.component';
+import { DateFormatterPipe } from './pipes/date-formatter.pipe';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { EsperienzeComponent } from './pages/esperienze/esperienze.component';
     FooterComponent,
     ProfiliComponent,
     EsperienzeComponent,
+    DateFormatterPipe,
   ],
   imports: [
     BrowserModule,
