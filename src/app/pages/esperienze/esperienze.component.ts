@@ -37,6 +37,9 @@ export class EsperienzeComponent implements OnInit {
     this.experienceSrv
       .removeExperience(id)
       .subscribe((res) => console.log('cancellato'));
+    this.experienceSrv.getExperiences().subscribe((data) => {
+      this.experienceData = data;
+    });
   }
   modifica(id: string) {
     this.router.navigate([`modifica/:${id}`]);
