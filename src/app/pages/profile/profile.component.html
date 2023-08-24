@@ -487,12 +487,10 @@
           </div>
           <div *ngFor="let item of utente" class="linkedin-box-content pt-0">
             <div class="d-flex mt-2">
-              <img [src]="item.user.image" class="rounded-circle iconProfile" />
+              <img [src]="item.image" class="rounded-circle iconProfile" />
               <div class="ms-2">
-                <p class="bold mb-0">
-                  {{ item.user.name }} {{ item.user.surname }}
-                </p>
-                <p class="mb-3">{{ item.user.title }}</p>
+                <p class="bold mb-0">{{ item.name }} {{ item.surname }}</p>
+                <p class="mb-3">{{ item.title }}</p>
               </div>
             </div>
             <div class="profilelanguage d-flex">
