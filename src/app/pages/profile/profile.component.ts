@@ -31,11 +31,12 @@ export class ProfileComponent implements OnInit {
   endDate: string = '';
   description: string = '';
   area: string = '';
-  utente?: Inews[];
+  utente: IProfile[] = [];
+  utenmatCardTitle?: Inews[];
   constructor(
     public striveSrv: StriveApiService,
     public experienceSrv: ExperienceService,
-    public postSrv: NewsService
+    public postSrv: StriveApiService
   ) {}
 
   ngOnInit(): void {
@@ -49,7 +50,7 @@ export class ProfileComponent implements OnInit {
         console.log('esperienza', data);
       });
     });
-    this.getUser();
+    this.getUsers();
   }
 
   onSubmit(form: NgForm): void {
@@ -87,10 +88,9 @@ export class ProfileComponent implements OnInit {
       console.log(data);
     });
   }
-  getUser() {
-    this.postSrv.getPosts().subscribe((data) => {
-      this.utente = data.slice(0, 10);
-      console.log(data.slice(0, 10));
+  getUsers() {
+    this.postSrv.getUsers().subscribe((data) => {
+      this.utente = data.reverse().slice(0, 6);
     });
   }
 }
