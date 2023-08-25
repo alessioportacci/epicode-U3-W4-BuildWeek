@@ -16,18 +16,21 @@
           <!-- Immagini -->
           <div class="position-relative div-img-profile w-100 m-0 p-0">
             <!-- Copertina -->
+
             <img
               src="./../assets/imgs/profile-top-image.png"
               alt=""
               class="img-fluid w-100 cover-img"
             />
-            <!-- Propic -->
-            <img
-              [src]="profileData.image"
-              alt=""
-              class="rounded-circle profile-img"
-            />
+            <div class="profile-img-container">
+              <img
+                [src]="profileData.image"
+                alt=""
+                class="rounded-circle profile-img"
+              />
+            </div>
           </div>
+          <!-- Propic -->
 
           <!-- Contenuto -->
           <div class="linkedin-box-content">
