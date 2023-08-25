@@ -1,0 +1,47 @@
+<div class="m">
+  <form class="ms-4" #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <label for="role" class="form-label" name="role"> modifica ruolo</label>
+    <input
+      type="text"
+      id="role"
+      name="role"
+      class="form-control w-75"
+      [value]="experienceData.role"
+      [(ngModel)]="experienceData.role"
+    />
+    <label for="company" class="form-label" name="company">
+      modifica azienda</label
+    >
+    <input
+      type="text"
+      id="company"
+      name="company"
+      class="form-control w-75"
+      [value]="experienceData.company"
+      [(ngModel)]="experienceData.company"
+    />
+    <label for="startDate" class="form-label" name="startDate">
+      modifica data inizio</label
+    >
+    <input
+      type="text"
+      id="startDate"
+      name="startDate"
+      class="form-control w-75"
+      [value]="experienceData.startDate"
+      [(ngModel)]="experienceData.startDate"
+    />
+    <label for="endDate" class="form-label" name="endDate">
+      modifica data fine</label
+    >
+    <input
+      type="text"
+      id="endDate"
+      name="endDate"
+      class="form-control w-75"
+      [value]="experienceData.endDate"
+      [(ngModel)]="experienceData.endDate"
+    />
+    <button>ok</button>
+  </form>
+</div>
