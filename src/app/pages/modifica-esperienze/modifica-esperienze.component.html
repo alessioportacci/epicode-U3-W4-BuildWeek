@@ -1,5 +1,6 @@
 <div class="m container d-flex justify-content-center">
   <form class="ms-4 w-50" #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <!-- ruOLO -->
     <label for="role" class="form-label" name="role"> Modifica ruolo</label>
     <input
       type="text"
@@ -9,6 +10,7 @@
       [value]="experienceData.role"
       [(ngModel)]="experienceData.role"
     />
+    <!-- Azienda -->
     <label for="company" class="form-label" name="company">
       Modifica azienda</label
     >
@@ -20,6 +22,20 @@
       [value]="experienceData.company"
       [(ngModel)]="experienceData.company"
     />
+
+    <!-- Descrizione -->
+    <label for="description" class="form-label" name="description">
+      Modifica Descrizione</label
+    >
+    <input
+      type="text"
+      id="description"
+      name="description"
+      class="form-control w-75"
+      [value]="experienceData.description"
+      [(ngModel)]="experienceData.description"
+    />
+
     <label for="startDate" class="form-label" name="startDate">
       Modifica data inizio</label
     >
