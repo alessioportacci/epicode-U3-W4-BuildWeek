@@ -15,46 +15,72 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./modifica-esperienze.component.css'],
 })
 export class ModificaEsperienzeComponent implements OnInit {
-  id!: string;
+  idExperience!: string;
   profileData?: IProfile;
-  experienceData: IUpdateExperience = {
+  experienceData: Iexperiences = {
+    _id: '', // server generated
     role: '',
     company: '',
     startDate: '',
     endDate: '', // could be null
     description: '',
     area: '',
+    username: '', // server generated
+    createdAt: '', // server generated
+    updatedAt: '', // server generated
+    __v: -1, // server generated
+    image: '',
   };
+
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     public experienceSrv: ExperienceService,
     public striveSrv: StriveApiService
   ) {}
+
+  ngOnInit() {
+    this.route.paramMap.subscribe(
+      (params) => (this.idExperience = params.get('id')!)
+    );
+    console.log(this.experienceData);
+
+    this.striveSrv.getProfile().subscribe((profile) => {
+      this.profileData = profile;
+
+      this.experienceSrv.userId = this.profileData._id;
+      this.experienceSrv
+        .getExperience(this.idExperience)
+        .subscribe((experience) => {
+          console.log(experience);
+
+          this.experienceData = experience;
+        });
+    });
+  }
+
   deleteExperience() {
-    this.experienceSrv.removeExperience(this.id).subscribe((res) => {
+    this.experienceSrv.removeExperience(this.idExperience).subscribe((res) => {
       console.log('cancellato');
       this.experienceSrv.getExperiences().subscribe((data) => {});
     });
   }
-  ngOnInit() {
-    this.route.paramMap.subscribe((params) => (this.id = params.get('id')!));
-    this.striveSrv.getProfile().subscribe((data) => {
-      this.profileData = data;
-      this.experienceSrv.setUserId(data._id);
 
-      this.experienceSrv.getExperiences().subscribe((data) => {
-        this.experienceData = data[0];
-        console.log(this.experienceData.startDate);
-      });
-    });
-  }
   onSubmit(form: NgForm) {
     if (form && form.valid) {
       console.log(this.experienceData);
+      const updateExperice: IUpdateExperience = {
+        role: this.experienceData.role,
+        company: this.experienceData.company,
+        startDate: this.experienceData.startDate,
+        endDate: this.experienceData.endDate,
+        description: this.experienceData.description,
+        area: this.experienceData.area,
+      };
+
+      console.log(this.idExperience);
 
       this.experienceSrv
-        .updateExperience(this.id, this.experienceData)
+        .updateExperience(this.idExperience, updateExperice)
         .subscribe((data) => console.log(data));
     }
   }
