@@ -69,6 +69,7 @@
       </div>
     </div>
 
+    <!-- parte dei post -->
     <div id="myGroup">
       <div
         class="container-fluid w-100 mt-5 d-flex justify-content-center panel"
@@ -120,6 +121,7 @@
               ><i class="bi bi-share text-truncate"></i> &nbsp; Invia</a
             >
           </div>
+
           <!-- Collapse dei commenti -->
           <div
             class="collapse"
@@ -166,6 +168,114 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Colonna di destra -->
+  <div class="col">
+    <!-- Parte dei profili consigliati -->
+    <div class="linkedin-box w-50 mx-auto">
+      <div class="p-box-contentent">
+        <h5 class="bold">Notizie</h5>
+      </div>
+      <div>
+        <div *ngFor="let post of posts; let i = index">
+          <div class="linkedin-box-content pt-0" *ngIf="i < 5">
+            <div class="d-flex">
+              <div class="ms-2">
+                <p class="card-title fw-bold">
+                  {{ post.user.name }} {{ post.user.surname }}
+                </p>
+                <p class="text-secondary">
+                  {{ post.text | slice : 0 : 100
+                  }}{{ post.text.length > 100 ? "..." : "" }}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Parte degli annunci -->
+    <div class="linkedin-box w-50 mt-5 mx-auto">
+      <p class="text-end m-0 addPann">
+        annuncio
+        <button
+          type="button"
+          class="btn p-0"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal2"
+        >
+          ∙∙∙
+        </button>
+      </p>
+      <!-- Button trigger modal -->
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal2"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel2"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel2">
+                Opzioni annuncio
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body annucioPopUP">
+              <div class="d-flex">
+                <i class="bi bi-info-square-fill me-1"></i>
+                <div class="user-select-none">
+                  <p class="bold m-0">perchè vedo questo annuncio?</p>
+                  <p>gestisci le preferenze per gli annunci pubblicitari</p>
+                </div>
+              </div>
+              <div class="d-flex">
+                <i class="bi bi-flag-fill me-1"></i>
+                <div>
+                  <p class="bold m-0">segnala questo annuncio</p>
+                  <p>non voglio vedere questo annucio nel mio feed</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="addPann text text-center m-1">
+        scorpi la formazione presso epicode
+      </p>
+      <div class="d-flex justify-content-center">
+        <img
+          [src]="profileData?.image"
+          alt=""
+          class="rounded-circle profileAddsImg me-2"
+        />
+        <a href="https://epicode.com/it">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQROaS3ruCLNEDynCYsFxDvt03s1oYBBqhz2Is_kJBcd23576MEEip3dWZuWOtQvPcP8MU&usqp=CAU"
+            class="rounded-circle profileAddsImg"
+        /></a>
+      </div>
+      <p class="text text-center my-2">
+        {{ profileData?.name }}, sopri le opportunità offerte da
+        <span class="spanEpicodeAdd">epicode</span>
+      </p>
+      <div class="d-flex justify-content-center">
+        <a href="https://www.linkedin.com/school/epicodeitalia/">
+          <button class="btn btn-blue mb-3">segui</button></a
+        >
       </div>
     </div>
   </div>
