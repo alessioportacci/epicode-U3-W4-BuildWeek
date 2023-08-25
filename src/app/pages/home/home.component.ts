@@ -65,7 +65,7 @@ export class HomeComponent implements OnInit {
     this.commentsSrv
       .getPostComments(postId)
       .subscribe((res) => {
-        this.comments = res
+        this.comments = res.reverse().slice(0, 35)
         console.log(res)
       });
   }
