@@ -101,6 +101,7 @@
                 <ng-container *ngIf="isMyPost(post)">
                   <button
                     type="button"
+                    class="btn-icon"
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal4"
                     id="modify-post"
@@ -108,7 +109,11 @@
                   >
                     <i class="bi bi-pencil-fill"></i>
                   </button>
-                  <button id="delete-post" (click)="deletePost(post._id)">
+                  <button
+                    id="delete-post"
+                    (click)="deletePost(post._id)"
+                    class="btn-icon"
+                  >
                     <i class="bi bi-trash-fill"></i>
                   </button>
                 </ng-container>
