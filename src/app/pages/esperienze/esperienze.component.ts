@@ -31,6 +31,13 @@ export class EsperienzeComponent implements OnInit {
         this.experienceData = data;
       });
     });
+
+    //   Side bar
+    //   getUsers() {
+    //     this.postSrv.getUsers().subscribe((data) => {
+    //       this.utente = data.reverse().slice(0, 6);
+    //     });
+    //   }
   }
 
   deleteExperience(id: string) {

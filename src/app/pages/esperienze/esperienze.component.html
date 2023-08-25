@@ -15,23 +15,33 @@
               />
               <div class="ms-2 card-body">
                 <!-- Descrizione -->
-                <p class="fw-bold m-0">{{ experience.role }}</p>
+                <div class="d-flex justify-content-between">
+                  <p class="fw-bold m-0">{{ experience.role }}</p>
+
+                  <div>
+                    <a href="#" (click)="modifica(experience._id)">
+                      <i class="bi bi-pencil text-secondary"></i>
+                    </a>
+                    <a
+                      href="#"
+                      class="text-decoration-none text-dark"
+                      (click)="deleteExperience(experience._id)"
+                    >
+                      <!-- Delete -->
+                    </a>
+                  </div>
+                </div>
+
                 <p class="fs-profile m-0">{{ experience.company }}</p>
                 <p class="fs-profile m-0">
-                  {{ experience.startDate }} - {{ experience.endDate }} - durata
-                  complessiva
+                  {{ experience.startDate | date }} -
+                  {{ experience.endDate | date }} -
                 </p>
                 <p class="fs-profile m-0">{{ experience.area }}</p>
                 <p class="fs-profile">
                   <span class="fw-bold">Competenze:</span>CSS HTML Jquery
                   Javascript SQL
                 </p>
-                <button (click)="modifica(experience._id)">
-                  <i class="bi bi-pencil text-secondary"></i>
-                </button>
-                <button (click)="deleteExperience(experience._id)">
-                  delete
-                </button>
               </div>
             </div>
           </div>
@@ -44,7 +54,7 @@
         <div class="col">
           <div class="card mt-2">
             <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
+              <h5 class="card-title">Altri profili consultati</h5>
               <p class="card-text">
                 With supporting text below as a natural lead-in to additional
                 content.
