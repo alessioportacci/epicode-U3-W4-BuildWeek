@@ -12,7 +12,7 @@
 }
 
 .card{
-  width: 600px;
+   width: 600px;
   border-radius: 20px;
   border: none;
 
@@ -61,10 +61,31 @@ img{
   border-color: transparent #f1f1f1 transparent transparent;
 }
 
+.bubble {
+  position: relative;
+  background: #f2f2f2;
+  color: black;
+  border-radius: 10px;
+  padding: 20px;
+}
+.bubble:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  z-index: 1;
+  border-style: solid;
+  border-width: 8px 0 0 9px;
+  border-color: transparent transparent transparent #f2f2f2;
+  top: -8px;
+  left: 5%;
+  margin-left: -4.5px;
+}
+
+
 #new-post{
   background-color: white;
   height: 150px;
-  width: 600px;
   border-radius: 20px;
   input{
     width: 300px;
@@ -86,7 +107,8 @@ img{
 }
 
 #first-col{
-  padding-left: 60px;
+  padding-left: 160px;
+
 }
 
 
@@ -124,4 +146,27 @@ img{
   p{
     font-size: 0.8em;
   }
+}
+
+right-col{
+  width: 400px;
+
+}
+
+#createPost{
+  width: 450px;
+  border: solid 1px gainsboro;
+  background-color: white;
+  border-radius: 50px;
+  height: 35px;
+  text-align: start;
+  padding-left: 20px;
+}
+
+
+#modify-post{
+  border: none;
+  background-color: white;
+  margin-left: 200px;
+  color:gray;
 }

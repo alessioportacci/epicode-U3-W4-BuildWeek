@@ -43,9 +43,6 @@ export class EsperienzeComponent implements OnInit {
   deleteExperience(id: string) {
     this.experienceSrv.removeExperience(id).subscribe((res) => {
       console.log('cancellato');
-      this.experienceSrv.getExperiences().subscribe((data) => {
-        this.experienceData = data;
-      });
     });
   }
   modifica(id: string) {

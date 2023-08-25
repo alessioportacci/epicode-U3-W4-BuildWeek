@@ -1,12 +1,13 @@
+import { IProfile } from './../../interfaces/iprofile';
+import { IupdateNews } from './../../interfaces/inews';
 import { Subject } from 'rxjs';
-import { Component, OnInit, Pipe } from '@angular/core';
+import { Component, OnInit, Pipe, ViewChild } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { Inews } from 'src/app/interfaces/inews';
 import { CommentsService } from 'src/app/services/comments.service';
 import { NewsService } from 'src/app/services/news.service';
 import { Icomments } from 'src/app/interfaces/icomments';
 import { StriveApiService } from 'src/app/services/strive-api.service';
-import { IProfile } from 'src/app/interfaces/iprofile';
 
 @Component({
   selector: 'app-home',
@@ -14,10 +15,22 @@ import { IProfile } from 'src/app/interfaces/iprofile';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  posts: Inews[] = [];
+  posts?: Inews[] = [];
   comments: Icomments[] = [];
   profileData?: IProfile;
   currentComment = '';
+  utente: IProfile[] = [];
+    userUpate?: any = {
+    bio: '',
+    title: '',
+    area: '',
+  };
+  post?: IupdateNews[]
+  text?:string
+  selectedPost: Inews | null = null;
+  editedPostText: string = '';
+
+
 
   constructor(
     private postSrv: NewsService,
@@ -41,14 +54,23 @@ export class HomeComponent implements OnInit {
       console.log(data);
       this.profileData = data;
     });
-  }
+    this.getUsers();
 
+  }
+  getUsers() {
+    this.striveSrv.getUsers().subscribe((data) => {
+      this.utente = data.reverse().slice(0, 6);
+    });
+  }
   loadComments(postId: string): void {
     console.log(this.comments);
     this.comments = [];
     this.commentsSrv
       .getPostComments(postId)
-      .subscribe((res) => (this.comments = res));
+      .subscribe((res) => {
+        this.comments = res
+        console.log(res)
+      });
   }
 
   addComment(postId: string) {
@@ -57,9 +79,64 @@ export class HomeComponent implements OnInit {
         comment: this.currentComment,
         rate: '3',
         elementId: postId,
+        author: ""
       })
       .subscribe();
     this.currentComment = '';
     this.loadComments(postId);
   }
+
+  saveNewPost(): void {
+    if (this.text) {
+      const newPost: IupdateNews = {
+        text: this.text
+      };
+      this.createNewPost(newPost);
+      this.text = '';
+
+    }
+  }
+
+  createNewPost(newPost: IupdateNews): void {
+    this.postSrv.setPost(newPost).subscribe((response) => {
+      console.log('Post creato:', response);
+
+      this.postSrv.getPosts().subscribe((data) => {
+        this.posts = data;
+        console.log('Elenco post aggiornato:', data);
+      });
+    });
+  }
+
+  isMyPost(post: Inews): boolean {
+
+    return post.user._id === this.profileData?._id;
+  }
+
+  openEditModal(post: Inews): void {
+    if (post) {
+      this.editedPostText = post.text;
+      this.selectedPost = post;
+
+    }
+  }
+
+  editPost() {
+    if (this.selectedPost) {
+      this.selectedPost.text = this.editedPostText; // Update the selected post's text
+      this.postSrv.updatePost(this.selectedPost, this.selectedPost._id).subscribe((data) => {
+        console.log(data);
+        // Optionally, you can reset the selectedPost and editedPostText
+        this.selectedPost = null;
+        this.editedPostText = '';
+      });
+    }
+  }
+
+  initializeEditModal(post: Inews): void {
+    this.selectedPost = post;
+    this.editedPostText = post.text;
+  }
+
+
 }
