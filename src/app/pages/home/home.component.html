@@ -2,14 +2,14 @@
 <div class="container-fluid">
   <div class="row row-cols-12 row-cols-xxl-3">
     <!-- Colonna di sinistra -->
-    <div class="col d-none d-xxl-block" id="first-col">
-      <div class="card" style="width: 18rem">
+    <div class="col d-none d-xxl-block link" id="first-col">
+      <div class="card float-end linkedin-box" style="width: 18rem">
         <div class="position-relative div-img-profile w-100 m-0 p-0">
           <!-- Copertina -->
           <img
             src="./../assets/imgs/profile-top-image.png"
             alt=""
-            class="img-fluid w-100 cover-image"
+            class="img-fluid w-100 cover-img-2"
           />
           <!-- Propic -->
           <div class="profile-img-container">
@@ -88,7 +88,7 @@
       <!-- parte dei post -->
       <div id="myGroup">
         <div
-          class="container-fluid w-100 mt-5 d-flex justify-content-center panel"
+          class="container-fluid w-100 mt-5 d-flex justify-content-center panel linkedin-box"
           *ngFor="let post of posts"
         >
           <div class="card">
@@ -210,71 +210,73 @@
         </div>
       </div>
     </div>
-
     <!-- Colonna di destra -->
     <div class="col d-none d-xxl-block">
-      <!-- Parte dei profili consigliati -->
-      <div class="linkedin-box w-50 mx-auto">
-        <div class="p-box-contentent">
-          <h5 class="bold">Notizie</h5>
-        </div>
-        <div>
-          <div *ngFor="let post of posts; let i = index">
-            <div class="linkedin-box-content pt-0" *ngIf="i < 5">
-              <div class="d-flex">
-                <div class="ms-2">
-                  <p class="card-title fw-bold">
-                    {{ post.user.name }} {{ post.user.surname }}
-                  </p>
-                  <p class="text-secondary">
-                    {{ post.text | slice : 0 : 100
-                    }}{{ post.text.length > 100 ? "..." : "" }}
-                  </p>
+      <!-- Notizie -->
+      <div class="float-start w-50">
+        <div class="linkedin-box mx-auto">
+          <div class="p-box-contentent">
+            <h5 class="bold">Notizie</h5>
+          </div>
+          <div>
+            <div *ngFor="let post of posts; let i = index">
+              <div class="linkedin-box-content pt-0" *ngIf="i < 5">
+                <div class="d-flex">
+                  <div class="ms-2">
+                    <p class="card-title fw-bold">
+                      {{ post.user.name }} {{ post.user.surname }}
+                    </p>
+                    <p class="text-secondary">
+                      {{ post.text | slice : 0 : 100
+                      }}{{ post.text.length > 100 ? "..." : "" }}
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Parte degli annunci -->
-      <div class="linkedin-box w-50 mt-5 mx-auto">
-        <p class="text-end m-0 addPann">
-          annuncio
-          <button
-            type="button"
-            class="btn p-0"
-            data-bs-toggle="modal"
-            data-bs-target="#exampleModal2"
-          >
-            ∙∙∙
-          </button>
-        </p>
-        <p class="addPann text text-center m-1">
-          scorpi la formazione presso epicode
-        </p>
-        <div class="d-flex justify-content-center">
-          <img
-            [src]="profileData?.image"
-            alt=""
-            class="rounded-circle profileAddsImg me-2"
-          />
-          <a href="https://epicode.com/it">
+        <!-- Parte degli annunci -->
+        <div class="linkedin-box mt-5 mx-auto p-2">
+          <p class="text-end m-0 addPann">
+            annuncio
+            <button
+              type="button"
+              class="btn p-0"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal2"
+            >
+              ∙∙∙
+            </button>
+          </p>
+          <p class="addPann text text-center m-1">
+            scorpi la formazione presso epicode
+          </p>
+          <div class="d-flex justify-content-center">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQROaS3ruCLNEDynCYsFxDvt03s1oYBBqhz2Is_kJBcd23576MEEip3dWZuWOtQvPcP8MU&usqp=CAU"
-              class="rounded-circle profileAddsImg"
-          /></a>
-        </div>
-        <p class="text text-center my-2">
-          {{ profileData?.name }}, sopri le opportunità offerte da
-          <span class="spanEpicodeAdd">epicode</span>
-        </p>
-        <div class="d-flex justify-content-center">
-          <a href="https://www.linkedin.com/school/epicodeitalia/">
-            <button class="btn btn-blue mb-3">segui</button></a
-          >
+              [src]="profileData?.image"
+              alt=""
+              class="rounded-circle profileAddsImg me-2"
+            />
+            <a href="https://epicode.com/it">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQROaS3ruCLNEDynCYsFxDvt03s1oYBBqhz2Is_kJBcd23576MEEip3dWZuWOtQvPcP8MU&usqp=CAU"
+                class="rounded-circle profileAddsImg"
+            /></a>
+          </div>
+          <p class="text text-center my-2">
+            {{ profileData?.name }}, sopri le opportunità offerte da
+            <span class="spanEpicodeAdd">epicode</span>
+          </p>
+          <div class="d-flex justify-content-center">
+            <a href="https://www.linkedin.com/school/epicodeitalia/">
+              <button class="btn btn-blue mb-3">segui</button></a
+            >
+          </div>
         </div>
       </div>
+      <!-- Parte dei profili consigliati -->
     </div>
   </div>
 </div>
