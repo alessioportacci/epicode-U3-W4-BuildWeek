@@ -105,6 +105,19 @@ $amount: 45;
   height: 50px !important;
 }
 
+.profile-img-proto {
+  position: absolute;
+  width: 10vw;
+  max-width: 190px;
+  height: 10vw;
+  max-height: 190px;
+  border: 3px solid white;
+  top: 2vw;
+  left: 24px;
+  background-size: cover;
+  background-position: center;
+}
+
 .profile-img {
   position: absolute;
   width: 100px;
