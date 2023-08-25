@@ -8,6 +8,7 @@ import { CommentsService } from 'src/app/services/comments.service';
 import { NewsService } from 'src/app/services/news.service';
 import { Icomments } from 'src/app/interfaces/icomments';
 import { StriveApiService } from 'src/app/services/strive-api.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -29,6 +30,8 @@ export class HomeComponent implements OnInit {
   text?:string
   selectedPost: Inews | null = null;
   editedPostText: string = '';
+
+
 
 
 
@@ -143,6 +146,7 @@ export class HomeComponent implements OnInit {
     this.postSrv.removePost(postId).subscribe(
       (res) => {
         console.log('Post removed:', res);
+
 
     })
   }

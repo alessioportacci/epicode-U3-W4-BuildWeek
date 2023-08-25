@@ -35,19 +35,28 @@
           <!-- Contenuto -->
           <div class="linkedin-box-content">
             <!-- Nome -->
-            <div class="d-flex align-items-center">
-              <h1 class="mt-5 profileName">
+            <div
+              class="d-flex align-items-center justify-content-between"
+              id="nome-utente"
+            >
+              <h1 class="mt-5 profileName fs-2">
                 {{ profileData.name }} {{ profileData.surname }}
               </h1>
               <!-- Button trigger modal -->
-              <button
-                type="button"
-                class="mt-5 mb-3 ms-4 btn-icon"
-                data-bs-toggle="modal"
-                data-bs-target="#formModal"
-              >
-                <i class="bi bi-pencil text-secondary"></i>
-              </button>
+              <div>
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQROaS3ruCLNEDynCYsFxDvt03s1oYBBqhz2Is_kJBcd23576MEEip3dWZuWOtQvPcP8MU&usqp=CAU"
+                  class="rounded-circle profileAddsImg"
+                />
+                <button
+                  type="button"
+                  class="mt-5 mb-3 ms-4 btn-icon"
+                  data-bs-toggle="modal"
+                  data-bs-target="#formModal"
+                >
+                  <i class="bi bi-pencil text-secondary"></i>
+                </button>
+              </div>
 
               <!-- Modal -->
               <div
@@ -172,21 +181,29 @@
               </div>
             </div>
             <!-- Altro  -->
-            <p class="text">{{ profileData.title }}</p>
+            <p class="text text-dark mb-0">
+              {{ profileData.title }}
+            </p>
             <p class="text">{{ profileData.bio }}</p>
             <p class="mb-0 text">{{ profileData.area }}</p>
           </div>
 
-          <!-- Bottoni -->
-          <div class="row row-cols-3 linkedin-box-content">
-            <div class="text-center">
-              <button class="btn btn-blue-2 me-2">Disponibile per</button>
+          <!-- Bottoni  linkedin-box-content-->
+          <div class="d-flex justify-content-start ms-4">
+            <div class="text-center p-0">
+              <button class="btn btn-blue-2 me-2 card-botton">
+                Disponibile per
+              </button>
             </div>
-            <div>
-              <button class="btn btn-blue">Aggiungi sezione profilo</button>
+
+            <div class="text-center p-0">
+              <button class="btn btn-blue card-botton me-2" id="second-button">
+                <div class="">Aggiungi sezione profilo</div>
+              </button>
             </div>
-            <div>
-              <button class="btn btn-gray">Aggiungi sezione profilo</button>
+
+            <div class="text-center p-0">
+              <button class="btn btn-gray card-botton">Altro</button>
             </div>
           </div>
 
@@ -228,7 +245,7 @@
           <div class="linkedin-box-content">
             <!-- Prima riga -->
             <div class="row row-cols-2 align-items-center mb-3">
-              <div><h5 class="d-inline">Esperienza</h5></div>
+              <div><h5 class="d-inline bold">Esperienza</h5></div>
               <div class="text-end">
                 <!-- Icona + -->
                 <button
@@ -261,7 +278,7 @@
                 </div>
                 <!-- Descrizione -->
                 <div class="col-10">
-                  <p class="fw-bold fs-4 m-0">{{ experience.role }}</p>
+                  <p class="fw-bold fs-5 m-0">{{ experience.role }}</p>
                   <p class="fs-profile fs-5 m-0">{{ experience.company }}</p>
                   <p class="fs-profile text-secondary m-0">
                     {{ experience.startDate | dateFormatter }} -
@@ -286,7 +303,7 @@
           <div class="linkedin-box-content">
             <!-- Prima riga -->
             <div class="row row-cols-2 align-items-center mb-3">
-              <div><h5 class="d-inline">Formazione</h5></div>
+              <div><h5 class="d-inline bold">Formazione</h5></div>
               <div class="text-end">
                 <!-- Icona + -->
                 <button
@@ -319,7 +336,7 @@
                 </div>
                 <!-- Descrizione -->
                 <div class="col-10">
-                  <p class="fw-bold fs-4 m-0">Sapienza Università di Roma</p>
+                  <p class="fw-bold fs-5 m-0">Sapienza Università di Roma</p>
                   <p class="fs-profile text-secondary m-0">
                     Laurea Triennale in Ingegneria Informatica gen 2020 - dic
                     2023
@@ -337,7 +354,7 @@
           <div class="linkedin-box-content">
             <!-- Prima riga -->
             <div class="row row-cols-2 align-items-center mb-3">
-              <div><h5 class="d-inline">Informazioni</h5></div>
+              <div><h5 class="d-inline bold">Informazioni</h5></div>
               <div class="text-end">
                 <!-- Icona + -->
                 <button
