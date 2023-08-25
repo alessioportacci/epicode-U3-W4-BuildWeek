@@ -69,7 +69,28 @@
                     </div>
                     <div class="modal-body">
                       <form>
-                        <label for="title"> modifica titolo:</label>
+                        <!-- Nome -->
+                        <label for="name"> Modifica nome:</label>
+                        <input
+                          type="text"
+                          id="name"
+                          [(ngModel)]="profileData.name"
+                          name="name"
+                          class="d-block w-100 rounded-2 my-2"
+                          [value]="profileData.name"
+                        />
+                        <!-- Cognome -->
+                        <label for="name"> Modifica cognome:</label>
+                        <input
+                          type="text"
+                          id="surname"
+                          [(ngModel)]="profileData.surname"
+                          name="surname"
+                          class="d-block w-100 rounded-2 my-2"
+                          [value]="profileData.surname"
+                        />
+                        <!-- Titolo -->
+                        <label for="title"> Modifica titolo:</label>
                         <input
                           type="text"
                           id="title"
@@ -78,7 +99,8 @@
                           class="d-block w-100 rounded-2 my-2"
                           [value]="profileData.title"
                         />
-                        <label for="bio"> modifica bio:</label>
+                        <!-- Modifica Bio -->
+                        <label for="bio"> Modifica bio:</label>
                         <input
                           type="text"
                           id="bio"
@@ -87,7 +109,8 @@
                           class="d-block w-100 rounded-2 my-2"
                           [value]="profileData.bio"
                         />
-                        <label for="area"> modifica area:</label>
+                        <!-- Modifica Area -->
+                        <label for="area"> Modifica area:</label>
                         <input
                           type="text"
                           id="area"
@@ -96,12 +119,22 @@
                           class="d-block w-100 rounded-2 my-2"
                           [value]="profileData.area"
                         />
+                        <!-- Modifica Immagine -->
+                        <label for="area"> Modifica propic:</label>
+                        <input
+                          type="text"
+                          id="image"
+                          [(ngModel)]="profileData.image"
+                          name="image"
+                          class="d-block w-100 rounded-2 my-2"
+                          [value]="profileData.image"
+                        />
                         <button
                           (click)="setUser()"
                           class="btn-blue-2 d-block"
                           data-bs-dismiss="modal"
                         >
-                          aggiorna profilo
+                          Aggiorna profilo
                         </button>
                       </form>
                     </div>

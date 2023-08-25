@@ -20,4 +20,5 @@ export interface IUpdateProfile {
   bio: string;
   title: string;
   area: string;
+  inmage: string;
 }
