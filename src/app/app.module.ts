@@ -13,6 +13,7 @@ import { EsperienzeComponent } from './pages/esperienze/esperienze.component';
 import { DateFormatterPipe } from './pipes/date-formatter.pipe';
 import { ModificaEsperienzeComponent } from './pages/modifica-esperienze/modifica-esperienze.component';
 import { DateDayPipe } from './pipes/date-day.pipe';
+import { FormazioneComponent } from './pages/formazione/formazione.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { DateDayPipe } from './pipes/date-day.pipe';
     DateFormatterPipe,
     ModificaEsperienzeComponent,
     DateDayPipe,
+    FormazioneComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
 

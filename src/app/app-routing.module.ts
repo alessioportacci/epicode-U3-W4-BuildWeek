@@ -19,6 +19,9 @@ const routes: Routes = [
     component: EsperienzeComponent,
   },
   {
+    path: 'profile/formazione',
+  },
+  {
     path: 'modifica/:id',
     component: ModificaEsperienzeComponent,
   },
