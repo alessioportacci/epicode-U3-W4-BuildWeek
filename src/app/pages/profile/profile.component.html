@@ -23,7 +23,7 @@
             />
             <!-- Propic -->
             <img
-              [src]="profileData?.image"
+              [src]="profileData.image"
               alt=""
               class="rounded-circle profile-img"
             />
@@ -34,7 +34,7 @@
             <!-- Nome -->
             <div class="d-flex align-items-center">
               <h1 class="mt-5 profileName">
-                {{ profileData?.name }} {{ profileData?.surname }}
+                {{ profileData.name }} {{ profileData.surname }}
               </h1>
               <!-- Button trigger modal -->
               <button
@@ -73,28 +73,28 @@
                         <input
                           type="text"
                           id="title"
-                          [(ngModel)]="userUpate.title"
+                          [(ngModel)]="profileData.title"
                           name="title"
                           class="d-block w-100 rounded-2 my-2"
-                          [value]="profileData?.title"
+                          [value]="profileData.title"
                         />
                         <label for="bio"> modifica bio:</label>
                         <input
                           type="text"
                           id="bio"
-                          [(ngModel)]="userUpate.bio"
+                          [(ngModel)]="profileData.bio"
                           name="bio"
                           class="d-block w-100 rounded-2 my-2"
-                          [value]="profileData?.bio"
+                          [value]="profileData.bio"
                         />
                         <label for="area"> modifica area:</label>
                         <input
                           type="text"
                           id="area"
-                          [(ngModel)]="userUpate.area"
+                          [(ngModel)]="profileData.area"
                           name="area"
                           class="d-block w-100 rounded-2 my-2"
-                          [value]="profileData?.area"
+                          [value]="profileData.area"
                         />
                         <button
                           (click)="setUser()"
@@ -110,9 +110,9 @@
               </div>
             </div>
             <!-- Altro  -->
-            <p class="text">{{ profileData?.title }}</p>
-            <p class="text">{{ profileData?.bio }}</p>
-            <p class="mb-0 text">{{ profileData?.area }}</p>
+            <p class="text">{{ profileData.title }}</p>
+            <p class="text">{{ profileData.bio }}</p>
+            <p class="mb-0 text">{{ profileData.area }}</p>
           </div>
 
           <!-- Bottoni -->
@@ -371,7 +371,7 @@
           </p>
           <div class="d-flex justify-content-center">
             <img
-              [src]="profileData?.image"
+              [src]="profileData.image"
               alt=""
               class="rounded-circle profileAddsImg me-2"
             />

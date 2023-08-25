@@ -49,7 +49,7 @@ export class StriveApiService {
     });
   }
 
-  setUser(userUpdate: IUpdateProfile): Observable<IProfile> {
+  setUser(userUpdate: IProfile): Observable<IProfile> {
     return this.http.put<IProfile>(`${this.url}`, userUpdate, {
       headers: { Authorization: `Bearer ${this.token}` },
     });

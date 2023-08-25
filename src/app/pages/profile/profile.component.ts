@@ -18,13 +18,22 @@ import { Inews } from 'src/app/interfaces/inews';
   styleUrls: ['./profile.component.scss'],
 })
 export class ProfileComponent implements OnInit {
-  profileData?: IProfile;
-  experienceData?: Iexperiences[];
-  userUpate?: any = {
+  profileData: IProfile = {
+    _id: '',
+    name: '',
+    surname: '',
+    email: '',
     bio: '',
     title: '',
     area: '',
+    image: '',
+    username: '',
+    createdAt: '',
+    updatedAt: '',
+    __v: -1,
   };
+  experienceData?: Iexperiences[];
+
   role: string = '';
   company: string = '';
   startDate: string = '';
@@ -34,7 +43,6 @@ export class ProfileComponent implements OnInit {
   utente: IProfile[] = [];
   utenmatCardTitle?: Inews[];
 
-
   constructor(
     public striveSrv: StriveApiService,
     public experienceSrv: ExperienceService,
@@ -42,8 +50,6 @@ export class ProfileComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-
-
     this.striveSrv.getProfile().subscribe((data) => {
       this.profileData = data;
       console.log(data);
@@ -87,8 +93,7 @@ export class ProfileComponent implements OnInit {
 
   getProfileData() {}
   setUser() {
-    this.striveSrv.setUser(this.userUpate).subscribe((data) => {
-      this.userUpate;
+    this.striveSrv.setUser(this.profileData).subscribe((data) => {
       console.log(data);
     });
   }
