@@ -7,8 +7,8 @@
 {{ profileData?.username }} -->
 
 <div class="container mt-5">
-  <div class="row justify-content-around">
-    <!-- colonna centrale -->
+  <!-- colonna centrale -->
+  <div class="row justify-content-between">
     <div class="col col-12 col-md-7">
       <div class="row flex-column">
         <!-- Box Profilo -->
@@ -26,7 +26,7 @@
               <img
                 [src]="profileData.image"
                 alt=""
-                class="rounded-circle profile-img"
+                class="rounded-circle profile-img-proto"
               />
             </div>
           </div>
@@ -255,13 +255,7 @@
           </div>
         </div>
 
-        <!-- Box di test -->
-        <!-- <div class="col g-4 linkedin-box p-0">
-          <div class="col g-4 linkedin-box-content"></div>
-        </div> -->
-
         <!-- Box formazione -->
-
         <div class="col g-4 linkedin-box p-0">
           <div class="linkedin-box-content">
             <!-- Prima riga -->
@@ -287,7 +281,7 @@
               </div>
             </div>
             <!-- Inizio esperienze -->
-            <div *ngFor="let experience of experienceData">
+            <div>
               <div class="row">
                 <!-- Immagine istituto di formazione -->
                 <div class="col-2 text-center">
@@ -299,20 +293,13 @@
                 </div>
                 <!-- Descrizione -->
                 <div class="col-10">
-                  <p class="fw-bold fs-4 m-0">{{ experience.role }}</p>
-                  <p class="fs-profile fs-5 m-0">{{ experience.company }}</p>
+                  <p class="fw-bold fs-4 m-0">Sapienza Università di Roma</p>
                   <p class="fs-profile text-secondary m-0">
-                    {{ experience.startDate | dateFormatter }} -
-                    {{ experience.endDate | dateFormatter }} - durata
-                    complessiva
+                    Laurea Triennale in Ingegneria Informatica gen 2020 - dic
+                    2023
                   </p>
-                  <p class="fs-profile text-secondary m-0">
-                    {{ experience.area }}
-                  </p>
-                  <p class="fs-profile">
-                    <span class="fw-bold">Competenze:</span>CSS HTML Jquery
-                    Javascript SQL
-                  </p>
+                  <p class="fs-profile text-secondary m-0"></p>
+                  <p class="fs-profile"></p>
                 </div>
               </div>
             </div>
@@ -344,44 +331,24 @@
                 </button>
               </div>
             </div>
-            <!-- Inizio esperienze -->
-            <div *ngFor="let experience of experienceData">
-              <div class="row">
-                <!-- Immagine azienda -->
-                <div class="col-2 text-center">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Valve-logo.jpg/1024px-Valve-logo.jpg"
-                    height="60px"
-                    width="60px"
-                  />
-                </div>
-                <!-- Descrizione -->
-                <div class="col-10">
-                  <p class="fw-bold fs-4 m-0">{{ experience.role }}</p>
-                  <p class="fs-profile fs-5 m-0">{{ experience.company }}</p>
-                  <p class="fs-profile text-secondary m-0">
-                    {{ experience.startDate | dateFormatter }} -
-                    {{ experience.endDate | dateFormatter }} - durata
-                    complessiva
-                  </p>
-                  <p class="fs-profile text-secondary m-0">
-                    {{ experience.area }}
-                  </p>
-                  <p class="fs-profile">
-                    <span class="fw-bold">Competenze:</span>CSS HTML Jquery
-                    Javascript SQL
-                  </p>
-                </div>
+            <div class="row">
+              <div class="col-10">
+                <p>
+                  Appassionato di gaming e grazie alla mie esperienze lavorative
+                  diversificate, ho acquisito molteplici abilità e competenze
+                  trasversali spendibili in tutti gli ambiti professionali. Ora,
+                  in merito ai corsi specifici frequentati, sono determinato a
+                  diventare un professionista nel mondo della programmazione.
+                </p>
               </div>
             </div>
           </div>
         </div>
-        <!-- Fine box centrali -->
       </div>
+      <!-- Fine box centrali -->
     </div>
-
     <!-- colonna laterale -->
-    <div class="col col-12 col-md-4 mx-1">
+    <div class="col col-12 col-md-4">
       <div class="row flex-column">
         <div class="col g-4 linkedin-box">
           <div class="linkedin-box-content profilelanguage">
@@ -527,7 +494,9 @@
             <img
               [src]="profileData.image"
               alt=""
-              class="rounded-circle profileAddsImg me-2"
+              class="rounded-circle profileAddsImg"
+              width="50"
+              height="50"
             />
             <a href="https://epicode.com/it">
               <img
