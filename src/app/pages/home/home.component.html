@@ -192,12 +192,46 @@
                   <div class="row justify-content-center">
                     <div class="col-12">
                       <div class="d-flex align-items-center">
+                        <!-- Icona profilo -->
                         <div>
                           <i
                             class="bi bi-person-circle fs-2 text-info-emphasis"
                           ></i>
                         </div>
-                        <div class="px-2">{{ comment.author }}</div>
+                        <!-- Nome e pulsanti -->
+                        <div class="w-100">
+                          <div class="row px-2">
+                            <!-- Nome -->
+                            <div class="col-8">{{ comment.author }}</div>
+                            <!-- Pulsanti -->
+                            <div
+                              class="col-4 text-end"
+                              *ngIf="comment.author == profileData?.email"
+                            >
+                              <button
+                                type="button"
+                                class="btn-icon"
+                                data-bs-toggle="modal"
+                                data-bs-target="#editCommentModal"
+                                id=""
+                                (click)="
+                                  openEditComment(comment._id, comment.comment)
+                                "
+                              >
+                                <i class="bi bi-pencil-fill"></i>
+                              </button>
+                              <button
+                                id=""
+                                data-bs-toggle="collapse"
+                                attr.data-bs-target="#collapse-{{ post._id }}"
+                                (click)="deleteComment()"
+                                class="btn-icon"
+                              >
+                                <i class="bi bi-trash-fill"></i>
+                              </button>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                     <div class="col-12">
@@ -409,6 +443,48 @@
           data-bs-dismiss="modal"
         >
           Save changes
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modale per modificare commento -->
+<div
+  class="modal fade"
+  id="editCommentModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">
+          Edit del commento
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <textarea
+          class="w-100"
+          rows="4"
+          [(ngModel)]="editCommentText"
+        ></textarea>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="editComment()"
+          data-bs-dismiss="modal"
+        >
+          Salva modifiche
         </button>
       </div>
     </div>

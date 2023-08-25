@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Token } from '../environment/token';
 import { HttpClient } from '@angular/common/http';
-import { Icomments, IupdateComment } from '../interfaces/icomments';
+import { IAggiornaComment, Icomments, IupdateComment } from '../interfaces/icomments';
 import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
@@ -28,9 +28,21 @@ export class CommentsService
     { headers: {Authorization:  `Bearer ${this.token}`}})
   }
 
-  setComment(comment: Icomments): Observable<Icomments>
+  setComment(comment: IupdateComment): Observable<IupdateComment>
   {
     return this.http.post<Icomments> (`${this.url}`, comment,
+    { headers: {Authorization:  `Bearer ${this.token}`}})
+  }
+
+  updateComment(commentId:string, comment: IAggiornaComment): Observable<IAggiornaComment>
+  {
+    return this.http.put<IAggiornaComment> (`${this.url}${commentId}`, comment,
+    { headers: {Authorization:  `Bearer ${this.token}`}})
+  }
+
+  deleteComment(commentId:string): Observable<IAggiornaComment>
+  {
+    return this.http.delete<IAggiornaComment> (`${this.url}${commentId}`,
     { headers: {Authorization:  `Bearer ${this.token}`}})
   }
 

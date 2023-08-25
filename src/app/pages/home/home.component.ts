@@ -114,10 +114,10 @@ export class HomeComponent implements OnInit {
   }
 
   openEditModal(post: Inews): void {
-    if (post) {
+    if (post)
+    {
       this.editedPostText = post.text;
       this.selectedPost = post;
-
     }
   }
 
@@ -133,7 +133,8 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  initializeEditModal(post: Inews) {
+  initializeEditModal(post: Inews)
+  {
     this.selectedPost = post;
     this.editedPostText = post.text;
   }
@@ -144,8 +145,26 @@ export class HomeComponent implements OnInit {
         console.log('Post removed:', res);
 
     })
+  }
 
+  editCommentId:string = ""
+  editCommentText:string = ""
+  openEditComment(commentId: string, comment: string): void
+  {
+    this.editCommentId = commentId
+    this.editCommentText = comment
+  }
 
+  editComment():void
+  {
+    this.commentsSrv.updateComment(this.editCommentId,{comment: this.editCommentText} ).subscribe()
+  }
+
+  openDeleteComment():void
+  {}
+  deleteComment():void
+  {
+    this.commentsSrv.deleteComment(this.editCommentId).subscribe()
   }
 
 
