@@ -48,7 +48,7 @@ export class ExperienceService {
     experience: IUpdateExperience
   ): Observable<IUpdateExperience> {
     return this.http.put<Iexperiences>(
-      `${this.url}/${experienceId}`,
+      ` https://striveschool-api.herokuapp.com/api/profile/${this.userId}/experiences/${this.userId}`,
       experience,
       { headers: { Authorization: `Bearer ${this.token}` } }
     );
