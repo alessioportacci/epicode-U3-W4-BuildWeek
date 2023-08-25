@@ -28,7 +28,12 @@ import { FormazioneComponent } from './pages/formazione/formazione.component';
     DateDayPipe,
     FormazioneComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+  ],
 
   providers: [],
   bootstrap: [AppComponent],
