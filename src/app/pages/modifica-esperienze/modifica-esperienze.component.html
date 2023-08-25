@@ -1,5 +1,5 @@
-<div class="m">
-  <form class="ms-4" #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+<div class="m container d-flex justify-content-center">
+  <form class="ms-4 w-50" #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
     <label for="role" class="form-label" name="role"> Modifica ruolo</label>
     <input
       type="text"
@@ -46,7 +46,7 @@
       <button class="btn btn-blue mx-2">aggiorna</button>
       <button
         type="button"
-        class="btn btn-blue mx-2"
+        class="btn btn-gray mx-2"
         (click)="deleteExperience()"
       >
         elimina
