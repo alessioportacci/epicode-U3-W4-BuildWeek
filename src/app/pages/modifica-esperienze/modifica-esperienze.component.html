@@ -1,4 +1,4 @@
-<div class="m">
+<div class="m col-8 bg-white">
   <form class="ms-4" #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
     <label for="role" class="form-label" name="role"> modifica ruolo</label>
     <input
@@ -42,8 +42,12 @@
       [value]="experienceData.endDate"
       [(ngModel)]="experienceData.endDate"
     />
-    <button class="btn btn-blue">aggiorna</button>
-    <button type="button" class="btn btn-blue" (click)="deleteExperience()">
+    <button class="btn btn-blue ms-4 mt-3 mb-2">aggiorna</button>
+    <button
+      type="button"
+      class="btn btn-blue mt-3 ms-4 mb-2"
+      (click)="deleteExperience()"
+    >
       elimina
     </button>
   </form>
