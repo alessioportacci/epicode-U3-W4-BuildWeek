@@ -53,13 +53,27 @@
       <div class="row">
         <div class="col">
           <div class="card mt-2">
-            <div class="card-body">
-              <h5 class="card-title">Altri profili consultati</h5>
-              <img src="http://www.placekitten.com/100" />
-              <p class="card-text">Micio</p>
-              <button class="mb-2 marginButtuonIcon d-block btn btn-gray">
-                <i class="bi bi-person-fill-add"></i> Collegati
-              </button>
+            <div class="col g-4 linkedin-box">
+              <div class="p-box-contentent">
+                <p class="bold">Altri profili cosultati</p>
+              </div>
+              <div
+                *ngFor="let item of utente"
+                class="linkedin-box-content pt-0"
+              >
+                <div class="d-flex mt-2">
+                  <img [src]="item.image" class="rounded-circle iconProfile" />
+                  <div class="ms-2">
+                    <p class="bold mb-0">{{ item.name }} {{ item.surname }}</p>
+                    <p class="mb-3">{{ item.title }}</p>
+                  </div>
+                </div>
+                <div class="profilelanguage d-flex">
+                  <button class="mb-2 marginButtuonIcon d-block btn btn-gray">
+                    <i class="bi bi-person-fill-add"></i> Collegati
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
