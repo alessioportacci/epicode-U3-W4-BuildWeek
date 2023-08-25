@@ -83,6 +83,7 @@ export class ModificaEsperienzeComponent implements OnInit {
       this.experienceSrv
         .updateExperience(this.idExperience, updateExperice)
         .subscribe((data) => console.log(data));
+      this.router.navigate([`profile/esperienze`]);
     }
   }
 }
