@@ -134,7 +134,7 @@
                           class="btn-blue-2 d-block"
                           data-bs-dismiss="modal"
                         >
-                          Aggiorna profilo
+                          Aggiorna profilo Aggiorna profilo
                         </button>
                       </form>
                     </div>
@@ -151,13 +151,13 @@
           <!-- Bottoni -->
           <div class="row row-cols-3 linkedin-box-content">
             <div class="text-center">
-              <button class="btn btn-blue-2 me-2">disponibile per</button>
+              <button class="btn btn-blue-2 me-2">Disponibile per</button>
             </div>
             <div>
-              <button class="btn btn-blue">aggiungi sezione profilo</button>
+              <button class="btn btn-blue">Aggiungi sezione profilo</button>
             </div>
             <div>
-              <button class="btn btn-gray">aggiungi sezione profilo</button>
+              <button class="btn btn-gray">Aggiungi sezione profilo</button>
             </div>
           </div>
 
@@ -253,9 +253,127 @@
         </div>
 
         <!-- Box di test -->
-        <div class="col g-4 linkedin-box p-0">
+        <!-- <div class="col g-4 linkedin-box p-0">
           <div class="col g-4 linkedin-box-content"></div>
+        </div> -->
+
+        <!-- Box formazione -->
+
+        <div class="col g-4 linkedin-box p-0">
+          <div class="linkedin-box-content">
+            <!-- Prima riga -->
+            <div class="row row-cols-2 align-items-center mb-3">
+              <div><h5 class="d-inline">Formazione</h5></div>
+              <div class="text-end">
+                <!-- Icona + -->
+                <button
+                  type="button "
+                  class="btn-icon"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal3"
+                >
+                  <i class="bi bi-plus-lg"></i>
+                </button>
+
+                <!-- Icona matita -->
+                <button type="button " class="btn-icon">
+                  <a routerLink="formazione">
+                    <i class="bi bi-pencil text-secondary"></i
+                  ></a>
+                </button>
+              </div>
+            </div>
+            <!-- Inizio esperienze -->
+            <div *ngFor="let experience of experienceData">
+              <div class="row">
+                <!-- Immagine istituto di formazione -->
+                <div class="col-2 text-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/2/24/Logo_Sapienza_Universit%C3%A0_di_Roma.jpg"
+                    height="60px"
+                    width="60px"
+                  />
+                </div>
+                <!-- Descrizione -->
+                <div class="col-10">
+                  <p class="fw-bold fs-4 m-0">{{ experience.role }}</p>
+                  <p class="fs-profile fs-5 m-0">{{ experience.company }}</p>
+                  <p class="fs-profile text-secondary m-0">
+                    {{ experience.startDate | dateFormatter }} -
+                    {{ experience.endDate | dateFormatter }} - durata
+                    complessiva
+                  </p>
+                  <p class="fs-profile text-secondary m-0">
+                    {{ experience.area }}
+                  </p>
+                  <p class="fs-profile">
+                    <span class="fw-bold">Competenze:</span>CSS HTML Jquery
+                    Javascript SQL
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- Box informazioni -->
+        <div class="col g-4 linkedin-box p-0">
+          <div class="linkedin-box-content">
+            <!-- Prima riga -->
+            <div class="row row-cols-2 align-items-center mb-3">
+              <div><h5 class="d-inline">Informazioni</h5></div>
+              <div class="text-end">
+                <!-- Icona + -->
+                <button
+                  type="button "
+                  class="btn-icon"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal3"
+                >
+                  <i class="bi bi-plus-lg"></i>
+                </button>
+
+                <!-- Icona matita -->
+                <button type="button " class="btn-icon">
+                  <a routerLink="esperienze">
+                    <i class="bi bi-pencil text-secondary"></i
+                  ></a>
+                </button>
+              </div>
+            </div>
+            <!-- Inizio esperienze -->
+            <div *ngFor="let experience of experienceData">
+              <div class="row">
+                <!-- Immagine azienda -->
+                <div class="col-2 text-center">
+                  <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Valve-logo.jpg/1024px-Valve-logo.jpg"
+                    height="60px"
+                    width="60px"
+                  />
+                </div>
+                <!-- Descrizione -->
+                <div class="col-10">
+                  <p class="fw-bold fs-4 m-0">{{ experience.role }}</p>
+                  <p class="fs-profile fs-5 m-0">{{ experience.company }}</p>
+                  <p class="fs-profile text-secondary m-0">
+                    {{ experience.startDate | dateFormatter }} -
+                    {{ experience.endDate | dateFormatter }} - durata
+                    complessiva
+                  </p>
+                  <p class="fs-profile text-secondary m-0">
+                    {{ experience.area }}
+                  </p>
+                  <p class="fs-profile">
+                    <span class="fw-bold">Competenze:</span>CSS HTML Jquery
+                    Javascript SQL
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Fine box centrali -->
       </div>
     </div>
 
@@ -265,7 +383,7 @@
         <div class="col g-4 linkedin-box">
           <div class="linkedin-box-content profilelanguage">
             <div class="d-flex justify-content-between">
-              <p class="bold">lingua del profilo</p>
+              <p class="bold">Lingua del profilo</p>
               <button
                 type="button"
                 class="btn-icon"
@@ -313,9 +431,9 @@
                       </div>
                     </div>
                     <div class="modal-footer d-block">
-                      <p>lingue</p>
-                      <button class="btn btn-gray">italiano</button>
-                      <button class="btn btn-blue">+ aggiungi lingua</button>
+                      <p>Lingue</p>
+                      <button class="btn btn-gray">Italiano</button>
+                      <button class="btn btn-blue">+ Aggiungi lingua</button>
                       <div class="d-flex">
                         <i class="bi bi-lightbulb i"></i>
                         <p>
@@ -331,22 +449,22 @@
                 </div>
               </div>
             </div>
-            <p class="text">italiano</p>
+            <p class="text">Italiano</p>
           </div>
           <div class="linkedin-box-content">
             <div class="d-flex justify-content-between">
-              <p class="bold">Public profile & URl</p>
+              <p class="bold">Public profile & URL</p>
 
               <button type="button " class="btn-icon">
                 <a> <i class="bi bi-pencil text-secondary"></i></a>
               </button>
             </div>
-            <p class="text">link non apribile</p>
+            <p class="text">Link non disponibile</p>
           </div>
         </div>
         <div class="col g-4 linkedin-box">
           <p class="text-end m-0 addPann">
-            annuncio
+            Annuncio
             <button
               type="button"
               class="btn p-0"
@@ -383,15 +501,15 @@
                   <div class="d-flex">
                     <i class="bi bi-info-square-fill me-1"></i>
                     <div class="user-select-none">
-                      <p class="bold m-0">perchè vedo questo annuncio?</p>
-                      <p>gestisci le preferenze per gli annunci pubblicitari</p>
+                      <p class="bold m-0">Perchè vedo questo annuncio?</p>
+                      <p>Gestisci le preferenze per gli annunci pubblicitari</p>
                     </div>
                   </div>
                   <div class="d-flex">
                     <i class="bi bi-flag-fill me-1"></i>
                     <div>
-                      <p class="bold m-0">segnala questo annuncio</p>
-                      <p>non voglio vedere questo annucio nel mio feed</p>
+                      <p class="bold m-0">Segnala questo annuncio</p>
+                      <p>Non voglio vedere questo annucio nel mio feed</p>
                     </div>
                   </div>
                 </div>
@@ -400,7 +518,7 @@
           </div>
 
           <p class="addPann text text-center m-1">
-            scorpi la formazione presso epicode
+            Scopri la formazione presso epicode
           </p>
           <div class="d-flex justify-content-center">
             <img
@@ -415,12 +533,12 @@
             /></a>
           </div>
           <p class="text text-center my-2">
-            {{ profileData.name }}, sopri le opportunità offerte da
-            <span class="spanEpicodeAdd">epicode</span>
+            {{ profileData?.name }}, scopri le opportunità offerte da
+            <span class="spanEpicodeAdd">Epicode</span>
           </p>
           <div class="d-flex justify-content-center">
             <a href="https://www.linkedin.com/school/epicodeitalia/">
-              <button class="btn btn-blue mb-3">segui</button></a
+              <button class="btn btn-blue mb-3">Segui</button></a
             >
           </div>
         </div>
@@ -438,7 +556,7 @@
             </div>
             <div class="profilelanguage d-flex">
               <button class="mb-2 marginButtuonIcon d-block btn btn-gray">
-                <i class="bi bi-person-fill-add"></i> colegati
+                <i class="bi bi-person-fill-add"></i> Collegati
               </button>
             </div>
           </div>

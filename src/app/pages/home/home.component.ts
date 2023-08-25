@@ -15,7 +15,7 @@ import { StriveApiService } from 'src/app/services/strive-api.service';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  posts: Inews[] = [];
+  posts?: Inews[] = [];
   comments: Icomments[] = [];
   profileData?: IProfile;
   currentComment = '';
@@ -27,6 +27,9 @@ export class HomeComponent implements OnInit {
   };
   post?: IupdateNews[]
   text?:string
+  selectedPost: Inews | null = null;
+  editedPostText: string = '';
+
 
 
   constructor(
@@ -104,4 +107,36 @@ export class HomeComponent implements OnInit {
       });
     });
   }
+
+  isMyPost(post: Inews): boolean {
+
+    return post.user._id === this.profileData?._id;
+  }
+
+  openEditModal(post: Inews): void {
+    if (post) {
+      this.editedPostText = post.text;
+      this.selectedPost = post;
+
+    }
+  }
+
+  editPost() {
+    if (this.selectedPost) {
+      this.selectedPost.text = this.editedPostText; // Update the selected post's text
+      this.postSrv.updatePost(this.selectedPost, this.selectedPost._id).subscribe((data) => {
+        console.log(data);
+        // Optionally, you can reset the selectedPost and editedPostText
+        this.selectedPost = null;
+        this.editedPostText = '';
+      });
+    }
+  }
+
+  initializeEditModal(post: Inews): void {
+    this.selectedPost = post;
+    this.editedPostText = post.text;
+  }
+
+
 }
