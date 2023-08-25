@@ -142,15 +142,6 @@
               data-bs-parent="#myGroup"
             >
               <div class="card card-body w-100">
-                <div
-                  class="comments mx-3 my-2"
-                  *ngFor="let comment of comments"
-                >
-                  <i class="bi bi-person-circle fs-2 text-info-emphasis"></i>
-                  <div class="comment-bubble mx-4">
-                    {{ comment.comment }}
-                  </div>
-                </div>
                 <!-- Inserisci commento -->
                 <input
                   type="text"
@@ -171,8 +162,23 @@
                 >
                   Pubblica
                 </button>
-
-                <!-- Commenti -->
+                <div
+                  class="comments mx-3 my-2"
+                  *ngFor="let comment of comments"
+                >
+                  <div class="row">
+                    <div class="col-1">
+                      <i
+                        class="bi bi-person-circle fs-2 text-info-emphasis"
+                      ></i>
+                    </div>
+                    <div class="col-11">
+                      <div class="comment-bubble mx-4">
+                        {{ comment.comment }}
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
