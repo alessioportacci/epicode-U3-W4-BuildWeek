@@ -255,13 +255,7 @@
           </div>
         </div>
 
-        <!-- Box di test -->
-        <!-- <div class="col g-4 linkedin-box p-0">
-          <div class="col g-4 linkedin-box-content"></div>
-        </div> -->
-
         <!-- Box formazione -->
-
         <div class="col g-4 linkedin-box p-0">
           <div class="linkedin-box-content">
             <!-- Prima riga -->
@@ -287,7 +281,7 @@
               </div>
             </div>
             <!-- Inizio esperienze -->
-            <div *ngFor="let experience of experienceData">
+            <div>
               <div class="row">
                 <!-- Immagine istituto di formazione -->
                 <div class="col-2 text-center">
@@ -299,20 +293,13 @@
                 </div>
                 <!-- Descrizione -->
                 <div class="col-10">
-                  <p class="fw-bold fs-4 m-0">{{ experience.role }}</p>
-                  <p class="fs-profile fs-5 m-0">{{ experience.company }}</p>
+                  <p class="fw-bold fs-4 m-0">Sapienza Università di Roma</p>
                   <p class="fs-profile text-secondary m-0">
-                    {{ experience.startDate | dateFormatter }} -
-                    {{ experience.endDate | dateFormatter }} - durata
-                    complessiva
+                    Laurea Triennale in Ingegneria Informatica gen 2020 - dic
+                    2023
                   </p>
-                  <p class="fs-profile text-secondary m-0">
-                    {{ experience.area }}
-                  </p>
-                  <p class="fs-profile">
-                    <span class="fw-bold">Competenze:</span>CSS HTML Jquery
-                    Javascript SQL
-                  </p>
+                  <p class="fs-profile text-secondary m-0"></p>
+                  <p class="fs-profile"></p>
                 </div>
               </div>
             </div>
@@ -344,230 +331,212 @@
                 </button>
               </div>
             </div>
-            <!-- Inizio esperienze -->
-            <div *ngFor="let experience of experienceData">
-              <div class="row">
-                <!-- Immagine azienda -->
-                <div class="col-2 text-center">
-                  <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Valve-logo.jpg/1024px-Valve-logo.jpg"
-                    height="60px"
-                    width="60px"
-                  />
-                </div>
-                <!-- Descrizione -->
-                <div class="col-10">
-                  <p class="fw-bold fs-4 m-0">{{ experience.role }}</p>
-                  <p class="fs-profile fs-5 m-0">{{ experience.company }}</p>
-                  <p class="fs-profile text-secondary m-0">
-                    {{ experience.startDate | dateFormatter }} -
-                    {{ experience.endDate | dateFormatter }} - durata
-                    complessiva
-                  </p>
-                  <p class="fs-profile text-secondary m-0">
-                    {{ experience.area }}
-                  </p>
-                  <p class="fs-profile">
-                    <span class="fw-bold">Competenze:</span>CSS HTML Jquery
-                    Javascript SQL
-                  </p>
-                </div>
+            <div class="row">
+              <div class="col-10">
+                <p>
+                  Appassionato di gaming e grazie alla mie esperienze lavorative
+                  diversificate, ho acquisito molteplici abilità e competenze
+                  trasversali spendibili in tutti gli ambiti professionali. Ora,
+                  in merito ai corsi specifici frequentati, sono determinato a
+                  diventare un professionista nel mondo della programmazione.
+                </p>
               </div>
             </div>
           </div>
         </div>
-        <!-- Fine box centrali -->
       </div>
+      <!-- Fine box centrali -->
     </div>
+  </div>
 
-    <!-- colonna laterale -->
-    <div class="col col-12 col-md-4 mx-1">
-      <div class="row flex-column">
-        <div class="col g-4 linkedin-box">
-          <div class="linkedin-box-content profilelanguage">
-            <div class="d-flex justify-content-between">
-              <p class="bold">Lingua del profilo</p>
-              <button
-                type="button"
-                class="btn-icon"
-                data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
-              >
-                <i class="bi bi-pencil"></i>
-              </button>
-              <!-- Modal -->
-              <div
-                class="modal fade"
-                id="exampleModal"
-                tabindex="-1"
-                aria-labelledby="exampleModalLabel"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h1 class="modal-title fs-5" id="exampleModalLabel">
-                        Impostazioni lingua del profilo
-                      </h1>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div class="modal-body d-flex">
-                      <div class="d-flex">
-                        <i class="bi bi-globe2 me-2"></i>
-                        <p>
-                          Aggiungi più di una lingua al tuo profilo, così sarà
-                          più facile trovarti.
-                        </p>
-                      </div>
-                      <div class="d-flex">
-                        <i class="bi bi-eyeglasses me-2"></i>
-                        <p>
-                          Se disponibile, mostreremo il tuo profilo nella lingua
-                          di chi lo visita. Se non c’è corrispondenza, verrà
-                          mostrato il tuo profilo predefinito.
-                        </p>
-                      </div>
-                    </div>
-                    <div class="modal-footer d-block">
-                      <p>Lingue</p>
-                      <button class="btn btn-gray">Italiano</button>
-                      <button class="btn btn-blue">+ Aggiungi lingua</button>
-                      <div class="d-flex">
-                        <i class="bi bi-lightbulb i"></i>
-                        <p>
-                          Puoi avere un solo profilo per lingua. Quando cambi il
-                          profilo nella tua lingua principale, le sezioni vuote
-                          verranno compilate usando la tua precedente lingua
-                          principale. Scopri di più su come
-                          <a href="">creare profili in un’altra lingua.</a>
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <p class="text">Italiano</p>
-          </div>
-          <div class="linkedin-box-content">
-            <div class="d-flex justify-content-between">
-              <p class="bold">Public profile & URL</p>
-
-              <button type="button " class="btn-icon">
-                <a> <i class="bi bi-pencil text-secondary"></i></a>
-              </button>
-            </div>
-            <p class="text">Link non disponibile</p>
-          </div>
-        </div>
-        <div class="col g-4 linkedin-box">
-          <p class="text-end m-0 addPann">
-            Annuncio
+  <!-- colonna laterale -->
+  <div class="col col-12 col-md-4 mx-1">
+    <div class="row flex-column">
+      <div class="col g-4 linkedin-box">
+        <div class="linkedin-box-content profilelanguage">
+          <div class="d-flex justify-content-between">
+            <p class="bold">Lingua del profilo</p>
             <button
               type="button"
-              class="btn p-0"
+              class="btn-icon"
               data-bs-toggle="modal"
-              data-bs-target="#exampleModal2"
+              data-bs-target="#exampleModal"
             >
-              ∙∙∙
+              <i class="bi bi-pencil"></i>
             </button>
-          </p>
-          <!-- Button trigger modal -->
-
-          <!-- Modal -->
-          <div
-            class="modal fade"
-            id="exampleModal2"
-            tabindex="-1"
-            aria-labelledby="exampleModalLabel2"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel2">
-                    Opzioni annuncio
-                  </h1>
-                  <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body annucioPopUP">
-                  <div class="d-flex">
-                    <i class="bi bi-info-square-fill me-1"></i>
-                    <div class="user-select-none">
-                      <p class="bold m-0">Perchè vedo questo annuncio?</p>
-                      <p>Gestisci le preferenze per gli annunci pubblicitari</p>
+            <!-- Modal -->
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Impostazioni lingua del profilo
+                    </h1>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body d-flex">
+                    <div class="d-flex">
+                      <i class="bi bi-globe2 me-2"></i>
+                      <p>
+                        Aggiungi più di una lingua al tuo profilo, così sarà più
+                        facile trovarti.
+                      </p>
+                    </div>
+                    <div class="d-flex">
+                      <i class="bi bi-eyeglasses me-2"></i>
+                      <p>
+                        Se disponibile, mostreremo il tuo profilo nella lingua
+                        di chi lo visita. Se non c’è corrispondenza, verrà
+                        mostrato il tuo profilo predefinito.
+                      </p>
                     </div>
                   </div>
-                  <div class="d-flex">
-                    <i class="bi bi-flag-fill me-1"></i>
-                    <div>
-                      <p class="bold m-0">Segnala questo annuncio</p>
-                      <p>Non voglio vedere questo annucio nel mio feed</p>
+                  <div class="modal-footer d-block">
+                    <p>Lingue</p>
+                    <button class="btn btn-gray">Italiano</button>
+                    <button class="btn btn-blue">+ Aggiungi lingua</button>
+                    <div class="d-flex">
+                      <i class="bi bi-lightbulb i"></i>
+                      <p>
+                        Puoi avere un solo profilo per lingua. Quando cambi il
+                        profilo nella tua lingua principale, le sezioni vuote
+                        verranno compilate usando la tua precedente lingua
+                        principale. Scopri di più su come
+                        <a href="">creare profili in un’altra lingua.</a>
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+          <p class="text">Italiano</p>
+        </div>
+        <div class="linkedin-box-content">
+          <div class="d-flex justify-content-between">
+            <p class="bold">Public profile & URL</p>
 
-          <p class="addPann text text-center m-1">
-            Scopri la formazione presso epicode
-          </p>
-          <div class="d-flex justify-content-center">
-            <img
-              [src]="profileData.image"
-              alt=""
-              class="rounded-circle profileAddsImg me-2"
-            />
-            <a href="https://epicode.com/it">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQROaS3ruCLNEDynCYsFxDvt03s1oYBBqhz2Is_kJBcd23576MEEip3dWZuWOtQvPcP8MU&usqp=CAU"
-                class="rounded-circle profileAddsImg"
-            /></a>
+            <button type="button " class="btn-icon">
+              <a> <i class="bi bi-pencil text-secondary"></i></a>
+            </button>
           </div>
-          <p class="text text-center my-2">
-            {{ profileData.name }}, scopri le opportunità offerte da
-            <span class="spanEpicodeAdd">Epicode</span>
-          </p>
-          <div class="d-flex justify-content-center">
-            <a href="https://www.linkedin.com/school/epicodeitalia/">
-              <button class="btn btn-blue mb-3">Segui</button></a
-            >
+          <p class="text">Link non disponibile</p>
+        </div>
+      </div>
+      <div class="col g-4 linkedin-box">
+        <p class="text-end m-0 addPann">
+          Annuncio
+          <button
+            type="button"
+            class="btn p-0"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal2"
+          >
+            ∙∙∙
+          </button>
+        </p>
+        <!-- Button trigger modal -->
+
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal2"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel2"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel2">
+                  Opzioni annuncio
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body annucioPopUP">
+                <div class="d-flex">
+                  <i class="bi bi-info-square-fill me-1"></i>
+                  <div class="user-select-none">
+                    <p class="bold m-0">Perchè vedo questo annuncio?</p>
+                    <p>Gestisci le preferenze per gli annunci pubblicitari</p>
+                  </div>
+                </div>
+                <div class="d-flex">
+                  <i class="bi bi-flag-fill me-1"></i>
+                  <div>
+                    <p class="bold m-0">Segnala questo annuncio</p>
+                    <p>Non voglio vedere questo annucio nel mio feed</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="col g-4 linkedin-box">
-          <div class="p-box-contentent">
-            <p class="bold">Altri profili cosultati</p>
+
+        <p class="addPann text text-center m-1">
+          Scopri la formazione presso epicode
+        </p>
+        <div class="d-flex justify-content-center">
+          <img
+            [src]="profileData.image"
+            alt=""
+            class="rounded-circle profileAddsImg me-2"
+          />
+          <a href="https://epicode.com/it">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQROaS3ruCLNEDynCYsFxDvt03s1oYBBqhz2Is_kJBcd23576MEEip3dWZuWOtQvPcP8MU&usqp=CAU"
+              class="rounded-circle profileAddsImg"
+          /></a>
+        </div>
+        <p class="text text-center my-2">
+          {{ profileData.name }}, scopri le opportunità offerte da
+          <span class="spanEpicodeAdd">Epicode</span>
+        </p>
+        <div class="d-flex justify-content-center">
+          <a href="https://www.linkedin.com/school/epicodeitalia/">
+            <button class="btn btn-blue mb-3">Segui</button></a
+          >
+        </div>
+      </div>
+      <div class="col g-4 linkedin-box">
+        <div class="p-box-contentent">
+          <p class="bold">Altri profili cosultati</p>
+        </div>
+        <div *ngFor="let item of utente" class="linkedin-box-content pt-0">
+          <div class="d-flex mt-2">
+            <img [src]="item.image" class="rounded-circle iconProfile" />
+            <div class="ms-2">
+              <p class="bold mb-0">{{ item.name }} {{ item.surname }}</p>
+              <p class="mb-3">{{ item.title }}</p>
+            </div>
           </div>
-          <div *ngFor="let item of utente" class="linkedin-box-content pt-0">
-            <div class="d-flex mt-2">
-              <img [src]="item.image" class="rounded-circle iconProfile" />
-              <div class="ms-2">
-                <p class="bold mb-0">{{ item.name }} {{ item.surname }}</p>
-                <p class="mb-3">{{ item.title }}</p>
-              </div>
-            </div>
-            <div class="profilelanguage d-flex">
-              <button class="mb-2 marginButtuonIcon d-block btn btn-gray">
-                <i class="bi bi-person-fill-add"></i> Collegati
-              </button>
-            </div>
+          <div class="profilelanguage d-flex">
+            <button class="mb-2 marginButtuonIcon d-block btn btn-gray">
+              <i class="bi bi-person-fill-add"></i> Collegati
+            </button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+<!-- </div> -->
 
 <!-- modale esperienze -->
 <div
