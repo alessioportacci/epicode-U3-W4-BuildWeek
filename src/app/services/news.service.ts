@@ -39,7 +39,10 @@ export class NewsService {
 
   removePost(postId: string): Observable<Inews> {
     return this.http.delete<Inews>(`${this.url}${postId}`, {
-      headers: { Authorization: `Bearer ${this.token}` },
+      headers: {
+        Authorization: `Bearer ${this.token}`,
+        responseType: 'text'
+     },
     });
   }
 }
