@@ -26,12 +26,7 @@ import { DateDayPipe } from './pipes/date-day.pipe';
     ModificaEsperienzeComponent,
     DateDayPipe,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-  ],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
 
   providers: [],
   bootstrap: [AppComponent],
