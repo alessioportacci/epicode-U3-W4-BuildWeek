@@ -15,7 +15,7 @@ import { Router } from '@angular/router';
 export class EsperienzeComponent implements OnInit {
   profileData?: IProfile;
   experienceData?: Iexperiences[];
-
+  utente: IProfile[] = [];
   constructor(
     public striveSrv: StriveApiService,
     public experienceSrv: ExperienceService,
@@ -31,7 +31,7 @@ export class EsperienzeComponent implements OnInit {
         this.experienceData = data;
       });
     });
-
+    this.getUsers();
     //   Side bar
     //   getUsers() {
     //     this.postSrv.getUsers().subscribe((data) => {
@@ -39,7 +39,11 @@ export class EsperienzeComponent implements OnInit {
     //     });
     //   }
   }
-
+  getUsers() {
+    this.striveSrv.getUsers().subscribe((data) => {
+      this.utente = data.reverse().slice(0, 6);
+    });
+  }
   deleteExperience(id: string) {
     this.experienceSrv.removeExperience(id).subscribe((res) => {
       console.log('cancellato');
