@@ -35,7 +35,8 @@ export class ModificaEsperienzeComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     public experienceSrv: ExperienceService,
-    public striveSrv: StriveApiService
+    public striveSrv: StriveApiService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -61,7 +62,7 @@ export class ModificaEsperienzeComponent implements OnInit {
   deleteExperience() {
     this.experienceSrv.removeExperience(this.idExperience).subscribe((res) => {
       console.log('cancellato');
-      this.experienceSrv.getExperiences().subscribe((data) => {});
+      this.router.navigate([`profile/esperienze`]);
     });
   }
 

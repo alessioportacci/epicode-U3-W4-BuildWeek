@@ -1,5 +1,6 @@
+import { IupdateNews } from './../../interfaces/inews';
 import { Subject } from 'rxjs';
-import { Component, OnInit, Pipe } from '@angular/core';
+import { Component, OnInit, Pipe, ViewChild } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 import { Inews } from 'src/app/interfaces/inews';
 import { CommentsService } from 'src/app/services/comments.service';
@@ -24,7 +25,8 @@ export class HomeComponent implements OnInit {
     title: '',
     area: '',
   };
-
+  post?: IupdateNews[]
+  text?:string
 
 
   constructor(
@@ -77,6 +79,25 @@ export class HomeComponent implements OnInit {
     this.loadComments(postId);
   }
 
+  saveNewPost(): void {
+    if (this.text) {
+      const newPost: IupdateNews = {
+        text: this.text
+      };
+      this.createNewPost(newPost);
+      this.text = '';
 
+    }
+  }
 
+  createNewPost(newPost: IupdateNews): void {
+    this.postSrv.setPost(newPost).subscribe((response) => {
+      console.log('Post creato:', response);
+
+      this.postSrv.getPosts().subscribe((data) => {
+        this.posts = data;
+        console.log('Elenco post aggiornato:', data);
+      });
+    });
+  }
 }
