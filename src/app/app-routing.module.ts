@@ -4,6 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { EsperienzeComponent } from './pages/esperienze/esperienze.component';
 import { ModificaEsperienzeComponent } from './pages/modifica-esperienze/modifica-esperienze.component';
+import { FormazioneComponent } from './pages/formazione/formazione.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,7 @@ const routes: Routes = [
   },
   {
     path: 'profile/formazione',
+    component: FormazioneComponent,
   },
   {
     path: 'modifica/:id',
