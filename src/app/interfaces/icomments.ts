@@ -1,8 +1,11 @@
+import { IProfile } from "./iprofile"
+
 export interface Icomments
 {
-    comment   : string
+    comment   : string,
     rate      : string,
-    elementId : string
+    elementId : string,
+    author    : string
 }
 
 export interface IupdateComment

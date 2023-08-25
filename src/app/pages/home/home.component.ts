@@ -1,3 +1,4 @@
+import { IProfile } from './../../interfaces/iprofile';
 import { IupdateNews } from './../../interfaces/inews';
 import { Subject } from 'rxjs';
 import { Component, OnInit, Pipe, ViewChild } from '@angular/core';
@@ -7,7 +8,6 @@ import { CommentsService } from 'src/app/services/comments.service';
 import { NewsService } from 'src/app/services/news.service';
 import { Icomments } from 'src/app/interfaces/icomments';
 import { StriveApiService } from 'src/app/services/strive-api.service';
-import { IProfile } from 'src/app/interfaces/iprofile';
 
 @Component({
   selector: 'app-home',
@@ -64,7 +64,10 @@ export class HomeComponent implements OnInit {
     this.comments = [];
     this.commentsSrv
       .getPostComments(postId)
-      .subscribe((res) => (this.comments = res));
+      .subscribe((res) => {
+        this.comments = res
+        console.log(res)
+      });
   }
 
   addComment(postId: string) {
@@ -73,6 +76,7 @@ export class HomeComponent implements OnInit {
         comment: this.currentComment,
         rate: '3',
         elementId: postId,
+        author: ""
       })
       .subscribe();
     this.currentComment = '';
