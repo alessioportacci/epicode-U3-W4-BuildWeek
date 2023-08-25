@@ -1,5 +1,6 @@
 <div id="empty"></div>
-<div class="row">
+<div class="row row-cols-3">
+  <!-- Colonna di sinistra -->
   <div class="col d-none d-lg-block" id="first-col">
     <div class="card" style="width: 18rem">
       <div class="position-relative div-img-profile w-100 m-0 p-0">
@@ -18,7 +19,6 @@
           />
         </div>
       </div>
-
       <div class="card-body">
         <h5 class="card-title text-center w-100">
           {{ profileData?.name }} {{ profileData?.surname }}
@@ -42,9 +42,12 @@
       </div>
     </div>
   </div>
+
+  <!-- Colonna centrale -->
   <div class="col">
+    <!-- Parte alta -->
     <div
-      class="container d-flex flex-column justify-content-center align-items-center"
+      class="container d-flex flex-column justify-content-center align-items-center m-1"
       id="new-post"
     >
       <div class="d-flex mb-3">
@@ -63,33 +66,8 @@
           <i class="bi bi-newspaper mx-1 text-danger-emphasis"></i>Scrivi un
           articolo</a
         >
-
-        <div class="my-3">
-          <a
-            href="#"
-            class="mx-4 text-decoration-none fs-6 text-black fw-bold btn-gray-2 py-2 px-1"
-            ><i class="bi bi-hand-thumbs-up"></i> &nbsp; Consiglia</a
-          >
-          <a
-            class="mx-3 text-decoration-none fs-6 text-black fw-bold btn-gray-2 py-2 px-1"
-            data-bs-toggle="collapse"
-            href="#collapse-{{ post._id }}"
-            aria-expanded="false"
-            (click)="loadComments(post._id)"
-            ><i class="bi bi-chat-text"></i> &nbsp; Commenta</a
-          >
-          <a
-            href="#"
-            class="mx-3 text-decoration-none fs-6 text-black fw-bold btn-gray-2 py-2 px-1"
-            ><i class="bi bi-upload"></i> &nbsp; Diffondi il post</a
-          >
-          <a
-            href="#"
-            class="mx-3 text-decoration-none fs-6 text-black fw-bold btn-gray-2 py-2 px-1"
-            ><i class="bi bi-share"></i> &nbsp; Invia</a
-          >
-        </div>
       </div>
+
       <div id="myGroup">
         <div
           class="container-fluid w-100 mt-5 d-flex justify-content-center panel"
@@ -182,6 +160,7 @@
         </div>
       </div>
     </div>
+
     <div class="col"></div>
   </div>
 </div>
