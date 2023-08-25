@@ -107,10 +107,12 @@ $amount: 45;
 
 .profile-img-proto {
   position: absolute;
-  width: 150px;
-  height: 150px;
+  width: 10vw;
+  max-width: 190px;
+  height: 10vw;
+  max-height: 190px;
   border: 3px solid white;
-  top: 65px;
+  top: 2vw;
   left: 24px;
   background-size: cover;
   background-position: center;
