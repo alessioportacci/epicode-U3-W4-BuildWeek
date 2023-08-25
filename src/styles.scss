@@ -98,6 +98,15 @@ $amount: 45;
   border-top-right-radius: 14px;
 }
 
+.cover-img-2
+{
+  border-top-left-radius: 14px !important;
+  border-top-right-radius: 14px !important;
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  height: 50px !important;
+}
+
 .profile-img {
   position: absolute;
   width: 100px;
