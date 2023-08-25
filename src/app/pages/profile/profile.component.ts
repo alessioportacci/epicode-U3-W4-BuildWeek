@@ -33,6 +33,8 @@ export class ProfileComponent implements OnInit {
   area: string = '';
   utente: IProfile[] = [];
   utenmatCardTitle?: Inews[];
+
+
   constructor(
     public striveSrv: StriveApiService,
     public experienceSrv: ExperienceService,
@@ -40,6 +42,8 @@ export class ProfileComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+
+
     this.striveSrv.getProfile().subscribe((data) => {
       this.profileData = data;
       console.log(data);

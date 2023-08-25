@@ -1,5 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import {
+  IUpdateExperience,
+  Iexperiences,
+} from 'src/app/interfaces/iexperiences';
+import { IProfile } from 'src/app/interfaces/iprofile';
+import { ExperienceService } from 'src/app/services/experience.service';
+import { StriveApiService } from 'src/app/services/strive-api.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-modifica-esperienze',
@@ -7,18 +15,73 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./modifica-esperienze.component.css'],
 })
 export class ModificaEsperienzeComponent implements OnInit {
-  id!: string;
-  constructor(private route: ActivatedRoute, private router: Router) {
-    this.ngOnInit();
-    this.card();
-  }
-  card() {
-    console.log('c');
-  }
-  ngOnInit() {
-    console.log('c');
+  idExperience!: string;
+  profileData?: IProfile;
+  experienceData: Iexperiences = {
+    _id: '', // server generated
+    role: '',
+    company: '',
+    startDate: '',
+    endDate: '', // could be null
+    description: '',
+    area: '',
+    username: '', // server generated
+    createdAt: '', // server generated
+    updatedAt: '', // server generated
+    __v: -1, // server generated
+    image: '',
+  };
 
-    this.route.paramMap.subscribe((params) => (this.id = params.get('id')!));
-    console.log(this.id);
+  constructor(
+    private route: ActivatedRoute,
+    public experienceSrv: ExperienceService,
+    public striveSrv: StriveApiService
+  ) {}
+
+  ngOnInit() {
+    this.route.paramMap.subscribe(
+      (params) => (this.idExperience = params.get('id')!)
+    );
+    console.log(this.experienceData);
+
+    this.striveSrv.getProfile().subscribe((profile) => {
+      this.profileData = profile;
+
+      this.experienceSrv.userId = this.profileData._id;
+      this.experienceSrv
+        .getExperience(this.idExperience)
+        .subscribe((experience) => {
+          console.log(experience);
+
+          this.experienceData = experience;
+        });
+    });
+  }
+
+  deleteExperience() {
+    this.experienceSrv.removeExperience(this.idExperience).subscribe((res) => {
+      console.log('cancellato');
+      this.experienceSrv.getExperiences().subscribe((data) => {});
+    });
+  }
+
+  onSubmit(form: NgForm) {
+    if (form && form.valid) {
+      console.log(this.experienceData);
+      const updateExperice: IUpdateExperience = {
+        role: this.experienceData.role,
+        company: this.experienceData.company,
+        startDate: this.experienceData.startDate,
+        endDate: this.experienceData.endDate,
+        description: this.experienceData.description,
+        area: this.experienceData.area,
+      };
+
+      console.log(this.idExperience);
+
+      this.experienceSrv
+        .updateExperience(this.idExperience, updateExperice)
+        .subscribe((data) => console.log(data));
+    }
   }
 }

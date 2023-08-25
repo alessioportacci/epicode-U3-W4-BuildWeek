@@ -19,9 +19,9 @@ export class ExperienceService {
     this.userId = id;
   }
 
-  getExperience(): Observable<Iexperiences> {
+  getExperience(expericeId: string): Observable<Iexperiences> {
     return this.http.get<Iexperiences>(
-      `https://striveschool-api.herokuapp.com/api/profile/${this.userId}/experiences`,
+      `https://striveschool-api.herokuapp.com/api/profile/${this.userId}/experiences/${expericeId}`,
       {
         headers: {
           Authorization: `Bearer ${this.token}`,
@@ -48,7 +48,7 @@ export class ExperienceService {
     experience: IUpdateExperience
   ): Observable<IUpdateExperience> {
     return this.http.put<Iexperiences>(
-      `${this.url}/${experienceId}`,
+      ` https://striveschool-api.herokuapp.com/api/profile/${this.userId}/experiences/${experienceId}`,
       experience,
       { headers: { Authorization: `Bearer ${this.token}` } }
     );

@@ -18,6 +18,14 @@ export class HomeComponent implements OnInit {
   comments: Icomments[] = [];
   profileData?: IProfile;
   currentComment = '';
+  utente: IProfile[] = [];
+    userUpate?: any = {
+    bio: '',
+    title: '',
+    area: '',
+  };
+
+
 
   constructor(
     private postSrv: NewsService,
@@ -41,8 +49,14 @@ export class HomeComponent implements OnInit {
       console.log(data);
       this.profileData = data;
     });
-  }
+    this.getUsers();
 
+  }
+  getUsers() {
+    this.striveSrv.getUsers().subscribe((data) => {
+      this.utente = data.reverse().slice(0, 6);
+    });
+  }
   loadComments(postId: string): void {
     console.log(this.comments);
     this.comments = [];
@@ -62,4 +76,7 @@ export class HomeComponent implements OnInit {
     this.currentComment = '';
     this.loadComments(postId);
   }
+
+
+
 }
