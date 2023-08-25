@@ -53,8 +53,7 @@ body {
   }
 }
 
-.btn-gray
-{
+.btn-gray {
   border: 1.5px solid !important;
   border-radius: 20px !important;
   color: $linkedinGray !important;
@@ -67,8 +66,7 @@ body {
   }
 }
 
-.btn-gray-2
-{
+.btn-gray-2 {
   border-radius: 5px !important;
   margin: 0px !important;
 
@@ -173,4 +171,9 @@ $amount: 45;
 }
 .spanEpicodeAdd {
   color: black;
+}
+.profile-img-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }
