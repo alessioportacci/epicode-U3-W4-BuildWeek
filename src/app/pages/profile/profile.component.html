@@ -366,96 +366,6 @@
             </div>
           </div>
 
-          <!-- Modal -->
-          <div
-            class="modal fade"
-            id="exampleModal3"
-            tabindex="-1"
-            aria-labelledby="exampleModalLabel2"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel2">
-                    Aggiungi esperienze
-                  </h1>
-                  <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
-                </div>
-                <div class="modal-body annucioPopUP">
-                  <!-- form del modale -->
-                  <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
-                    <div class="mb-3">
-                      <label class="form-label">Qualifica</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="role"
-                        name="role"
-                        [(ngModel)]="role"
-                      />
-                    </div>
-                    <div class="mb-3">
-                      <label class="form-label">Nome azienda</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="company"
-                        name="company"
-                        [(ngModel)]="company"
-                      />
-                    </div>
-                    <div class="mb-3">
-                      <label class="form-label">Data di inizio</label>
-                      <input
-                        type="date"
-                        class="form-control"
-                        id="startDate"
-                        name="startDate"
-                        [(ngModel)]="startDate"
-                      />
-                    </div>
-                    <div class="mb-3">
-                      <label class="form-label">Data di fine</label>
-                      <input
-                        type="date"
-                        class="form-control"
-                        id="endDate"
-                        name="endDate"
-                        [(ngModel)]="endDate"
-                      />
-                    </div>
-                    <div class="mb-3">
-                      <label class="form-label">Descrizione</label>
-                      <textarea
-                        class="form-control"
-                        id="description"
-                        name="description"
-                        [(ngModel)]="description"
-                      ></textarea>
-                    </div>
-                    <div class="mb-3">
-                      <label class="form-label">Luogo</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="area"
-                        name="area"
-                        [(ngModel)]="area"
-                      />
-                    </div>
-                    <button type="submit" class="btn btn-primary">Salva</button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-
           <p class="addPann text text-center m-1">
             scorpi la formazione presso epicode
           </p>
@@ -500,6 +410,96 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modale esperienze -->
+<div
+  class="modal fade"
+  id="exampleModal3"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel2"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel2">
+          Aggiungi esperienze
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body annucioPopUP">
+        <!-- form del modale -->
+        <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+          <div class="mb-3">
+            <label class="form-label">Qualifica</label>
+            <input
+              type="text"
+              class="form-control"
+              id="role"
+              name="role"
+              [(ngModel)]="role"
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Nome azienda</label>
+            <input
+              type="text"
+              class="form-control"
+              id="company"
+              name="company"
+              [(ngModel)]="company"
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Data di inizio</label>
+            <input
+              type="date"
+              class="form-control"
+              id="startDate"
+              name="startDate"
+              [(ngModel)]="startDate"
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Data di fine</label>
+            <input
+              type="date"
+              class="form-control"
+              id="endDate"
+              name="endDate"
+              [(ngModel)]="endDate"
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Descrizione</label>
+            <textarea
+              class="form-control"
+              id="description"
+              name="description"
+              [(ngModel)]="description"
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Luogo</label>
+            <input
+              type="text"
+              class="form-control"
+              id="area"
+              name="area"
+              [(ngModel)]="area"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Salva</button>
+        </form>
       </div>
     </div>
   </div>
