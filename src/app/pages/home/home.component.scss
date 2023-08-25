@@ -61,10 +61,31 @@ img{
   border-color: transparent #f1f1f1 transparent transparent;
 }
 
+.bubble {
+  position: relative;
+  background: #f2f2f2;
+  color: black;
+  border-radius: 10px;
+  padding: 20px;
+}
+.bubble:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  z-index: 1;
+  border-style: solid;
+  border-width: 8px 0 0 9px;
+  border-color: transparent transparent transparent #f2f2f2;
+  top: -8px;
+  left: 5%;
+  margin-left: -4.5px;
+}
+
+
 #new-post{
   background-color: white;
   height: 150px;
-  width: 600px;
   border-radius: 20px;
   input{
     width: 300px;
